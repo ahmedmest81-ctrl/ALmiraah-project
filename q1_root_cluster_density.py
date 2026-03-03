@@ -227,6 +227,10 @@ def compute_root_cluster_density(model, families, lang_name, min_words=3):
         print(f"  ERROR: No families had enough words in vocabulary.")
         return None
 
+    if len(available_families) < 2:
+        print(f"  ERROR: Need at least 2 families for cross-family comparison; got {len(available_families)}.")
+        return None
+
     # ── Cross-family similarities ─────────────────────────────────────
     print(f"\n  Computing cross-family similarities...")
     cross_sims_all = []
@@ -284,8 +288,8 @@ def compute_root_cluster_density(model, families, lang_name, min_words=3):
         "cross_std": cross_std,
         "gap": gap,
         "cohens_d": cohens_d,
-        "p_value": p_value,
-        "significant": p_value < 0.05,
+        "p_value": float(p_value),
+        "significant": bool(p_value < 0.05),
         "family_stats": family_stats,
         "intra_sims_sample": intra_sims_all[:200],
         "cross_sims_sample": cross_sims_all[:200],
@@ -314,7 +318,8 @@ def print_comparative_summary(arabic_results, english_results):
         print(f"  {'GAP (intra - cross)':<35} "
               f"{ar_gap:>12.4f} "
               f"{en_gap:>12.4f}")
-        print(f"  {'Cohen\\'s d (effect size)':<35} "
+        cohens_label = "Cohen's d (effect size)"
+        print(f"  {cohens_label:<35} "
               f"{arabic_results['cohens_d']:>12.4f} "
               f"{english_results['cohens_d']:>12.4f}")
         print(f"  {'p-value':<35} "
