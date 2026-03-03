@@ -478,7 +478,7 @@ def save_results(arabic_results, english_results, output_dir):
         }
 
     path = os.path.join(output_dir, "q1_results.json")
-    with open(path, 'w', ensure_ascii=False) as f:
+    with open(path, 'w', encoding='utf-8') as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
     print(f"  Saved: {path}")
     return output
