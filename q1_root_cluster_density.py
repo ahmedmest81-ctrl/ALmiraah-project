@@ -168,7 +168,7 @@ def cosine_similarity(v1, v2):
     norm2 = np.linalg.norm(v2)
     if norm1 == 0 or norm2 == 0:
         return 0.0
-    return np.dot(v1, v2) / (norm1 * norm2)
+    return float(np.dot(v1, v2) / (norm1 * norm2))
 
 
 def compute_pairwise_similarities(model, word_list):
