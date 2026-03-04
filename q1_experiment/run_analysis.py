@@ -33,7 +33,8 @@ from q1_root_cluster_density import (
     save_results,
 )
 
-OUT = "q1_report"
+HERE = os.path.dirname(os.path.abspath(__file__))
+OUT = os.path.join(HERE, "results", "synthetic")
 os.makedirs(OUT, exist_ok=True)
 
 
@@ -122,3 +123,5 @@ for lang, families, model in [
 print(f"\n{'='*60}")
 print(f"Done.  Results in {OUT}/")
 print(f"{'='*60}")
+print(f"\nNOTE: These are synthetic proxy results.")
+print(f"Run run_q1_real.py with real AraVec + word2vec for production results.")
