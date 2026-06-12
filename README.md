@@ -14,7 +14,7 @@ transformer representations.
 `semantic_neighbors`, `compare_terms`, `semantic_project`)
 
 **Dataset:** https://huggingface.co/datasets/WELLyes1/almiraah_coordinate_db
-(747 accumulated query records, v3 protocol, with full provenance)
+(759 accumulated query records, v3 protocol, with full provenance)
 
 **Papers**
 - *Paper A* — wazn geometry and Abjad-attention in CAMeLBERT-ca (arXiv: pending)
@@ -56,14 +56,24 @@ pipeline/      Coordinate-space regeneration
   regenerate_full_v3.py  Full accumulated-term re-projection
 
 experiments/   Pre-registered analyses with honest tallies
+  q2_abjad_attention.py             Paper A primary Abjad-attention analysis
+  q2_robustness.py                  Paper A unrestricted Q2 robustness analysis
   q2_robustness_freq_matched.py   Paper A frequency-matched null
+  q3_alephbert_control.py            Paper A AlephBERT control
+  q3_robustness.py                   Paper A Q3 robustness analysis
+  m4_pattern_geometry.py             Wazn-pattern geometry analysis
+  m4_pattern_geometry_200.py         Locked 200-family Wazn run
   three_experiments_report.md     Opposition axes / shadow field / wazn×position
   abjad_audit_report.txt          99-Name stored-value audit
   opposition_edges.json           Machine-resolved doctrinal opposition graph
   color_profiles.json             99-dim profiles of the five color terms
 
 docs/          DEPLOYMENT.md (fix history), VALIDATION_V3.md (protocol
-               correction results)
+               correction results), paper consistency audit, and result manifest
+
+data/paper_a/  Reviewed 200-family Wazn annotations and adjudication log
+
+results/paper_a/ Locked result JSONs cited by Paper A
 ```
 
 ## Reproduction

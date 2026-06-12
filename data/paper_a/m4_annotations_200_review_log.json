@@ -1,0 +1,1544 @@
+{
+  "input": "C:\\Users\\ahmed\\ALmiraah-project\\q1_experiment\\m4_annotations_200.json",
+  "output": "m4_annotations_200_reviewed.json",
+  "n_removed": 122,
+  "n_changed": 26,
+  "removed": [
+    {
+      "row": {
+        "family": "ك-ر-م",
+        "raw": "كريم",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "ك-ر-م",
+        "raw": "مكرم",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ن-و-ر",
+        "raw": "نائر",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "ن-و-ر",
+        "raw": "منار",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ح-ق-ق",
+        "raw": "محق",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "ح-ق-ق",
+        "raw": "محقق",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ف-ك-ر",
+        "raw": "فاكر",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "ف-ك-ر",
+        "raw": "مفكور",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ع-ل-و",
+        "raw": "معلو",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ن-ف-س",
+        "raw": "منفوس",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ق-د-ر",
+        "raw": "مقدور",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ر-ب-ب",
+        "raw": "رابّ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "ر-ب-ب",
+        "raw": "مربوب",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ش-ر-ح",
+        "raw": "مشروح",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ع-ص-م",
+        "raw": "معصوم",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ب-ع-ث",
+        "raw": "مبعوث",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ص-ب-ر",
+        "raw": "مصبور",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ح-ب-ب",
+        "raw": "محب",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "س-ب-ح",
+        "raw": "مسبوح",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ك-م-ل",
+        "raw": "مكمول",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ن-ب-أ",
+        "raw": "منبوء",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ف-ر-ق",
+        "raw": "مفروق",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ث-ق-ل",
+        "raw": "مثقول",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "و-ح-د",
+        "raw": "موحّد",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "أ-د-ب",
+        "raw": "مؤدب",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ع-ز-ز",
+        "raw": "عازّ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "ع-ز-ز",
+        "raw": "معزوز",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ر-ق-ب",
+        "raw": "مرقوب",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ح-ل-م",
+        "raw": "محلوم",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ل-ط-ف",
+        "raw": "ملطوف",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ن-ع-م",
+        "raw": "منعوم",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ت-و-ب",
+        "raw": "تائب",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "ت-و-ب",
+        "raw": "متوب",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ح-ي-و",
+        "raw": "حيّ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "ح-ي-و",
+        "raw": "محيا",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ب-ي-ن",
+        "raw": "مبيّن",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ظ-ه-ر",
+        "raw": "مظهور",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ق-ر-ب",
+        "raw": "مقروب",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ف-ر-ح",
+        "raw": "مفروح",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ع-ز-ل",
+        "raw": "معزول",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ح-ك-م",
+        "raw": "محكوم",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "أ-ر-ض",
+        "raw": "مُرضٍ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "أ-ر-ض",
+        "raw": "مُرضى",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ل-ح-ق",
+        "raw": "ملحوق",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "غ-ف-ر",
+        "raw": "مغفور",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ص-ب-ح",
+        "raw": "مصبوح",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ب-ر-ز",
+        "raw": "مبروز",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ح-و-ل",
+        "raw": "محول",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ر-ج-ل",
+        "raw": "مرجول",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "خ-ض-ع",
+        "raw": "مخضوع",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "أ-ه-ل",
+        "raw": "مؤهل",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "أ-ه-ل",
+        "raw": "مؤهَّل",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ن-ز-ل",
+        "raw": "منزول",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "م-د-د",
+        "raw": "ممدود",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ف-ع-ل",
+        "raw": "مفعول",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ش-ه-د",
+        "raw": "مشهود",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "خ-ل-ص",
+        "raw": "مخلوص",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ص-ن-ع",
+        "raw": "مصنوع",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ح-ر-ك",
+        "raw": "محرّك",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "ح-ر-ك",
+        "raw": "محرّك",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ر-س-ل",
+        "raw": "مرسل",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "ر-س-ل",
+        "raw": "مرسول",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ف-ق-ه",
+        "raw": "فقيه",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "ف-ق-ه",
+        "raw": "مفقوه",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ق-ن-ع",
+        "raw": "مقنوع",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ل-ق-ن",
+        "raw": "ملقّن",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "ل-ق-ن",
+        "raw": "ملقَّن",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ع-ل-ن",
+        "raw": "معلن",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "ع-ل-ن",
+        "raw": "معلَن",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ر-و-ح",
+        "raw": "مروح",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ب-ل-غ",
+        "raw": "مبلوغ",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ق-ح-م",
+        "raw": "مقحم",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "ق-ح-م",
+        "raw": "مقحَم",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ح-ر-ج",
+        "raw": "محروج",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ض-ع-ف",
+        "raw": "مضعوف",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ث-ب-ت",
+        "raw": "مثبوت",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "س-ل-م",
+        "raw": "مسلوم",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ع-ظ-م",
+        "raw": "معظوم",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "د-ب-ر",
+        "raw": "مدبّر",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "د-ب-ر",
+        "raw": "مدبَّر",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ب-ص-ر",
+        "raw": "بصير",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "ب-ص-ر",
+        "raw": "مبصور",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ح-ي-ط",
+        "raw": "محيط",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "ح-ي-ط",
+        "raw": "محاط",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ق-و-م",
+        "raw": "مقام",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ع-ل-ق",
+        "raw": "معلوق",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ج-د-د",
+        "raw": "مجدود",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ف-ص-ح",
+        "raw": "فصيح",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "ف-ص-ح",
+        "raw": "مفصوح",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ن-ف-ق",
+        "raw": "منفوق",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "م-ش-ي",
+        "raw": "ممشى",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ق-ر-ر",
+        "raw": "مقرّ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "ق-ر-ر",
+        "raw": "مقرور",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ح-د-ث",
+        "raw": "محدَّث",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ز-ه-د",
+        "raw": "مزهود",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ت-ع-ب",
+        "raw": "تاعب",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "ت-ع-ب",
+        "raw": "متعوب",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ن-ب-ض",
+        "raw": "منبوض",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ش-و-ق",
+        "raw": "مشوق",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ع-م-ق",
+        "raw": "معموق",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "خ-ب-ر",
+        "raw": "مخبور",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "أ-ف-ل",
+        "raw": "مأفول",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ص-ف-و",
+        "raw": "مصفّى",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ح-ض-ر",
+        "raw": "محضور",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ر-ب-ح",
+        "raw": "مربوح",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ث-م-ر",
+        "raw": "مثمور",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ل-و-م",
+        "raw": "ملوم",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "س-ع-ي",
+        "raw": "مسعيّ",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ش-ع-ر",
+        "raw": "مشعور",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "أ-و-ب",
+        "raw": "مآب",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ع-ب-ق",
+        "raw": "معبوق",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ص-م-د",
+        "raw": "مصمود",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ب-ق-ي",
+        "raw": "مبقيّ",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ح-ن-ن",
+        "raw": "محنون",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ص-ف-ح",
+        "raw": "مصفوح",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "و-ع-ي",
+        "raw": "موعيّ",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ف-ز-ع",
+        "raw": "مفزوع",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_unverified_passive_participle"
+    },
+    {
+      "row": {
+        "family": "خ-ش-ي",
+        "raw": "مخشيّ",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "و-ج-ل",
+        "raw": "واجل",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "reason": "removed_not_clean_form_i_active_participle"
+    },
+    {
+      "row": {
+        "family": "و-ج-ل",
+        "raw": "موجول",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ب-د-ل",
+        "raw": "مبدل",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    },
+    {
+      "row": {
+        "family": "ج-ه-د",
+        "raw": "مجهود",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "reason": "removed_not_clean_form_i_passive_participle"
+    }
+  ],
+  "changed": [
+    {
+      "before": {
+        "family": "ل-ق-ي",
+        "raw": "لاقٍ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "after": {
+        "family": "ل-ق-ي",
+        "raw": "لاق",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle",
+        "review_status": "kept_ap_normalized"
+      },
+      "reason": "kept_ap_normalized"
+    },
+    {
+      "before": {
+        "family": "ع-ف-و",
+        "raw": "عافٍ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "after": {
+        "family": "ع-ف-و",
+        "raw": "عاف",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle",
+        "review_status": "kept_ap_normalized"
+      },
+      "reason": "kept_ap_normalized"
+    },
+    {
+      "before": {
+        "family": "ن-ه-ي",
+        "raw": "ناهٍ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "after": {
+        "family": "ن-ه-ي",
+        "raw": "ناه",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle",
+        "review_status": "kept_ap_normalized"
+      },
+      "reason": "kept_ap_normalized"
+    },
+    {
+      "before": {
+        "family": "ز-ك-و",
+        "raw": "زاكٍ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "after": {
+        "family": "ز-ك-و",
+        "raw": "زاك",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle",
+        "review_status": "kept_ap_normalized"
+      },
+      "reason": "kept_ap_normalized"
+    },
+    {
+      "before": {
+        "family": "ق-ض-ي",
+        "raw": "قاضٍ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "after": {
+        "family": "ق-ض-ي",
+        "raw": "قاض",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle",
+        "review_status": "kept_ap_normalized"
+      },
+      "reason": "kept_ap_normalized"
+    },
+    {
+      "before": {
+        "family": "د-ع-و",
+        "raw": "داعٍ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "after": {
+        "family": "د-ع-و",
+        "raw": "داع",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle",
+        "review_status": "kept_ap_normalized"
+      },
+      "reason": "kept_ap_normalized"
+    },
+    {
+      "before": {
+        "family": "ص-ل-ي",
+        "raw": "مصلٍّ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "after": {
+        "family": "ص-ل-ي",
+        "raw": "مصل",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle",
+        "review_status": "kept_ap_normalized"
+      },
+      "reason": "kept_ap_normalized"
+    },
+    {
+      "before": {
+        "family": "ص-ل-ي",
+        "raw": "مصلّى",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "after": {
+        "family": "ص-ل-ي",
+        "raw": "مصلى",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle",
+        "review_status": "kept_pp_normalized"
+      },
+      "reason": "kept_pp_normalized"
+    },
+    {
+      "before": {
+        "family": "ع-ن-ي",
+        "raw": "معنيّ",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "after": {
+        "family": "ع-ن-ي",
+        "raw": "معني",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle",
+        "review_status": "kept_pp_normalized"
+      },
+      "reason": "kept_pp_normalized"
+    },
+    {
+      "before": {
+        "family": "ع-ط-ي",
+        "raw": "معطٍ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "after": {
+        "family": "ع-ط-ي",
+        "raw": "معط",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle",
+        "review_status": "kept_ap_normalized"
+      },
+      "reason": "kept_ap_normalized"
+    },
+    {
+      "before": {
+        "family": "ر-ق-ي",
+        "raw": "راقٍ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "after": {
+        "family": "ر-ق-ي",
+        "raw": "راق",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle",
+        "review_status": "kept_ap_normalized"
+      },
+      "reason": "kept_ap_normalized"
+    },
+    {
+      "before": {
+        "family": "ر-ق-ي",
+        "raw": "مرقيّ",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "after": {
+        "family": "ر-ق-ي",
+        "raw": "مرقي",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle",
+        "review_status": "kept_pp_normalized"
+      },
+      "reason": "kept_pp_normalized"
+    },
+    {
+      "before": {
+        "family": "م-ش-ي",
+        "raw": "ماشٍ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "after": {
+        "family": "م-ش-ي",
+        "raw": "ماش",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle",
+        "review_status": "kept_ap_normalized"
+      },
+      "reason": "kept_ap_normalized"
+    },
+    {
+      "before": {
+        "family": "ح-د-ث",
+        "raw": "محدِّث",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "after": {
+        "family": "ح-د-ث",
+        "raw": "محدث",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle",
+        "review_status": "kept_ap_normalized"
+      },
+      "reason": "kept_ap_normalized"
+    },
+    {
+      "before": {
+        "family": "ص-ف-و",
+        "raw": "صافٍ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "after": {
+        "family": "ص-ف-و",
+        "raw": "صاف",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle",
+        "review_status": "kept_ap_normalized"
+      },
+      "reason": "kept_ap_normalized"
+    },
+    {
+      "before": {
+        "family": "م-ح-و",
+        "raw": "ماحٍ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "after": {
+        "family": "م-ح-و",
+        "raw": "ماح",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle",
+        "review_status": "kept_ap_normalized"
+      },
+      "reason": "kept_ap_normalized"
+    },
+    {
+      "before": {
+        "family": "غ-ي-ب",
+        "raw": "مغيَّب",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "after": {
+        "family": "غ-ي-ب",
+        "raw": "مغيب",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle",
+        "review_status": "kept_pp_normalized"
+      },
+      "reason": "kept_pp_normalized"
+    },
+    {
+      "before": {
+        "family": "س-ع-ي",
+        "raw": "ساعٍ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "after": {
+        "family": "س-ع-ي",
+        "raw": "ساع",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle",
+        "review_status": "kept_ap_normalized"
+      },
+      "reason": "kept_ap_normalized"
+    },
+    {
+      "before": {
+        "family": "ن-س-ي",
+        "raw": "ناسٍ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "after": {
+        "family": "ن-س-ي",
+        "raw": "ناس",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle",
+        "review_status": "kept_ap_normalized"
+      },
+      "reason": "kept_ap_normalized"
+    },
+    {
+      "before": {
+        "family": "ف-ن-ي",
+        "raw": "فانٍ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "after": {
+        "family": "ف-ن-ي",
+        "raw": "فان",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle",
+        "review_status": "kept_ap_normalized"
+      },
+      "reason": "kept_ap_normalized"
+    },
+    {
+      "before": {
+        "family": "ف-ن-ي",
+        "raw": "مفنيّ",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "after": {
+        "family": "ف-ن-ي",
+        "raw": "مفني",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle",
+        "review_status": "kept_pp_normalized"
+      },
+      "reason": "kept_pp_normalized"
+    },
+    {
+      "before": {
+        "family": "ب-ق-ي",
+        "raw": "باقٍ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "after": {
+        "family": "ب-ق-ي",
+        "raw": "باق",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle",
+        "review_status": "kept_ap_normalized"
+      },
+      "reason": "kept_ap_normalized"
+    },
+    {
+      "before": {
+        "family": "ر-ع-ي",
+        "raw": "راعٍ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "after": {
+        "family": "ر-ع-ي",
+        "raw": "راع",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle",
+        "review_status": "kept_ap_normalized"
+      },
+      "reason": "kept_ap_normalized"
+    },
+    {
+      "before": {
+        "family": "و-ع-ي",
+        "raw": "واعٍ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "after": {
+        "family": "و-ع-ي",
+        "raw": "واع",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle",
+        "review_status": "kept_ap_normalized"
+      },
+      "reason": "kept_ap_normalized"
+    },
+    {
+      "before": {
+        "family": "خ-ش-ي",
+        "raw": "خاشٍ",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle"
+      },
+      "after": {
+        "family": "خ-ش-ي",
+        "raw": "خاش",
+        "pattern": "AP",
+        "description": "Expanded 200-family set: active participle",
+        "review_status": "kept_ap_normalized"
+      },
+      "reason": "kept_ap_normalized"
+    },
+    {
+      "before": {
+        "family": "ب-ن-ي",
+        "raw": "مبنيّ",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle"
+      },
+      "after": {
+        "family": "ب-ن-ي",
+        "raw": "مبني",
+        "pattern": "PP",
+        "description": "Expanded 200-family set: passive participle",
+        "review_status": "kept_pp_normalized"
+      },
+      "reason": "kept_pp_normalized"
+    }
+  ],
+  "pattern_counts": {
+    "V1": 200,
+    "VN": 209,
+    "AP": 176,
+    "PP": 100,
+    "PL": 15,
+    "PN": 12,
+    "V2": 195,
+    "V8": 6,
+    "V5": 4,
+    "V2AP": 2,
+    "V5AP": 1,
+    "ADJ": 8,
+    "V4": 5,
+    "V10": 4,
+    "OTHER": 8,
+    "V4AP": 2,
+    "V6": 3,
+    "V2PP": 1
+  }
+}

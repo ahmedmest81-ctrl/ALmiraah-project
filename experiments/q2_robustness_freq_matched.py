@@ -201,28 +201,21 @@ def partial_spearman(
 ) -> tuple[float, float]:
     """
     Partial Spearman correlation between y and x, controlling for `controls`
-    (a 2-D array of shape (n, k)). Implementation: regress out controls
-    from rank(y) and rank(x), then Spearman the residuals.
+    (a 2-D array of shape (n, k)).
+
+    This intentionally matches q2_robustness.py: regress raw y and raw x on
+    raw controls, then compute Spearman correlation on the residuals. Do not
+    rank-transform before residualization, or the observed rho no longer
+    reproduces the locked Q2 result.
     """
-    from scipy.stats import rankdata
+    from sklearn.linear_model import LinearRegression
 
-    ry = rankdata(y)
-    rx = rankdata(x)
-    rc = np.column_stack([rankdata(controls[:, k]) for k in range(controls.shape[1])])
+    reg_y = LinearRegression().fit(controls, y)
+    res_y = y - reg_y.predict(controls)
+    reg_x = LinearRegression().fit(controls, x)
+    res_x = x - reg_x.predict(controls)
 
-    # Center
-    ry = ry - ry.mean()
-    rx = rx - rx.mean()
-    rc = rc - rc.mean(axis=0)
-
-    # OLS residuals: y - X(X'X)^-1 X'y
-    XtX_inv = np.linalg.pinv(rc.T @ rc)
-    beta_y = XtX_inv @ rc.T @ ry
-    beta_x = XtX_inv @ rc.T @ rx
-    res_y = ry - rc @ beta_y
-    res_x = rx - rc @ beta_x
-
-    rho, p = spearmanr(res_y, res_x)
+    rho, p = spearmanr(res_x, res_y)
     return rho, p
 
 
@@ -271,17 +264,25 @@ def run_freq_matched_null(
             f"letters {' '.join(b)}"
         )
 
-    # Filter to cross-root pairs only (matching q2_robustness.py spec)
-    cross_root = [r for r in records if not r.get("same_root", False)]
+    # Filter to cross-root pairs only (matching the patched Q2 artifacts).
+    # Historical variants of this pipeline used a boolean `same_root`; the
+    # current saved records use `root_relation` with values same/different/unknown.
+    cross_root = [r for r in records if r.get("root_relation") == "different"]
     log.info(f"Cross-root pairs: {len(cross_root):,}")
 
     # Pre-extract arrays for fast permutation
     word_i = [r["word_i"] for r in cross_root]
     word_j = [r["word_j"] for r in cross_root]
-    attentions = np.array([r["attention"] for r in cross_root])
+    attentions = np.array([r["mean_attention"] for r in cross_root])
     pos_distances = np.array([r["pos_distance"] for r in cross_root])
     cooc_array = np.array(
-        [cooc_freq.get((r["word_i"], r["word_j"]), 0.0) for r in cross_root]
+        [
+            cooc_freq.get(
+                (r["word_i"], r["word_j"]),
+                cooc_freq.get((r["word_j"], r["word_i"]), 0.0),
+            )
+            for r in cross_root
+        ]
     )
 
     # Compute observed ρ with the actual Mashriqi values
@@ -321,6 +322,22 @@ def run_freq_matched_null(
         rho_p = compute_partial_rho(abjad_dist_p, attentions, pos_distances, cooc_array)
         permuted_rhos.append(rho_p)
 
+        if checkpoint_path and ((i + 1) % 10 == 0):
+            with open(checkpoint_path, "w", encoding="utf-8") as f:
+                json.dump(
+                    {
+                        "timestamp": datetime.utcnow().isoformat(),
+                        "seed": seed,
+                        "n_bins": n_bins,
+                        "n_permutations": n_permutations,
+                        "done": i + 1,
+                        "observed_rho": float(observed_rho),
+                        "permuted_rhos": permuted_rhos,
+                    },
+                    f,
+                    ensure_ascii=False,
+                )
+
         if (i + 1) % 100 == 0:
             elapsed = time.time() - t0
             rate = (i + 1 - start_idx) / max(elapsed, 1)
@@ -330,20 +347,6 @@ def run_freq_matched_null(
                 f"latest ρ = {rho_p:.5f} | "
                 f"{rate:.2f} perm/s | ETA {eta/60:.1f} min"
             )
-            if checkpoint_path:
-                with open(checkpoint_path, "w") as f:
-                    json.dump(
-                        {
-                            "timestamp": datetime.utcnow().isoformat(),
-                            "seed": seed,
-                            "n_bins": n_bins,
-                            "n_permutations": n_permutations,
-                            "done": i + 1,
-                            "observed_rho": float(observed_rho),
-                            "permuted_rhos": permuted_rhos,
-                        },
-                        f,
-                    )
             gc.collect()
 
     permuted_rhos_arr = np.array(permuted_rhos)
@@ -351,7 +354,7 @@ def run_freq_matched_null(
     threshold_95 = np.percentile(abs_permuted, 95)
     n_more_extreme = int(np.sum(abs_permuted >= abs(observed_rho)))
     empirical_p = (n_more_extreme + 1) / (n_permutations + 1)
-    passed = abs(observed_rho) > threshold_95
+    passed = empirical_p < 0.05
 
     interpretation = (
         f"Observed |ρ| = {abs(observed_rho):.4f}; "
@@ -453,7 +456,7 @@ def main():
 
     # Embed into existing-results structure if provided
     if args.existing_results and args.existing_results.exists():
-        with open(args.existing_results, "r") as f:
+        with open(args.existing_results, "r", encoding="utf-8") as f:
             existing = json.load(f)
         existing["results"]["freq_matched_null"] = result
         existing["results"]["freq_matched_null"]["meta"] = {
@@ -461,13 +464,14 @@ def main():
             "seed": args.seed,
             "n_bins": args.bins,
         }
-        with open(args.output, "w") as f:
-            json.dump(existing, f, indent=2)
+        with open(args.output, "w", encoding="utf-8") as f:
+            json.dump(existing, f, ensure_ascii=False, indent=2)
     else:
-        with open(args.output, "w") as f:
+        with open(args.output, "w", encoding="utf-8") as f:
             json.dump(
                 {"freq_matched_null": result, "meta": {"seed": args.seed, "n_bins": args.bins}},
                 f,
+                ensure_ascii=False,
                 indent=2,
             )
 
