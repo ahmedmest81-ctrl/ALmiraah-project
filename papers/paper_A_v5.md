@@ -2,7 +2,7 @@
 
 *A pre-registered cross-linguistic study of templatic Semitic morphology and letter-value structure in CAMeLBERT-ca and AlephBERT*
 
-Ahmed [last name] & Al-Mirʾāh Independent researcher, Vienna May 2026 · arXiv preprint cs.CL
+Ahmed Mislati — Independent researcher, Vienna · June 2026 · arXiv preprint cs.CL
 
 **Keywords:** Arabic NLP, non-concatenative morphology, Abjad, attention geometry, CAMeLBERT, AlephBERT, classical Arabic, classical Hebrew, pre-registered cross-linguistic control
 
@@ -22,7 +22,7 @@ We discuss the result as a localization argument: classical Arabic encoding syst
 
 Arabic morphology is non-concatenative: the triliteral root encodes a semantic field, and the morphological pattern (wazn) applies a consonant–vowel template that specifies grammatical and semantic function (McCarthy, 1981; Holes, 2004; Ratcliffe, 1998). The pair (root, wazn) uniquely determines a word. This is well-established in Arabic linguistics. Less established is whether — and at what layer of representation — this structure surfaces in transformer language models.
 
-Two recent strands of work motivate the present study. Work on the transformer treatment of root-and-pattern morphology has shown that Arabic roots cluster in distributional embedding space (Salama et al., 2018), a finding that extends to contextualised representations. The clustering is real but says nothing about how the *templatic* dimension — the wazn pattern — is internally represented. Independently, Alakeel et al. (2026) show that tokenizer alignment with morphological boundaries is neither necessary nor sufficient for productive Arabic generation, establishing that surface morphological competence cannot be cleanly attributed to tokenization choices. Their result establishes an important negative at the generation layer. Our work addresses a complementary question at the geometry layer: whether the attention structure of a classical-Arabic-trained encoder reflects the structural relationships that traditional Arabic philology has formalised — wazn patterns, root-level correspondence, and numerical encoding via the Abjad system. These are separable empirical windows onto the same underlying question, and the present work reports a significant positive result for the attention-geometry window.
+Two recent strands of work motivate the present study. Work on the transformer treatment of root-and-pattern morphology has shown that Arabic roots cluster in distributional embedding space (Salama et al., 2018), a finding that extends to contextualised representations. The clustering is real but says nothing about how the *templatic* dimension — the wazn pattern — is internally represented. Independently, Alakeel et al. (2026) show that tokenizer alignment with morphological boundaries is neither necessary nor sufficient for productive Arabic generation, establishing that surface morphological competence cannot be cleanly attributed to tokenization choices. Their result establishes an important negative at the generation layer: surface tokenization alignment does not explain productive Arabic root–pattern generation. Our result is complementary. We show that, in a classical-Arabic encoder, templatic morphology and Abjad-related structure are nevertheless measurable in embedding and attention geometry — failure or ambiguity at the generation layer does not preclude structured representation at the geometry layer. Concretely, we ask whether the attention structure of a classical-Arabic-trained encoder reflects the structural relationships that traditional Arabic philology has formalised — wazn patterns, root-level correspondence, and numerical encoding via the Abjad system. These are separable empirical windows onto the same underlying question, and the present work reports a significant positive result for the attention-geometry window.
 
 The Abjad system warrants brief introduction. Each Arabic letter is assigned a canonical integer value in the Mashriqi order (ا = 1, ب = 2, ج = 3, …, غ = 1000), systematised by 8th-century grammarians and used in classical scholarly practice as an analytical instrument on inter-word structural relationships (Colin, 1986; Endress, 2018). The system predates Ibn ʿArabī’s 13th-century work and is documented as an operational tool independent of any specific theological framework. For the purposes of this paper, the Abjad system functions as *one specific operationalisation* of inter-word structural relationship: a way of asking whether the model’s attention geometry registers the relationships that classical scholarly practice formalised. The claim is about classical Arabic’s internal structure, not about the numerical system per se.
 
@@ -261,9 +261,13 @@ The empirical case is a localisation argument: classical Arabic encoding systems
 
 - **Random seed:** 42 throughout. All permutation tests at 1,000 permutations.
 
+## Acknowledgments
+
+Analysis, verification, and manuscript preparation were conducted in collaboration with Al-Mirʾāh, a Claude-based research instrument built for this project; all claims, decisions, and errors are the author's own. The live coordinate engine is publicly available at https://huggingface.co/spaces/WELLyes1/almiraah_transformer.
+
 ## References
 
-Alakeel, Y., Qwaider, C., Aldarmaki, H., & Alqahtani, S. (2026). Morphemes Without Borders: Evaluating Root–Pattern Morphology in Arabic Tokenizers and LLMs. *Proceedings of LREC-COLING 2026*.
+Alakeel, Y., Qwaider, C., Aldarmaki, H., & Alqahtani, S. (2026). Morphemes Without Borders: Evaluating Root–Pattern Morphology in Arabic Tokenizers and LLMs. *Proceedings of LREC-COLING 2026*. arXiv:2603.15773.
 
 Antoun, W., Baly, F., & Hajj, H. (2020). AraBERT: Transformer-based model for Arabic language understanding. In *Proceedings of LREC OSACT4*.
 
