@@ -674,6 +674,136 @@ def dual_distance(pos1: dict, pos2: dict) -> dict:
             "hierarchy_load": load}
 
 
+def geodesic_midpoint(pos1: dict, pos2: dict) -> dict:
+    """v3.2: the barzakh operation — the point standing exactly halfway
+    along the geodesic between two terms, computed intrinsically via the
+    tangent-space maps (log_x / exp_x). A Euclidean midpoint is wrong on
+    the disk: geodesics bow toward the center, so the true halfway point
+    sits shallower (smaller r) than the chord midpoint — increasingly so
+    near the rim. The midpoint is a geometric construct, not an embedded
+    term: it names the region of the field a concept would have to occupy
+    to stand at equal geodesic remove from both terms.
+    """
+    from hyperbolic import geodesic_midpoint as intrinsic_midpoint
+    x = np.array([pos1["px"], pos1["py"]], dtype=float)
+    y = np.array([pos2["px"], pos2["py"]], dtype=float)
+    m = intrinsic_midpoint(x, y)
+    mr = float(np.hypot(float(m[0]), float(m[1])))
+    return {"px": round(float(m[0]), 4), "py": round(float(m[1]), 4),
+            "r": round(mr, 4)}
+
+
+def nearest_basis_names(px: float, py: float, k: int = 3) -> list:
+    """Geodesic kNN of a disk point against the 99 fixed basis Names."""
+    scored = []
+    for ar, meta in name_meta.items():
+        d = poincare_distance((px, py), (meta["px"], meta["py"]))
+        scored.append((d, ar, meta))
+    scored.sort(key=lambda t: t[0])
+    return [{"ar": ar, "trans": meta["trans"],
+             "tier": ['Dhāt', 'Ṣifāt', 'Afʿāl'][min(meta["level"], 2)],
+             "distance": round(d, 4)}
+            for d, ar, meta in scored[:k]]
+
+
+def radial_angular_decomposition(pos1: dict, pos2: dict) -> dict:
+    """v3.2: diagnostic radial/angular L-path through the disk.
+
+    hierarchy_load says how strongly curvature magnifies a flat
+    displacement. This diagnostic asks whether a simple path joining the
+    terms spends more length changing depth or changing angular field.
+
+      d_radial  = |d(0,p1) − d(0,p2)| = |2·artanh(r1) − 2·artanh(r2)|
+                  — pure depth difference, measured along a ray through
+                  the origin (rays are geodesics, so this is exact).
+      d_angular = geodesic between the two angular positions evaluated
+                  at the SHALLOWER of the two radii — pure same-depth
+                  field separation, measured where angular traversal is
+                  cheapest (geodesics bow toward the center).
+
+    The legs form an L-shaped path, so d_radial + d_angular >= geodesic
+    (triangle inequality); shares are reported against the leg sum. This
+    is not a unique orthogonal decomposition of the direct geodesic.
+    Interpretive gloss, held lightly: high radial share = the terms
+    differ by specificity/differentiation within a common field; high
+    angular share = the terms sit at comparable depth in different
+    fields.
+    """
+    from hyperbolic import radial_angular_legs
+    legs = radial_angular_legs(
+        np.array([pos1["px"], pos1["py"]], dtype=float),
+        np.array([pos2["px"], pos2["py"]], dtype=float),
+    )
+    radial_share = (
+        None if legs["radial_share"] is None
+        else round(legs["radial_share"], 3)
+    )
+    angular_share = (
+        None if legs["angular_share"] is None
+        else round(legs["angular_share"], 3)
+    )
+
+    if radial_share is None:
+        gloss = "coincident positions"
+    elif radial_share >= 0.65:
+        gloss = "depth-dominated: same field, different differentiation"
+    elif angular_share >= 0.65:
+        gloss = "field-dominated: comparable depth, different semantic field"
+    else:
+        gloss = "mixed: separation runs through both depth and field"
+
+    return {"d_radial": round(legs["radial"], 4),
+            "d_angular": round(legs["angular"], 4),
+            "radial_share": radial_share,
+            "angular_share": angular_share,
+            "delta_theta_deg": round(legs["delta_theta_deg"], 1),
+            "gloss": gloss}
+
+
+_FIELD_MEAN_PAIRWISE = None
+
+
+def field_mean_pairwise() -> float:
+    """Mean pairwise geodesic distance over all 99 basis Names — the
+    field-wide dispersion baseline. Computed once and cached."""
+    global _FIELD_MEAN_PAIRWISE
+    if _FIELD_MEAN_PAIRWISE is None:
+        from hyperbolic import mean_pairwise_distance
+        pts = [
+            np.array([m["px"], m["py"]], dtype=float)
+            for m in name_meta.values()
+        ]
+        _FIELD_MEAN_PAIRWISE = mean_pairwise_distance(pts)
+    return _FIELD_MEAN_PAIRWISE
+
+
+def root_cluster_geometry(positions: list) -> dict:
+    """v3.2: disk-native cluster statistics for ≥2 basis Names sharing a
+    root. Karcher mean (intrinsic barycenter), Fréchet variance (mean
+    squared geodesic distance to that mean), dispersion (its square
+    root), mean pairwise geodesic, and tightness = root mean pairwise /
+    field mean pairwise (< 1.0 means the root's Names cluster tighter
+    than the field at large — the disk-native analogue of the Q1
+    root-cluster-density question).
+    """
+    from hyperbolic import frechet_statistics
+    pts = [np.array([p[0], p[1]], dtype=float) for p in positions]
+    baseline = field_mean_pairwise()
+    stats = frechet_statistics(pts, field_baseline=baseline)
+    km = stats["center"]
+    return {"karcher_mean": {"px": round(float(km[0]), 4),
+                             "py": round(float(km[1]), 4),
+                             "r": round(float(np.hypot(*km)), 4)},
+            "frechet_variance": round(stats["variance"], 4),
+            "dispersion": round(stats["dispersion"], 4),
+            "mean_pairwise": round(stats["mean_pairwise"], 4),
+            "field_mean_pairwise": round(baseline, 4),
+            "tightness": (
+                None if stats["tightness"] is None
+                else round(stats["tightness"], 3)
+            )}
+
+
 def context_centroid(profiles: list) -> tuple:
     if not profiles:
         return (0.0, 0.0)
@@ -709,11 +839,16 @@ def compare(term1: str, term2: str):
     pos1 = r1["estimated_position"]
     pos2 = r2["estimated_position"]
     dd = dual_distance(pos1, pos2)
+    mid = geodesic_midpoint(pos1, pos2)
+    mid_names = nearest_basis_names(mid["px"], mid["py"], k=3)
+    decomp = radial_angular_decomposition(pos1, pos2)
     return JSONResponse({
         "term1": term1, "term2": term2,
         "distance_euclidean":  dd["distance_euclidean"],
         "distance_hyperbolic": dd["distance_hyperbolic"],
         "hierarchy_load":      dd["hierarchy_load"],
+        "geodesic_midpoint":   {**mid, "nearest_names": mid_names},
+        "decomposition":       decomp,
         "term1_position": {"r": pos1["r"], "level": pos1["level_label"],
                            "dominant_wazn": r1["dominant_wazn"],
                            "abjad": r1.get("abjad", {})},
@@ -838,7 +973,11 @@ async def list_tools() -> list[types.Tool]:
                 "Analyse all 99 Names sharing a given Arabic root (3 consonants). "
                 "Returns each matching Name with: Abjad value, wazn, hierarchy level, "
                 "paired opposite (axis partner), ML homolog, and available phonetic, "
-                "numerical, geometric, and breath-layer annotations. "
+                "numerical, geometric, and breath-layer annotations. When the root "
+                "matches 2+ Names, also returns disk-native cluster geometry: "
+                "Karcher mean, Fréchet variance, dispersion, and a tightness ratio "
+                "against the field-wide pairwise baseline (how tightly the root "
+                "clusters on the disk). "
                 "Use to explore the full semantic field of a root across the divine Names."
             ),
             inputSchema={
@@ -906,7 +1045,11 @@ async def list_tools() -> list[types.Tool]:
             description=(
                 "Compare two Arabic terms in the 99-Name field. Returns: shared "
                 "attractor Names, divergent Names unique to each term, opposing "
-                "poles (one attracts what the other repels), coordinate distance, "
+                "poles (one attracts what the other repels), dual Euclidean/"
+                "hyperbolic distance with hierarchy load, a radial/angular "
+                "diagnostic decomposition (does a simple joining path run more "
+                "through depth or angular field?), the geodesic midpoint "
+                "(barzakh) with the basis Names nearest that intrinsic midpoint, "
                 "hierarchy levels, and Abjad values for both terms. "
                 "Use to determine structural relationship between two concepts."
             ),
@@ -998,6 +1141,20 @@ async def call_tool(name: str, arguments: dict) -> list[types.TextContent]:
                 lines.append(f"  Geometric: {meta['layer4_geometric'][:100]}")
             if meta.get("layer5_breath"):
                 lines.append(f"  Breath: {meta['layer5_breath'][:100]}")
+        if len(matches) >= 2:
+            geo = root_cluster_geometry(
+                [(meta["px"], meta["py"]) for _, meta in matches])
+            km = geo["karcher_mean"]
+            lines.append("")
+            lines.append(f"DISK GEOMETRY ({len(matches)} Names on root {root})")
+            lines.append(f"  Karcher mean: ({km['px']}, {km['py']}) r={km['r']}")
+            lines.append(f"  Fréchet variance: {geo['frechet_variance']} | dispersion: {geo['dispersion']}")
+            lines.append(f"  Mean pairwise geodesic: {geo['mean_pairwise']} | field baseline (all 99): {geo['field_mean_pairwise']}")
+            tight = geo["tightness"]
+            reading = ("tighter than the field at large"
+                       if tight is not None and tight < 1.0
+                       else "no tighter than the field at large")
+            lines.append(f"  Tightness ratio: {tight} ({reading})")
         return [types.TextContent(type="text", text="\n".join(lines))]
 
     elif name == "semantic_project":
@@ -1148,6 +1305,15 @@ async def call_tool(name: str, arguments: dict) -> list[types.TextContent]:
         pos1 = r1["estimated_position"]
         pos2 = r2["estimated_position"]
         dd = dual_distance(pos1, pos2)
+        mid = geodesic_midpoint(pos1, pos2)
+        mid_names = nearest_basis_names(mid["px"], mid["py"], k=3)
+        decomp = radial_angular_decomposition(pos1, pos2)
+        mid_names_str = ", ".join(
+            f"{n['ar']} ({n['trans']}, {n['tier']}, d={n['distance']})"
+            for n in mid_names)
+        share_str = (
+            f"radial {decomp['radial_share']} / angular {decomp['angular_share']}"
+            if decomp["radial_share"] is not None else "—")
 
         a1 = r1.get("abjad", {}); a2 = r2.get("abjad", {})
         shared_str   = ", ".join(f"{ar} ({top1[ar]['trans']})" for ar in shared)   or "none"
@@ -1162,7 +1328,11 @@ async def call_tool(name: str, arguments: dict) -> list[types.TextContent]:
             f"abjad={a1.get('value','—')} [{a1.get('breakdown','—')}]\n"
             f"{t2}: r={pos2['r']}, {pos2['level_label']}, wazn={r2['dominant_wazn']}, "
             f"abjad={a2.get('value','—')} [{a2.get('breakdown','—')}]\n"
-            f"Distance — Euclidean (flat): {dd['distance_euclidean']} | hyperbolic (geodesic): {dd['distance_hyperbolic']} | hierarchy load: {dd['hierarchy_load']}\n\n"
+            f"Distance — Euclidean (flat): {dd['distance_euclidean']} | hyperbolic (geodesic): {dd['distance_hyperbolic']} | hierarchy load: {dd['hierarchy_load']}\n"
+            f"DECOMPOSITION — radial (depth) leg: {decomp['d_radial']} | angular (field) leg: {decomp['d_angular']} | shares: {share_str} | Δθ: {decomp['delta_theta_deg']}°\n"
+            f"  Reading: {decomp['gloss']}\n"
+            f"BARZAKH (geodesic midpoint): ({mid['px']}, {mid['py']}) r={mid['r']}\n"
+            f"  Nearest basis Names to the isthmus: {mid_names_str}\n\n"
             f"SHARED ATTRACTORS: {shared_str}\n\n"
             f"DIVERGENT — {t1} only: {only_t1_str}\n"
             f"DIVERGENT — {t2} only: {only_t2_str}\n\n"

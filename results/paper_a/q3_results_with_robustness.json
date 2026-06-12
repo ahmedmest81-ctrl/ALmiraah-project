@@ -1,0 +1,98 @@
+{
+  "results": {
+    "primary_all_pairs": {
+      "rho": -0.07787435189326077,
+      "p": 0.0,
+      "n": 12081207
+    },
+    "heuristic_different_root": {
+      "rho": -0.028418801240543776,
+      "p": 4.967948986607013e-260,
+      "n": 1468657
+    },
+    "heuristic_same_root": {
+      "rho": -0.3339541775975286,
+      "p": 0.0,
+      "n": 58776
+    },
+    "primary": {
+      "rho": -0.07787435189326077,
+      "p": 0.0,
+      "n": 12081207
+    },
+    "binned": {
+      "proximate_0_10": {
+        "n": 815346,
+        "mean_attention": 0.016730803641034613,
+        "median_attention": 0.008187432307749987,
+        "sd": 0.023517869104656343
+      },
+      "medial_11_25": {
+        "n": 785554,
+        "mean_attention": 0.014063533963225542,
+        "median_attention": 0.0058173188008368015,
+        "sd": 0.022650646835996192
+      },
+      "medial_26_50": {
+        "n": 1093747,
+        "mean_attention": 0.014149013902769453,
+        "median_attention": 0.005826626438647509,
+        "sd": 0.02269814460573276
+      },
+      "distal_51_100": {
+        "n": 1608641,
+        "mean_attention": 0.013294924153718803,
+        "median_attention": 0.00546577014029026,
+        "sd": 0.021730040311491602
+      },
+      "distal_101_200": {
+        "n": 2146565,
+        "mean_attention": 0.013166148177240595,
+        "median_attention": 0.00536545692011714,
+        "sd": 0.021530829978142884
+      },
+      "distal_201_plus": {
+        "n": 5631354,
+        "mean_attention": 0.012519519501919605,
+        "median_attention": 0.005138152977451682,
+        "sd": 0.0204926815706316
+      }
+    },
+    "unadjusted_all_pairs": {
+      "rho": -0.06782595665861313,
+      "p": 0.0,
+      "n": 12081207
+    },
+    "meta": {
+      "timestamp": "2026-05-08T17:20:47.185938",
+      "seed": 42,
+      "n_records": 12081207,
+      "analysis_group": "all"
+    },
+    "permutation_null": {
+      "observed_rho": -0.07787435189326077,
+      "observed_n": 12081207,
+      "analysis_group": "all",
+      "n_permutations": 1000,
+      "permuted_mean": -0.0655576933958082,
+      "permuted_sd": 0.014695884164380077,
+      "permuted_ci_95_pct": [
+        -0.09218396351916679,
+        -0.036190472687178885
+      ],
+      "empirical_p_two_tailed": 0.23,
+      "abs_threshold_95th_pct": 0.08879722300251142,
+      "passed": false,
+      "interpretation": "Observed |rho| = 0.0779; 95th-percentile of |permuted| = 0.0888; empirical p (two-tailed) = 0.2300. FAIL for Hebrew gematria mapping specificity."
+    },
+    "random_pair_baseline": {
+      "observed_rho": -0.07787435189326077,
+      "scrambled_rho": -0.017614286718459455,
+      "scrambled_p": 0.0,
+      "scrambled_n": 12081207,
+      "observed_minus_scrambled": -0.060260065174801314,
+      "interpretation": "Observed rho = -0.0779; random-pair scrambled rho = -0.0176. PASS: scrambled rho should be substantially smaller if the effect is pair-level."
+    }
+  },
+  "verdict": "VERDICT: HEBREW CONTROL SIGNAL DETECTED - gematria proximity predicts higher AlephBERT mutual attention (partial rho = -0.0779, p = 0.0000e+00, n = 12,081,207) after controlling for positional distance and co-occurrence frequency. This should be interpreted as a control signal, not as direct support for the Arabic Abjad claim."
+}

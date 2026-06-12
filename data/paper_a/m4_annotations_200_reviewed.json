@@ -1,0 +1,6689 @@
+{
+  "source": {
+    "seed_results": "C:\\Users\\ahmed\\ALmiraah-project\\m4_results_contextual\\m4_results.json",
+    "expansion_draft": "C:\\Users\\ahmed\\Downloads\\expand_wazn_roots.py",
+    "note": "The first 15 families are the original manually annotated M4 set. The added families use the five-pattern expansion set V1/VN/AP/PP/V2 and are run through the same contextual M4 pipeline.",
+    "review_note": "Reviewed expansion for same-standard M4 rerun. The original 15-family manual seed is unchanged. For generated families, V1/VN/V2 are retained as core forms; AP/PP entries that are adjectives, derived-form participles, or unverified generated passive participles are excluded from the AP/PP operator tests."
+  },
+  "n_families": 200,
+  "n_annotations": 951,
+  "pattern_counts": {
+    "V1": 200,
+    "VN": 209,
+    "AP": 176,
+    "PP": 100,
+    "PL": 15,
+    "PN": 12,
+    "V2": 195,
+    "V8": 6,
+    "V5": 4,
+    "V2AP": 2,
+    "V5AP": 1,
+    "ADJ": 8,
+    "V4": 5,
+    "V10": 4,
+    "OTHER": 8,
+    "V4AP": 2,
+    "V6": 3,
+    "V2PP": 1
+  },
+  "annotations": [
+    {
+      "family": "ك-ت-ب",
+      "raw": "كَتَبَ",
+      "pattern": "V1",
+      "description": "Form I verb — he wrote",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ك-ت-ب",
+      "raw": "كِتَاب",
+      "pattern": "VN",
+      "description": "Verbal noun fi'āl — book/writing",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ك-ت-ب",
+      "raw": "كَاتِب",
+      "pattern": "AP",
+      "description": "Active participle fā'il — writer",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ك-ت-ب",
+      "raw": "مَكْتُوب",
+      "pattern": "PP",
+      "description": "Passive participle maf'ūl — written/letter",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ك-ت-ب",
+      "raw": "كِتَابَات",
+      "pattern": "PL",
+      "description": "Broken plural — writings",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ك-ت-ب",
+      "raw": "مَكْتَب",
+      "pattern": "PN",
+      "description": "Place noun maf'al — office/desk",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ك-ت-ب",
+      "raw": "كُتُب",
+      "pattern": "PL",
+      "description": "Broken plural fu'ul — books",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ك-ت-ب",
+      "raw": "كَتَّبَ",
+      "pattern": "V2",
+      "description": "Form II fa''ala — made to write",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ك-ت-ب",
+      "raw": "اكْتَتَبَ",
+      "pattern": "V8",
+      "description": "Form VIII ifta'ala — subscribed",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ك-ت-ب",
+      "raw": "كِتَابَه",
+      "pattern": "VN",
+      "description": "Verbal noun fi'āla — his writing",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ع-ل-م",
+      "raw": "عَلِمَ",
+      "pattern": "V1",
+      "description": "Form I verb — he knew",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ع-ل-م",
+      "raw": "عِلْم",
+      "pattern": "VN",
+      "description": "Verbal noun fi'l — knowledge",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ع-ل-م",
+      "raw": "عَالِم",
+      "pattern": "AP",
+      "description": "Active participle fā'il — scholar",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ع-ل-م",
+      "raw": "مَعْلُوم",
+      "pattern": "PP",
+      "description": "Passive participle maf'ūl — known",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ع-ل-م",
+      "raw": "تَعَلَّمَ",
+      "pattern": "V5",
+      "description": "Form V tafa''ala — he learned",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ع-ل-م",
+      "raw": "عَلَّمَ",
+      "pattern": "V2",
+      "description": "Form II fa''ala — he taught",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ع-ل-م",
+      "raw": "مُعَلِّم",
+      "pattern": "V2AP",
+      "description": "Form II active participle — teacher",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ع-ل-م",
+      "raw": "مُتَعَلِّم",
+      "pattern": "V5AP",
+      "description": "Form V active participle — learner",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ع-ل-م",
+      "raw": "عُلُوم",
+      "pattern": "PL",
+      "description": "Broken plural — sciences",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ع-ل-م",
+      "raw": "مَعْلُومَات",
+      "pattern": "PL",
+      "description": "Plural of maf'ūl — information",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "د-ر-س",
+      "raw": "دَرَسَ",
+      "pattern": "V1",
+      "description": "Form I verb — he studied",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "د-ر-س",
+      "raw": "دِرَاسَه",
+      "pattern": "VN",
+      "description": "Verbal noun fi'āla — studying",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "د-ر-س",
+      "raw": "دَارِس",
+      "pattern": "AP",
+      "description": "Active participle fā'il — student",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "د-ر-س",
+      "raw": "مَدْرَسَه",
+      "pattern": "PN",
+      "description": "Place noun maf'ala — school",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "د-ر-س",
+      "raw": "دَرَّسَ",
+      "pattern": "V2",
+      "description": "Form II — he taught",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "د-ر-س",
+      "raw": "مُدَرِّس",
+      "pattern": "V2AP",
+      "description": "Form II active participle — teacher",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "د-ر-س",
+      "raw": "دُرُوس",
+      "pattern": "PL",
+      "description": "Broken plural — lessons",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "د-ر-س",
+      "raw": "مَدْرُوس",
+      "pattern": "PP",
+      "description": "Passive participle maf'ūl — studied",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "د-ر-س",
+      "raw": "دِرَاسِي",
+      "pattern": "ADJ",
+      "description": "Nisba adjective — academic",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "د-ر-س",
+      "raw": "دِرَاسَة",
+      "pattern": "VN",
+      "description": "Verbal noun fi'āla — study",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ق-ر-أ",
+      "raw": "قَرَا",
+      "pattern": "V1",
+      "description": "Form I verb — he read",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ق-ر-أ",
+      "raw": "قِرَاءَه",
+      "pattern": "VN",
+      "description": "Verbal noun fi'āla — reading",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ق-ر-أ",
+      "raw": "قَارِئ",
+      "pattern": "AP",
+      "description": "Active participle fā'il — reader",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ق-ر-أ",
+      "raw": "مَقْرُوء",
+      "pattern": "PP",
+      "description": "Passive participle maf'ūl — that which is read",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ق-ر-أ",
+      "raw": "قِرَاءَات",
+      "pattern": "PL",
+      "description": "Plural — readings",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ق-ر-أ",
+      "raw": "قُرَّاء",
+      "pattern": "PL",
+      "description": "Broken plural of fā'il — readers",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ق-ر-أ",
+      "raw": "قَارِئِين",
+      "pattern": "PL",
+      "description": "Regular plural — readers",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ق-ر-أ",
+      "raw": "قِرَائِه",
+      "pattern": "VN",
+      "description": "Verbal noun possessive — his reading",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ق-ر-أ",
+      "raw": "مَقْرُوءَة",
+      "pattern": "PP",
+      "description": "Passive participle feminine",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "خ-ر-ج",
+      "raw": "خَرَجَ",
+      "pattern": "V1",
+      "description": "Form I verb — he went out",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "خ-ر-ج",
+      "raw": "خُرُوج",
+      "pattern": "VN",
+      "description": "Verbal noun fu'ūl — going out",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "خ-ر-ج",
+      "raw": "خَارِج",
+      "pattern": "AP",
+      "description": "Active participle fā'il — outside/exiting",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "خ-ر-ج",
+      "raw": "مَخْرَج",
+      "pattern": "PN",
+      "description": "Place noun maf'al — exit",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "خ-ر-ج",
+      "raw": "أَخْرَجَ",
+      "pattern": "V4",
+      "description": "Form IV af'ala — he took out",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "خ-ر-ج",
+      "raw": "تَخَرَّجَ",
+      "pattern": "V5",
+      "description": "Form V — he graduated",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "خ-ر-ج",
+      "raw": "اسْتَخْرَجَ",
+      "pattern": "V10",
+      "description": "Form X — he extracted",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "خ-ر-ج",
+      "raw": "خِرِّيج",
+      "pattern": "OTHER",
+      "description": "Graduate (fi''īl intensive pattern)",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "خ-ر-ج",
+      "raw": "خَرَّجَ",
+      "pattern": "V2",
+      "description": "Form II — he graduated/expelled",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "خ-ر-ج",
+      "raw": "مُخْرِج",
+      "pattern": "V4AP",
+      "description": "Form IV active participle — director",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ر-ج-ع",
+      "raw": "رَجَعَ",
+      "pattern": "V1",
+      "description": "Form I verb — he returned",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ر-ج-ع",
+      "raw": "رُجُوع",
+      "pattern": "VN",
+      "description": "Verbal noun fu'ūl — return",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ر-ج-ع",
+      "raw": "رَاجِع",
+      "pattern": "AP",
+      "description": "Active participle fā'il — returning/reviewing",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ر-ج-ع",
+      "raw": "مَرْجِع",
+      "pattern": "PN",
+      "description": "Place/source noun maf'il — reference",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ر-ج-ع",
+      "raw": "أَرْجَعَ",
+      "pattern": "V4",
+      "description": "Form IV — he returned sth",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ر-ج-ع",
+      "raw": "تَرَاجَعَ",
+      "pattern": "V6",
+      "description": "Form VI tafā'ala — he receded",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ر-ج-ع",
+      "raw": "اسْتَرْجَعَ",
+      "pattern": "V10",
+      "description": "Form X — he retrieved",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ر-ج-ع",
+      "raw": "رَجْعَة",
+      "pattern": "VN",
+      "description": "Verbal noun fa'la — a return",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ر-ج-ع",
+      "raw": "مَرْجِعِي",
+      "pattern": "ADJ",
+      "description": "Nisba adjective — referential",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ر-ج-ع",
+      "raw": "رَاجَعَ",
+      "pattern": "OTHER",
+      "description": "Form III fā'ala — he reviewed",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ح-م-ل",
+      "raw": "حَمَلَ",
+      "pattern": "V1",
+      "description": "Form I verb — he carried",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ح-م-ل",
+      "raw": "حَمْل",
+      "pattern": "VN",
+      "description": "Verbal noun fa'l — carrying / pregnancy",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ح-م-ل",
+      "raw": "حَامِل",
+      "pattern": "AP",
+      "description": "Active participle fā'il — carrier / pregnant",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ح-م-ل",
+      "raw": "مَحْمُول",
+      "pattern": "PP",
+      "description": "Passive participle maf'ūl — carried / mobile",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ح-م-ل",
+      "raw": "أَحْمَلَ",
+      "pattern": "V4",
+      "description": "Form IV — he made carry",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ح-م-ل",
+      "raw": "تَحَمَّلَ",
+      "pattern": "V5",
+      "description": "Form V — he bore / endured",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ح-م-ل",
+      "raw": "احْتَمَلَ",
+      "pattern": "V8",
+      "description": "Form VIII — he tolerated / was probable",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ح-م-ل",
+      "raw": "حَمَّالَة",
+      "pattern": "OTHER",
+      "description": "Strap / carrier — fa''āla pattern",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ح-م-ل",
+      "raw": "مُحَمَّل",
+      "pattern": "V2PP",
+      "description": "Form II passive participle — laden",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ف-ت-ح",
+      "raw": "فَتَحَ",
+      "pattern": "V1",
+      "description": "Form I verb — he opened",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ف-ت-ح",
+      "raw": "فَتْح",
+      "pattern": "VN",
+      "description": "Verbal noun fa'l — opening / conquest",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ف-ت-ح",
+      "raw": "فَاتِح",
+      "pattern": "AP",
+      "description": "Active participle fā'il — opener / conqueror",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ف-ت-ح",
+      "raw": "مَفْتُوح",
+      "pattern": "PP",
+      "description": "Passive participle maf'ūl — open",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ف-ت-ح",
+      "raw": "فَتَّحَ",
+      "pattern": "V2",
+      "description": "Form II — he opened wide",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ف-ت-ح",
+      "raw": "انْفَتَحَ",
+      "pattern": "OTHER",
+      "description": "Form VII infa'ala — it opened",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ف-ت-ح",
+      "raw": "افْتَتَحَ",
+      "pattern": "V8",
+      "description": "Form VIII — he inaugurated",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ف-ت-ح",
+      "raw": "فِتَاح",
+      "pattern": "VN",
+      "description": "Verbal noun fi'āl — opening",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ف-ت-ح",
+      "raw": "مَفْتَاح",
+      "pattern": "PN",
+      "description": "Instrument noun mif'āl — key",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ف-ت-ح",
+      "raw": "فَتَّاح",
+      "pattern": "ADJ",
+      "description": "Intensive agent fa''āl — the Opener (divine name)",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ص-ل-ح",
+      "raw": "صَلَحَ",
+      "pattern": "V1",
+      "description": "Form I verb — he was good / suitable",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ص-ل-ح",
+      "raw": "صَلَاح",
+      "pattern": "VN",
+      "description": "Verbal noun fa'āl — righteousness",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ص-ل-ح",
+      "raw": "صَالِح",
+      "pattern": "AP",
+      "description": "Active participle fā'il — righteous / good",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ص-ل-ح",
+      "raw": "مَصْلَحَه",
+      "pattern": "PN",
+      "description": "Place noun maf'ala — welfare / interest",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ص-ل-ح",
+      "raw": "اصْلَحَ",
+      "pattern": "V4",
+      "description": "Form IV af'ala — he reformed",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ص-ل-ح",
+      "raw": "اسْتَصْلَحَ",
+      "pattern": "V10",
+      "description": "Form X — he sought reform",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ص-ل-ح",
+      "raw": "اصْلَاح",
+      "pattern": "VN",
+      "description": "Form IV verbal noun if'āl — reform",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ص-ل-ح",
+      "raw": "مُصْلِح",
+      "pattern": "V4AP",
+      "description": "Form IV active participle — reformer",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ص-ل-ح",
+      "raw": "صَلُوح",
+      "pattern": "ADJ",
+      "description": "Intensive fa'ūl — very righteous",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ص-ل-ح",
+      "raw": "تَصَالَحَ",
+      "pattern": "V6",
+      "description": "Form VI tafā'ala — they reconciled",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ق-و-ل",
+      "raw": "قَالَ",
+      "pattern": "V1",
+      "description": "Form I verb — he said",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ق-و-ل",
+      "raw": "قَوْل",
+      "pattern": "VN",
+      "description": "Verbal noun fa'l — saying / statement",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ق-و-ل",
+      "raw": "قَائِل",
+      "pattern": "AP",
+      "description": "Active participle fā'il — one who says",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ق-و-ل",
+      "raw": "مَقُول",
+      "pattern": "PP",
+      "description": "Passive participle maf'ūl — said / spoken",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ق-و-ل",
+      "raw": "أَقْوَال",
+      "pattern": "PL",
+      "description": "Broken plural af'āl — sayings",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ق-و-ل",
+      "raw": "قَوَّلَ",
+      "pattern": "V2",
+      "description": "Form II — he put words in mouth",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ق-و-ل",
+      "raw": "تَقَوَّلَ",
+      "pattern": "V5",
+      "description": "Form V — he fabricated / attributed falsely",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ق-و-ل",
+      "raw": "مَقَال",
+      "pattern": "VN",
+      "description": "maf'āl — article / essay",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ق-و-ل",
+      "raw": "قِيل",
+      "pattern": "OTHER",
+      "description": "Passive of V1 — 'it was said'",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ق-و-ل",
+      "raw": "مَقُولَة",
+      "pattern": "PP",
+      "description": "Passive participle feminine — maxim",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ع-م-ل",
+      "raw": "عَمِلَ",
+      "pattern": "V1",
+      "description": "Form I verb — he worked",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ع-م-ل",
+      "raw": "عَمَل",
+      "pattern": "VN",
+      "description": "Verbal noun fa'al — work / deed",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ع-م-ل",
+      "raw": "عَامِل",
+      "pattern": "AP",
+      "description": "Active participle fā'il — worker / agent",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ع-م-ل",
+      "raw": "مَعْمُول",
+      "pattern": "PP",
+      "description": "Passive participle maf'ūl — made / object",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ع-م-ل",
+      "raw": "أَعْمَال",
+      "pattern": "PL",
+      "description": "Broken plural af'āl — works / deeds",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ع-م-ل",
+      "raw": "عَمَّلَ",
+      "pattern": "V2",
+      "description": "Form II — he employed",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ع-م-ل",
+      "raw": "اعْتَمَلَ",
+      "pattern": "V8",
+      "description": "Form VIII — he worked hard",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ع-م-ل",
+      "raw": "عَمَلِي",
+      "pattern": "ADJ",
+      "description": "Nisba adjective — practical / applied",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ع-م-ل",
+      "raw": "مَعْمَل",
+      "pattern": "PN",
+      "description": "Place noun maf'al — laboratory / factory",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ع-م-ل",
+      "raw": "عُمَّال",
+      "pattern": "PL",
+      "description": "Broken plural — workers",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ن-ظ-ر",
+      "raw": "نَظَرَ",
+      "pattern": "V1",
+      "description": "Form I verb — he looked",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ن-ظ-ر",
+      "raw": "نَظَر",
+      "pattern": "VN",
+      "description": "Verbal noun fa'al — sight / view",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ن-ظ-ر",
+      "raw": "نَاظِر",
+      "pattern": "AP",
+      "description": "Active participle fā'il — gazer / overseer",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ن-ظ-ر",
+      "raw": "مَنْظُور",
+      "pattern": "PP",
+      "description": "Passive participle maf'ūl — viewed / perspective",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ن-ظ-ر",
+      "raw": "أَنْظَار",
+      "pattern": "PL",
+      "description": "Broken plural af'āl — gazes / views",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ن-ظ-ر",
+      "raw": "نَظَّرَ",
+      "pattern": "V2",
+      "description": "Form II — he theorized",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ن-ظ-ر",
+      "raw": "تَنَاظَرَ",
+      "pattern": "V6",
+      "description": "Form VI — they faced each other / debated",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ن-ظ-ر",
+      "raw": "مِنْظَار",
+      "pattern": "PN",
+      "description": "Instrument noun mif'āl — telescope / prism",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ن-ظ-ر",
+      "raw": "نَظَرِي",
+      "pattern": "ADJ",
+      "description": "Nisba adjective — theoretical",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ن-ظ-ر",
+      "raw": "مَنْظَر",
+      "pattern": "PN",
+      "description": "Place noun maf'al — view / scene",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ب-ح-ث",
+      "raw": "بَحَثَ",
+      "pattern": "V1",
+      "description": "Form I verb — he researched",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ب-ح-ث",
+      "raw": "بَحْث",
+      "pattern": "VN",
+      "description": "Verbal noun fa'l — research",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ب-ح-ث",
+      "raw": "بَاحِث",
+      "pattern": "AP",
+      "description": "Active participle fā'il — researcher",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ب-ح-ث",
+      "raw": "مَبْحُوث",
+      "pattern": "PP",
+      "description": "Passive participle maf'ūl — researched",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ب-ح-ث",
+      "raw": "أَبْحَاث",
+      "pattern": "PL",
+      "description": "Broken plural af'āl — researches",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ب-ح-ث",
+      "raw": "بَحَّثَ",
+      "pattern": "V2",
+      "description": "Form II — he investigated thoroughly",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ب-ح-ث",
+      "raw": "ابْتَحَثَ",
+      "pattern": "V8",
+      "description": "Form VIII — he researched",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ب-ح-ث",
+      "raw": "بَحْثِي",
+      "pattern": "ADJ",
+      "description": "Nisba adjective — research / academic",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ب-ح-ث",
+      "raw": "مَبْحَث",
+      "pattern": "PN",
+      "description": "Place noun maf'al — research topic",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ب-ح-ث",
+      "raw": "بُحُوث",
+      "pattern": "PL",
+      "description": "Broken plural fu'ūl — researches",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "س-م-ع",
+      "raw": "سَمِعَ",
+      "pattern": "V1",
+      "description": "Form I verb — he heard",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "س-م-ع",
+      "raw": "سَمَاع",
+      "pattern": "VN",
+      "description": "Verbal noun fa'āl — hearing / audition",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "س-م-ع",
+      "raw": "سَامِع",
+      "pattern": "AP",
+      "description": "Active participle fā'il — hearer / listener",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "س-م-ع",
+      "raw": "مَسْمُوع",
+      "pattern": "PP",
+      "description": "Passive participle maf'ūl — heard",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "س-م-ع",
+      "raw": "اسْمَعَ",
+      "pattern": "OTHER",
+      "description": "Imperative of Form IV — let him hear",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "س-م-ع",
+      "raw": "اسْتَمَعَ",
+      "pattern": "V10",
+      "description": "Form X — he listened attentively",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "س-م-ع",
+      "raw": "سَمَاعَه",
+      "pattern": "VN",
+      "description": "Verbal noun possessive / earphone",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "س-م-ع",
+      "raw": "سَمِيع",
+      "pattern": "ADJ",
+      "description": "Intensive fa'īl — all-hearing (divine name)",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "س-م-ع",
+      "raw": "مِسْمَع",
+      "pattern": "PN",
+      "description": "Instrument noun mif'al — hearing range",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "س-م-ع",
+      "raw": "سَمَّاعَة",
+      "pattern": "OTHER",
+      "description": "Earphone / receiver — fa''āla pattern",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ج-ل-س",
+      "raw": "جَلَسَ",
+      "pattern": "V1",
+      "description": "Form I verb — he sat",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ج-ل-س",
+      "raw": "جُلُوس",
+      "pattern": "VN",
+      "description": "Verbal noun fu'ūl — sitting",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ج-ل-س",
+      "raw": "جَالِس",
+      "pattern": "AP",
+      "description": "Active participle fā'il — sitting / seated",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ج-ل-س",
+      "raw": "مَجْلِس",
+      "pattern": "PN",
+      "description": "Place noun maf'il — council / sitting place",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ج-ل-س",
+      "raw": "اجْلَسَ",
+      "pattern": "V4",
+      "description": "Form IV — he seated someone",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ج-ل-س",
+      "raw": "جَلَّسَ",
+      "pattern": "V2",
+      "description": "Form II — he made sit",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ج-ل-س",
+      "raw": "اجْتَلَسَ",
+      "pattern": "V8",
+      "description": "Form VIII — they sat together",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ج-ل-س",
+      "raw": "جِلْسَه",
+      "pattern": "VN",
+      "description": "Verbal noun fi'la — sitting session",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ج-ل-س",
+      "raw": "مُجَالِس",
+      "pattern": "OTHER",
+      "description": "Form III active participle — sitting companion",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ج-ل-س",
+      "raw": "جُلَسَاء",
+      "pattern": "PL",
+      "description": "Broken plural fu'alā' — sitting companions",
+      "review_status": "original_15_manual_seed"
+    },
+    {
+      "family": "ع-ر-ف",
+      "raw": "عرف",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ر-ف",
+      "raw": "معرفة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ر-ف",
+      "raw": "عارف",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ع-ر-ف",
+      "raw": "معروف",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ع-ر-ف",
+      "raw": "عرّف",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ل-ب",
+      "raw": "قلب",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ل-ب",
+      "raw": "قلب",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ل-ب",
+      "raw": "قالب",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ق-ل-ب",
+      "raw": "مقلوب",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ق-ل-ب",
+      "raw": "قلّب",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ح-م",
+      "raw": "رحم",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ح-م",
+      "raw": "رحمة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ح-م",
+      "raw": "راحم",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ر-ح-م",
+      "raw": "مرحوم",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ر-ح-م",
+      "raw": "رحّم",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-م-ر",
+      "raw": "أمر",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-م-ر",
+      "raw": "أمر",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-م-ر",
+      "raw": "آمر",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "أ-م-ر",
+      "raw": "مأمور",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "أ-م-ر",
+      "raw": "أمّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ك-ر-م",
+      "raw": "كرم",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ك-ر-م",
+      "raw": "كرم",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ك-ر-م",
+      "raw": "كرّم",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ب-د",
+      "raw": "عبد",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ب-د",
+      "raw": "عبادة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ب-د",
+      "raw": "عابد",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ع-ب-د",
+      "raw": "معبود",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ع-ب-د",
+      "raw": "عبّد",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ج-ع-ل",
+      "raw": "جعل",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ج-ع-ل",
+      "raw": "جعل",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ج-ع-ل",
+      "raw": "جاعل",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ج-ع-ل",
+      "raw": "مجعول",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ج-ع-ل",
+      "raw": "جعّل",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ط-ع",
+      "raw": "قطع",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ط-ع",
+      "raw": "قطع",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ط-ع",
+      "raw": "قاطع",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ق-ط-ع",
+      "raw": "مقطوع",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ق-ط-ع",
+      "raw": "قطّع",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ج-د",
+      "raw": "وجد",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ج-د",
+      "raw": "وجود",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ج-د",
+      "raw": "واجد",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "و-ج-د",
+      "raw": "موجود",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "و-ج-د",
+      "raw": "وجّد",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-و-ر",
+      "raw": "نار",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-و-ر",
+      "raw": "نور",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-و-ر",
+      "raw": "نوّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ق-ق",
+      "raw": "حق",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ق-ق",
+      "raw": "حقيقة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ق-ق",
+      "raw": "حقّق",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ز-ق",
+      "raw": "رزق",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ز-ق",
+      "raw": "رزق",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ز-ق",
+      "raw": "رازق",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ر-ز-ق",
+      "raw": "مرزوق",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ر-ز-ق",
+      "raw": "رزّق",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ك-ر",
+      "raw": "فكر",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ك-ر",
+      "raw": "فكر",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ك-ر",
+      "raw": "فكّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ذ-ك-ر",
+      "raw": "ذكر",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ذ-ك-ر",
+      "raw": "ذكر",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ذ-ك-ر",
+      "raw": "ذاكر",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ذ-ك-ر",
+      "raw": "مذكور",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ذ-ك-ر",
+      "raw": "ذكّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ه-د-ي",
+      "raw": "هدى",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ه-د-ي",
+      "raw": "هداية",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ه-د-ي",
+      "raw": "هادي",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ه-د-ي",
+      "raw": "مهدي",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ه-د-ي",
+      "raw": "هدّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ل-و",
+      "raw": "علا",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ل-و",
+      "raw": "علو",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ل-و",
+      "raw": "عالي",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ع-ل-و",
+      "raw": "علّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ف-س",
+      "raw": "نفس",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ف-س",
+      "raw": "نفس",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ف-س",
+      "raw": "نافس",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ن-ف-س",
+      "raw": "نفّس",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-د-ر",
+      "raw": "قدر",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-د-ر",
+      "raw": "قدرة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-د-ر",
+      "raw": "قادر",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ق-د-ر",
+      "raw": "قدّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-خ-ذ",
+      "raw": "أخذ",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-خ-ذ",
+      "raw": "أخذ",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-خ-ذ",
+      "raw": "آخذ",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "أ-خ-ذ",
+      "raw": "مأخوذ",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "أ-خ-ذ",
+      "raw": "أخّذ",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ب-ب",
+      "raw": "ربّ",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ب-ب",
+      "raw": "ربوبية",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ب-ب",
+      "raw": "ربّب",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ش-ر-ح",
+      "raw": "شرح",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ش-ر-ح",
+      "raw": "شرح",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ش-ر-ح",
+      "raw": "شارح",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ش-ر-ح",
+      "raw": "شرّح",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ص-م",
+      "raw": "عصم",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ص-م",
+      "raw": "عصمة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ص-م",
+      "raw": "عاصم",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ع-ص-م",
+      "raw": "عصّم",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-ع-ث",
+      "raw": "بعث",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-ع-ث",
+      "raw": "بعث",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-ع-ث",
+      "raw": "باعث",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ب-ع-ث",
+      "raw": "بعّث",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ه-م",
+      "raw": "فهم",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ه-م",
+      "raw": "فهم",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ه-م",
+      "raw": "فاهم",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ف-ه-م",
+      "raw": "مفهوم",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ف-ه-م",
+      "raw": "فهّم",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-م-د",
+      "raw": "حمد",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-م-د",
+      "raw": "حمد",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-م-د",
+      "raw": "حامد",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ح-م-د",
+      "raw": "محمود",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ح-م-د",
+      "raw": "حمّد",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-ب-ر",
+      "raw": "صبر",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-ب-ر",
+      "raw": "صبر",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-ب-ر",
+      "raw": "صابر",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ص-ب-ر",
+      "raw": "صبّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ك-ش-ف",
+      "raw": "كشف",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ك-ش-ف",
+      "raw": "كشف",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ك-ش-ف",
+      "raw": "كاشف",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ك-ش-ف",
+      "raw": "مكشوف",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ك-ش-ف",
+      "raw": "كشّف",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-س-م",
+      "raw": "قسم",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-س-م",
+      "raw": "قسم",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-س-م",
+      "raw": "قاسم",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ق-س-م",
+      "raw": "مقسوم",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ق-س-م",
+      "raw": "قسّم",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ظ-م",
+      "raw": "نظم",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ظ-م",
+      "raw": "نظام",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ظ-م",
+      "raw": "ناظم",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ن-ظ-م",
+      "raw": "منظوم",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ن-ظ-م",
+      "raw": "نظّم",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ف-ع",
+      "raw": "رفع",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ف-ع",
+      "raw": "رفع",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ف-ع",
+      "raw": "رافع",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ر-ف-ع",
+      "raw": "مرفوع",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ر-ف-ع",
+      "raw": "رفّع",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ص-ف",
+      "raw": "وصف",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ص-ف",
+      "raw": "وصف",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ص-ف",
+      "raw": "واصف",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "و-ص-ف",
+      "raw": "موصوف",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "و-ص-ف",
+      "raw": "وصّف",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ب-ب",
+      "raw": "حبّ",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ب-ب",
+      "raw": "حب",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ب-ب",
+      "raw": "محبوب",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ح-ب-ب",
+      "raw": "حبّب",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "س-ب-ح",
+      "raw": "سبح",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "س-ب-ح",
+      "raw": "تسبيح",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "س-ب-ح",
+      "raw": "سابح",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "س-ب-ح",
+      "raw": "سبّح",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ج-م-ع",
+      "raw": "جمع",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ج-م-ع",
+      "raw": "جمع",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ج-م-ع",
+      "raw": "جامع",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ج-م-ع",
+      "raw": "مجموع",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ج-م-ع",
+      "raw": "جمّع",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "م-ل-ك",
+      "raw": "ملك",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "م-ل-ك",
+      "raw": "ملك",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "م-ل-ك",
+      "raw": "مالك",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "م-ل-ك",
+      "raw": "مملوك",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "م-ل-ك",
+      "raw": "ملّك",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-م-ر",
+      "raw": "عمر",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-م-ر",
+      "raw": "عمر",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-م-ر",
+      "raw": "عامر",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ع-م-ر",
+      "raw": "معمور",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ع-م-ر",
+      "raw": "عمّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ك-م-ل",
+      "raw": "كمل",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ك-م-ل",
+      "raw": "كمال",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ك-م-ل",
+      "raw": "كامل",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ك-م-ل",
+      "raw": "كمّل",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ف-ظ",
+      "raw": "حفظ",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ف-ظ",
+      "raw": "حفظ",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ف-ظ",
+      "raw": "حافظ",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ح-ف-ظ",
+      "raw": "محفوظ",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ح-ف-ظ",
+      "raw": "حفّظ",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ط-ل-ب",
+      "raw": "طلب",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ط-ل-ب",
+      "raw": "طلب",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ط-ل-ب",
+      "raw": "طالب",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ط-ل-ب",
+      "raw": "مطلوب",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ط-ل-ب",
+      "raw": "طلّب",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-ل-ف",
+      "raw": "ألف",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-ل-ف",
+      "raw": "ألفة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-ل-ف",
+      "raw": "آلف",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "أ-ل-ف",
+      "raw": "مألوف",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "أ-ل-ف",
+      "raw": "ألّف",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ل-ق-ي",
+      "raw": "لقي",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ل-ق-ي",
+      "raw": "لقاء",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ل-ق-ي",
+      "raw": "لاق",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_normalized"
+    },
+    {
+      "family": "ل-ق-ي",
+      "raw": "ملقي",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ل-ق-ي",
+      "raw": "لقّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ف-و",
+      "raw": "عفا",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ف-و",
+      "raw": "عفو",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ف-و",
+      "raw": "عاف",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_normalized"
+    },
+    {
+      "family": "ع-ف-و",
+      "raw": "معفو",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ع-ف-و",
+      "raw": "عفّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ق-ف",
+      "raw": "وقف",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ق-ف",
+      "raw": "وقف",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ق-ف",
+      "raw": "واقف",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "و-ق-ف",
+      "raw": "موقوف",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "و-ق-ف",
+      "raw": "وقّف",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ه-ي",
+      "raw": "نهى",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ه-ي",
+      "raw": "نهي",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ه-ي",
+      "raw": "ناه",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_normalized"
+    },
+    {
+      "family": "ن-ه-ي",
+      "raw": "منهي",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ن-ه-ي",
+      "raw": "نهّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-د-ق",
+      "raw": "صدق",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-د-ق",
+      "raw": "صدق",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-د-ق",
+      "raw": "صادق",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ص-د-ق",
+      "raw": "مصدوق",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ص-د-ق",
+      "raw": "صدّق",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ك-ل",
+      "raw": "وكل",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ك-ل",
+      "raw": "وكالة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ك-ل",
+      "raw": "واكل",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "و-ك-ل",
+      "raw": "موكول",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "و-ك-ل",
+      "raw": "وكّل",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "م-ن-ع",
+      "raw": "منع",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "م-ن-ع",
+      "raw": "منع",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "م-ن-ع",
+      "raw": "مانع",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "م-ن-ع",
+      "raw": "ممنوع",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "م-ن-ع",
+      "raw": "منّع",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-م-ن",
+      "raw": "أمن",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-م-ن",
+      "raw": "أمان",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-م-ن",
+      "raw": "آمن",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "أ-م-ن",
+      "raw": "مأمون",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "أ-م-ن",
+      "raw": "أمّن",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "خ-ل-ق",
+      "raw": "خلق",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "خ-ل-ق",
+      "raw": "خلق",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "خ-ل-ق",
+      "raw": "خالق",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "خ-ل-ق",
+      "raw": "مخلوق",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "خ-ل-ق",
+      "raw": "خلّق",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ق-ل",
+      "raw": "عقل",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ق-ل",
+      "raw": "عقل",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ق-ل",
+      "raw": "عاقل",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ع-ق-ل",
+      "raw": "معقول",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ع-ق-ل",
+      "raw": "عقّل",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ب-أ",
+      "raw": "نبأ",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ب-أ",
+      "raw": "نبأ",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ب-أ",
+      "raw": "نابئ",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ن-ب-أ",
+      "raw": "نبّأ",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ز-ك-و",
+      "raw": "زكا",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ز-ك-و",
+      "raw": "زكاة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ز-ك-و",
+      "raw": "زاك",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_normalized"
+    },
+    {
+      "family": "ز-ك-و",
+      "raw": "مزكّى",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ز-ك-و",
+      "raw": "زكّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ر-ق",
+      "raw": "فرق",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ر-ق",
+      "raw": "فرق",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ر-ق",
+      "raw": "فارق",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ف-ر-ق",
+      "raw": "فرّق",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ث-ق-ل",
+      "raw": "ثقل",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ث-ق-ل",
+      "raw": "ثقل",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ث-ق-ل",
+      "raw": "ثاقل",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ث-ق-ل",
+      "raw": "ثقّل",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ط-ه-ر",
+      "raw": "طهر",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ط-ه-ر",
+      "raw": "طهارة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ط-ه-ر",
+      "raw": "طاهر",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ط-ه-ر",
+      "raw": "مطهور",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ط-ه-ر",
+      "raw": "طهّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ح-د",
+      "raw": "وحد",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ح-د",
+      "raw": "وحدة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ح-د",
+      "raw": "واحد",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "و-ح-د",
+      "raw": "وحّد",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "س-ت-ر",
+      "raw": "ستر",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "س-ت-ر",
+      "raw": "ستر",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "س-ت-ر",
+      "raw": "ساتر",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "س-ت-ر",
+      "raw": "مستور",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "س-ت-ر",
+      "raw": "ستّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-د-ب",
+      "raw": "أدب",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-د-ب",
+      "raw": "أدب",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-د-ب",
+      "raw": "آدب",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "أ-د-ب",
+      "raw": "أدّب",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ز-ز",
+      "raw": "عزّ",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ز-ز",
+      "raw": "عزة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ز-ز",
+      "raw": "عزّز",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ق-ب",
+      "raw": "رقب",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ق-ب",
+      "raw": "رقابة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ق-ب",
+      "raw": "راقب",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ر-ق-ب",
+      "raw": "رقّب",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ل-م",
+      "raw": "حلم",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ل-م",
+      "raw": "حلم",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ل-م",
+      "raw": "حالم",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ح-ل-م",
+      "raw": "حلّم",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ل-ط-ف",
+      "raw": "لطف",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ل-ط-ف",
+      "raw": "لطف",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ل-ط-ف",
+      "raw": "لاطف",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ل-ط-ف",
+      "raw": "لطّف",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ب-ل",
+      "raw": "قبل",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ب-ل",
+      "raw": "قبول",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ب-ل",
+      "raw": "قابل",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ق-ب-ل",
+      "raw": "مقبول",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ق-ب-ل",
+      "raw": "قبّل",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "س-ك-ن",
+      "raw": "سكن",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "س-ك-ن",
+      "raw": "سكون",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "س-ك-ن",
+      "raw": "ساكن",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "س-ك-ن",
+      "raw": "مسكون",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "س-ك-ن",
+      "raw": "سكّن",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ع-م",
+      "raw": "نعم",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ع-م",
+      "raw": "نعمة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ع-م",
+      "raw": "ناعم",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ن-ع-م",
+      "raw": "نعّم",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ع-د",
+      "raw": "وعد",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ع-د",
+      "raw": "وعد",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ع-د",
+      "raw": "واعد",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "و-ع-د",
+      "raw": "موعود",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "و-ع-د",
+      "raw": "وعّد",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ت-و-ب",
+      "raw": "تاب",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ت-و-ب",
+      "raw": "توبة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ت-و-ب",
+      "raw": "توّب",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ي-و",
+      "raw": "حيّ",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ي-و",
+      "raw": "حياة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ي-و",
+      "raw": "حيّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-ي-ن",
+      "raw": "بان",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-ي-ن",
+      "raw": "بيان",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-ي-ن",
+      "raw": "بائن",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ب-ي-ن",
+      "raw": "بيّن",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ظ-ه-ر",
+      "raw": "ظهر",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ظ-ه-ر",
+      "raw": "ظهور",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ظ-ه-ر",
+      "raw": "ظاهر",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ظ-ه-ر",
+      "raw": "ظهّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ر-ب",
+      "raw": "قرب",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ر-ب",
+      "raw": "قربة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ر-ب",
+      "raw": "قارب",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ق-ر-ب",
+      "raw": "قرّب",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ر-ح",
+      "raw": "فرح",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ر-ح",
+      "raw": "فرح",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ر-ح",
+      "raw": "فارح",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ف-ر-ح",
+      "raw": "فرّح",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ز-ل",
+      "raw": "عزل",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ز-ل",
+      "raw": "عزل",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ز-ل",
+      "raw": "عازل",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ع-ز-ل",
+      "raw": "عزّل",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ك-م",
+      "raw": "حكم",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ك-م",
+      "raw": "حكم",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ك-م",
+      "raw": "حاكم",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ح-ك-م",
+      "raw": "حكّم",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-ر-ض",
+      "raw": "أرض",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-ر-ض",
+      "raw": "إرضاء",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-ر-ض",
+      "raw": "أرضى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ل-ح-ق",
+      "raw": "لحق",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ل-ح-ق",
+      "raw": "لحوق",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ل-ح-ق",
+      "raw": "لاحق",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ل-ح-ق",
+      "raw": "لحّق",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "غ-ف-ر",
+      "raw": "غفر",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "غ-ف-ر",
+      "raw": "غفران",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "غ-ف-ر",
+      "raw": "غافر",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "غ-ف-ر",
+      "raw": "غفّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-ب-ح",
+      "raw": "صبح",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-ب-ح",
+      "raw": "صبح",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-ب-ح",
+      "raw": "صابح",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ص-ب-ح",
+      "raw": "صبّح",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-ر-ز",
+      "raw": "برز",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-ر-ز",
+      "raw": "بروز",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-ر-ز",
+      "raw": "بارز",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ب-ر-ز",
+      "raw": "برّز",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ض-ي",
+      "raw": "قضى",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ض-ي",
+      "raw": "قضاء",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ض-ي",
+      "raw": "قاض",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_normalized"
+    },
+    {
+      "family": "ق-ض-ي",
+      "raw": "مقضي",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ق-ض-ي",
+      "raw": "قضّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ج-ه-ل",
+      "raw": "جهل",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ج-ه-ل",
+      "raw": "جهل",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ج-ه-ل",
+      "raw": "جاهل",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ج-ه-ل",
+      "raw": "مجهول",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ج-ه-ل",
+      "raw": "جهّل",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ص-ر",
+      "raw": "نصر",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ص-ر",
+      "raw": "نصر",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ص-ر",
+      "raw": "ناصر",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ن-ص-ر",
+      "raw": "منصور",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ن-ص-ر",
+      "raw": "نصّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "د-ع-و",
+      "raw": "دعا",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "د-ع-و",
+      "raw": "دعاء",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "د-ع-و",
+      "raw": "داع",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_normalized"
+    },
+    {
+      "family": "د-ع-و",
+      "raw": "مدعو",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "د-ع-و",
+      "raw": "دعّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ض-ل",
+      "raw": "فضل",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ض-ل",
+      "raw": "فضل",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ض-ل",
+      "raw": "فاضل",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ف-ض-ل",
+      "raw": "مفضول",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ف-ض-ل",
+      "raw": "فضّل",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "م-س-ك",
+      "raw": "مسك",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "م-س-ك",
+      "raw": "إمساك",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "م-س-ك",
+      "raw": "ماسك",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "م-س-ك",
+      "raw": "ممسوك",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "م-س-ك",
+      "raw": "مسّك",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-و-ل",
+      "raw": "حال",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-و-ل",
+      "raw": "حول",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-و-ل",
+      "raw": "حائل",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ح-و-ل",
+      "raw": "حوّل",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-ل-ي",
+      "raw": "صلى",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-ل-ي",
+      "raw": "صلاة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-ل-ي",
+      "raw": "مصل",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_normalized"
+    },
+    {
+      "family": "ص-ل-ي",
+      "raw": "مصلى",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_normalized"
+    },
+    {
+      "family": "ص-ل-ي",
+      "raw": "صلّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ج-ل",
+      "raw": "رجل",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ج-ل",
+      "raw": "رجولة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ج-ل",
+      "raw": "راجل",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ر-ج-ل",
+      "raw": "رجّل",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "خ-ض-ع",
+      "raw": "خضع",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "خ-ض-ع",
+      "raw": "خضوع",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "خ-ض-ع",
+      "raw": "خاضع",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "خ-ض-ع",
+      "raw": "خضّع",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-ه-ل",
+      "raw": "أهل",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-ه-ل",
+      "raw": "أهلية",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-ه-ل",
+      "raw": "أهّل",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ز-ل",
+      "raw": "نزل",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ز-ل",
+      "raw": "نزول",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ز-ل",
+      "raw": "نازل",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ن-ز-ل",
+      "raw": "نزّل",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "م-د-د",
+      "raw": "مدّ",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "م-د-د",
+      "raw": "مد",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "م-د-د",
+      "raw": "مادّ",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "م-د-د",
+      "raw": "مدّد",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ع-ل",
+      "raw": "فعل",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ع-ل",
+      "raw": "فعل",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ع-ل",
+      "raw": "فاعل",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ف-ع-ل",
+      "raw": "فعّل",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ن-ي",
+      "raw": "عنى",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ن-ي",
+      "raw": "عناية",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ن-ي",
+      "raw": "عانٍ",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ع-ن-ي",
+      "raw": "معني",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_normalized"
+    },
+    {
+      "family": "ع-ن-ي",
+      "raw": "عنّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ش-ه-د",
+      "raw": "شهد",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ش-ه-د",
+      "raw": "شهادة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ش-ه-د",
+      "raw": "شاهد",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ش-ه-د",
+      "raw": "شهّد",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "خ-ل-ص",
+      "raw": "خلص",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "خ-ل-ص",
+      "raw": "خلاص",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "خ-ل-ص",
+      "raw": "خالص",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "خ-ل-ص",
+      "raw": "خلّص",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-ن-ع",
+      "raw": "صنع",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-ن-ع",
+      "raw": "صناعة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-ن-ع",
+      "raw": "صانع",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ص-ن-ع",
+      "raw": "صنّع",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ر-ك",
+      "raw": "حرك",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ر-ك",
+      "raw": "حركة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ر-ك",
+      "raw": "حرّك",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ط-ي",
+      "raw": "أعطى",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ط-ي",
+      "raw": "عطاء",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ط-ي",
+      "raw": "معط",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_normalized"
+    },
+    {
+      "family": "ع-ط-ي",
+      "raw": "معطى",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ع-ط-ي",
+      "raw": "عطّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-س-ل",
+      "raw": "أرسل",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-س-ل",
+      "raw": "رسالة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-س-ل",
+      "raw": "رسّل",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ك-ت-م",
+      "raw": "كتم",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ك-ت-م",
+      "raw": "كتمان",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ك-ت-م",
+      "raw": "كاتم",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ك-ت-م",
+      "raw": "مكتوم",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ك-ت-م",
+      "raw": "كتّم",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ق-ه",
+      "raw": "فقه",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ق-ه",
+      "raw": "فقه",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ق-ه",
+      "raw": "فقّه",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ب-ر",
+      "raw": "عبر",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ب-ر",
+      "raw": "عبور",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ب-ر",
+      "raw": "عابر",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ع-ب-ر",
+      "raw": "معبور",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ع-ب-ر",
+      "raw": "عبّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ج-ه-ر",
+      "raw": "جهر",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ج-ه-ر",
+      "raw": "جهر",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ج-ه-ر",
+      "raw": "جاهر",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ج-ه-ر",
+      "raw": "مجهور",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ج-ه-ر",
+      "raw": "جهّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ن-ع",
+      "raw": "قنع",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ن-ع",
+      "raw": "قناعة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ن-ع",
+      "raw": "قانع",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ق-ن-ع",
+      "raw": "قنّع",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ج-ب",
+      "raw": "حجب",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ج-ب",
+      "raw": "حجاب",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ج-ب",
+      "raw": "حاجب",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ح-ج-ب",
+      "raw": "محجوب",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ح-ج-ب",
+      "raw": "حجّب",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "س-ب-ق",
+      "raw": "سبق",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "س-ب-ق",
+      "raw": "سبق",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "س-ب-ق",
+      "raw": "سابق",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "س-ب-ق",
+      "raw": "مسبوق",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "س-ب-ق",
+      "raw": "سبّق",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ل-ق-ن",
+      "raw": "لقن",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ل-ق-ن",
+      "raw": "تلقين",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ل-ق-ن",
+      "raw": "لقّن",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ل-ن",
+      "raw": "علن",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ل-ن",
+      "raw": "علانية",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ل-ن",
+      "raw": "علّن",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ر-ض",
+      "raw": "فرض",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ر-ض",
+      "raw": "فرض",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ر-ض",
+      "raw": "فارض",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ف-ر-ض",
+      "raw": "مفروض",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ف-ر-ض",
+      "raw": "فرّض",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-و-ح",
+      "raw": "راح",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-و-ح",
+      "raw": "روح",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-و-ح",
+      "raw": "رائح",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ر-و-ح",
+      "raw": "روّح",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ب-ض",
+      "raw": "قبض",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ب-ض",
+      "raw": "قبض",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ب-ض",
+      "raw": "قابض",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ق-ب-ض",
+      "raw": "مقبوض",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ق-ب-ض",
+      "raw": "قبّض",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ص-ل",
+      "raw": "حصل",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ص-ل",
+      "raw": "حصول",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ص-ل",
+      "raw": "حاصل",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ح-ص-ل",
+      "raw": "محصول",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ح-ص-ل",
+      "raw": "حصّل",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ش-ر-ع",
+      "raw": "شرع",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ش-ر-ع",
+      "raw": "شريعة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ش-ر-ع",
+      "raw": "شارع",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ش-ر-ع",
+      "raw": "مشروع",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ش-ر-ع",
+      "raw": "شرّع",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-ل-غ",
+      "raw": "بلغ",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-ل-غ",
+      "raw": "بلاغ",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-ل-غ",
+      "raw": "بالغ",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ب-ل-غ",
+      "raw": "بلّغ",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ح-م",
+      "raw": "قحم",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ح-م",
+      "raw": "إقحام",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ح-م",
+      "raw": "قحّم",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "خ-ط-ب",
+      "raw": "خطب",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "خ-ط-ب",
+      "raw": "خطبة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "خ-ط-ب",
+      "raw": "خاطب",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "خ-ط-ب",
+      "raw": "مخطوب",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "خ-ط-ب",
+      "raw": "خطّب",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ق-ي",
+      "raw": "رقى",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ق-ي",
+      "raw": "رقية",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ق-ي",
+      "raw": "راق",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_normalized"
+    },
+    {
+      "family": "ر-ق-ي",
+      "raw": "مرقي",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_normalized"
+    },
+    {
+      "family": "ر-ق-ي",
+      "raw": "رقّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ج-ب",
+      "raw": "عجب",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ج-ب",
+      "raw": "عجب",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ج-ب",
+      "raw": "عاجب",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ع-ج-ب",
+      "raw": "معجوب",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ع-ج-ب",
+      "raw": "عجّب",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ر-ج",
+      "raw": "حرج",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ر-ج",
+      "raw": "حرج",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ر-ج",
+      "raw": "حارج",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ح-ر-ج",
+      "raw": "حرّج",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ص-ل",
+      "raw": "فصل",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ص-ل",
+      "raw": "فصل",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ص-ل",
+      "raw": "فاصل",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ف-ص-ل",
+      "raw": "مفصول",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ف-ص-ل",
+      "raw": "فصّل",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ض-ع-ف",
+      "raw": "ضعف",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ض-ع-ف",
+      "raw": "ضعف",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ض-ع-ف",
+      "raw": "ضاعف",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ض-ع-ف",
+      "raw": "ضعّف",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ز-ن",
+      "raw": "وزن",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ز-ن",
+      "raw": "وزن",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ز-ن",
+      "raw": "وازن",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "و-ز-ن",
+      "raw": "موزون",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "و-ز-ن",
+      "raw": "وزّن",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ث-ب-ت",
+      "raw": "ثبت",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ث-ب-ت",
+      "raw": "ثبات",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ث-ب-ت",
+      "raw": "ثابت",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ث-ب-ت",
+      "raw": "ثبّت",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "س-ل-م",
+      "raw": "سلم",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "س-ل-م",
+      "raw": "سلام",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "س-ل-م",
+      "raw": "سالم",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "س-ل-م",
+      "raw": "سلّم",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ظ-م",
+      "raw": "عظم",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ظ-م",
+      "raw": "عظمة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ظ-م",
+      "raw": "عاظم",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ع-ظ-م",
+      "raw": "عظّم",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "د-ب-ر",
+      "raw": "دبر",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "د-ب-ر",
+      "raw": "تدبير",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "د-ب-ر",
+      "raw": "دبّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-ص-ر",
+      "raw": "بصر",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-ص-ر",
+      "raw": "بصيرة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-ص-ر",
+      "raw": "بصّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ي-ط",
+      "raw": "أحاط",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ي-ط",
+      "raw": "إحاطة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ي-ط",
+      "raw": "حوّط",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-و-م",
+      "raw": "قام",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-و-م",
+      "raw": "قيام",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-و-م",
+      "raw": "قائم",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ق-و-م",
+      "raw": "قوّم",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ل-ق",
+      "raw": "علق",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ل-ق",
+      "raw": "تعليق",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ل-ق",
+      "raw": "عالق",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ع-ل-ق",
+      "raw": "علّق",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ج-د-د",
+      "raw": "جدّ",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ج-د-د",
+      "raw": "جدة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ج-د-د",
+      "raw": "جادّ",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ج-د-د",
+      "raw": "جدّد",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ب-ط",
+      "raw": "ربط",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ب-ط",
+      "raw": "رباط",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ب-ط",
+      "raw": "رابط",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ر-ب-ط",
+      "raw": "مربوط",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ر-ب-ط",
+      "raw": "ربّط",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ص-ح",
+      "raw": "فصح",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ص-ح",
+      "raw": "فصاحة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ص-ح",
+      "raw": "فصّح",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ف-ق",
+      "raw": "نفق",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ف-ق",
+      "raw": "نفقة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ف-ق",
+      "raw": "نافق",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ن-ف-ق",
+      "raw": "نفّق",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "م-ش-ي",
+      "raw": "مشى",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "م-ش-ي",
+      "raw": "مشي",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "م-ش-ي",
+      "raw": "ماش",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_normalized"
+    },
+    {
+      "family": "م-ش-ي",
+      "raw": "مشّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ر-ر",
+      "raw": "قرّ",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ر-ر",
+      "raw": "قرار",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ق-ر-ر",
+      "raw": "قرّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-د-ث",
+      "raw": "حدث",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-د-ث",
+      "raw": "حديث",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-د-ث",
+      "raw": "محدث",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_normalized"
+    },
+    {
+      "family": "ح-د-ث",
+      "raw": "حدّث",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ش-ق",
+      "raw": "عشق",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ش-ق",
+      "raw": "عشق",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ش-ق",
+      "raw": "عاشق",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ع-ش-ق",
+      "raw": "معشوق",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ع-ش-ق",
+      "raw": "عشّق",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ش-ر-ب",
+      "raw": "شرب",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ش-ر-ب",
+      "raw": "شرب",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ش-ر-ب",
+      "raw": "شارب",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ش-ر-ب",
+      "raw": "مشروب",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ش-ر-ب",
+      "raw": "شرّب",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ز-ه-د",
+      "raw": "زهد",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ز-ه-د",
+      "raw": "زهد",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ز-ه-د",
+      "raw": "زاهد",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ز-ه-د",
+      "raw": "زهّد",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ت-ع-ب",
+      "raw": "تعب",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ت-ع-ب",
+      "raw": "تعب",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ت-ع-ب",
+      "raw": "تعّب",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ب-ض",
+      "raw": "نبض",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ب-ض",
+      "raw": "نبض",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ب-ض",
+      "raw": "نابض",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ن-ب-ض",
+      "raw": "نبّض",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ش-و-ق",
+      "raw": "شاق",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ش-و-ق",
+      "raw": "شوق",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ش-و-ق",
+      "raw": "شائق",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ش-و-ق",
+      "raw": "شوّق",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-م-ق",
+      "raw": "عمق",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-م-ق",
+      "raw": "عمق",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-م-ق",
+      "raw": "عامق",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ع-م-ق",
+      "raw": "عمّق",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "خ-ب-ر",
+      "raw": "خبر",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "خ-ب-ر",
+      "raw": "خبر",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "خ-ب-ر",
+      "raw": "خابر",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "خ-ب-ر",
+      "raw": "خبّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-ف-ل",
+      "raw": "أفل",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-ف-ل",
+      "raw": "أفول",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-ف-ل",
+      "raw": "آفل",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "أ-ف-ل",
+      "raw": "أفّل",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ج-ذ-ب",
+      "raw": "جذب",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ج-ذ-ب",
+      "raw": "جذب",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ج-ذ-ب",
+      "raw": "جاذب",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ج-ذ-ب",
+      "raw": "مجذوب",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ج-ذ-ب",
+      "raw": "جذّب",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-ف-و",
+      "raw": "صفا",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-ف-و",
+      "raw": "صفاء",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-ف-و",
+      "raw": "صاف",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_normalized"
+    },
+    {
+      "family": "ص-ف-و",
+      "raw": "صفّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ض-ر",
+      "raw": "حضر",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ض-ر",
+      "raw": "حضور",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ض-ر",
+      "raw": "حاضر",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ح-ض-ر",
+      "raw": "حضّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ق-ص",
+      "raw": "نقص",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ق-ص",
+      "raw": "نقص",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ق-ص",
+      "raw": "ناقص",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ن-ق-ص",
+      "raw": "منقوص",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ن-ق-ص",
+      "raw": "نقّص",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ب-ح",
+      "raw": "ربح",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ب-ح",
+      "raw": "ربح",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ب-ح",
+      "raw": "رابح",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ر-ب-ح",
+      "raw": "ربّح",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ث-م-ر",
+      "raw": "ثمر",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ث-م-ر",
+      "raw": "ثمرة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ث-م-ر",
+      "raw": "ثامر",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ث-م-ر",
+      "raw": "ثمّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ل-و-م",
+      "raw": "لام",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ل-و-م",
+      "raw": "لوم",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ل-و-م",
+      "raw": "لائم",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ل-و-م",
+      "raw": "لوّم",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "م-ح-و",
+      "raw": "محا",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "م-ح-و",
+      "raw": "محو",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "م-ح-و",
+      "raw": "ماح",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_normalized"
+    },
+    {
+      "family": "م-ح-و",
+      "raw": "ممحو",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "م-ح-و",
+      "raw": "محّو",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "غ-ي-ب",
+      "raw": "غاب",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "غ-ي-ب",
+      "raw": "غياب",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "غ-ي-ب",
+      "raw": "غائب",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "غ-ي-ب",
+      "raw": "مغيب",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_normalized"
+    },
+    {
+      "family": "غ-ي-ب",
+      "raw": "غيّب",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "س-ع-ي",
+      "raw": "سعى",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "س-ع-ي",
+      "raw": "سعي",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "س-ع-ي",
+      "raw": "ساع",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_normalized"
+    },
+    {
+      "family": "س-ع-ي",
+      "raw": "سعّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-س-ي",
+      "raw": "نسي",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-س-ي",
+      "raw": "نسيان",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-س-ي",
+      "raw": "ناس",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_normalized"
+    },
+    {
+      "family": "ن-س-ي",
+      "raw": "منسيّ",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ن-س-ي",
+      "raw": "نسّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ط-ل-ع",
+      "raw": "طلع",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ط-ل-ع",
+      "raw": "طلوع",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ط-ل-ع",
+      "raw": "طالع",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ط-ل-ع",
+      "raw": "مطلوع",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ط-ل-ع",
+      "raw": "طلّع",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ش-ع-ر",
+      "raw": "شعر",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ش-ع-ر",
+      "raw": "شعور",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ش-ع-ر",
+      "raw": "شاعر",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ش-ع-ر",
+      "raw": "شعّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-و-ب",
+      "raw": "آب",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-و-ب",
+      "raw": "أوبة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "أ-و-ب",
+      "raw": "آئب",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "أ-و-ب",
+      "raw": "أوّب",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ب-ق",
+      "raw": "عبق",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ب-ق",
+      "raw": "عبق",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ع-ب-ق",
+      "raw": "عابق",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ع-ب-ق",
+      "raw": "عبّق",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-م-د",
+      "raw": "صمد",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-م-د",
+      "raw": "صمود",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-م-د",
+      "raw": "صامد",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ص-م-د",
+      "raw": "صمّد",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ن-ي",
+      "raw": "فني",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ن-ي",
+      "raw": "فناء",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ن-ي",
+      "raw": "فان",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_normalized"
+    },
+    {
+      "family": "ف-ن-ي",
+      "raw": "مفني",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_normalized"
+    },
+    {
+      "family": "ف-ن-ي",
+      "raw": "فنّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-ق-ي",
+      "raw": "بقي",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-ق-ي",
+      "raw": "بقاء",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-ق-ي",
+      "raw": "باق",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_normalized"
+    },
+    {
+      "family": "ب-ق-ي",
+      "raw": "بقّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ن-ن",
+      "raw": "حنّ",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ن-ن",
+      "raw": "حنين",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ن-ن",
+      "raw": "حانّ",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ح-ن-ن",
+      "raw": "حنّن",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-ف-ح",
+      "raw": "صفح",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-ف-ح",
+      "raw": "صفح",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ص-ف-ح",
+      "raw": "صافح",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ص-ف-ح",
+      "raw": "صفّح",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ع-ي",
+      "raw": "رعى",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ع-ي",
+      "raw": "رعاية",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ع-ي",
+      "raw": "راع",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_normalized"
+    },
+    {
+      "family": "ر-ع-ي",
+      "raw": "مرعيّ",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ر-ع-ي",
+      "raw": "رعّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ع-ي",
+      "raw": "وعى",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ع-ي",
+      "raw": "وعي",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ع-ي",
+      "raw": "واع",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_normalized"
+    },
+    {
+      "family": "و-ع-ي",
+      "raw": "وعّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ز-ع",
+      "raw": "فزع",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ز-ع",
+      "raw": "فزع",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ف-ز-ع",
+      "raw": "فازع",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ف-ز-ع",
+      "raw": "فزّع",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "خ-ش-ي",
+      "raw": "خشي",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "خ-ش-ي",
+      "raw": "خشية",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "خ-ش-ي",
+      "raw": "خاش",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_normalized"
+    },
+    {
+      "family": "خ-ش-ي",
+      "raw": "خشّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ج-ل",
+      "raw": "وجل",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ج-ل",
+      "raw": "وجل",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "و-ج-ل",
+      "raw": "وجّل",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ه-ب",
+      "raw": "رهب",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ه-ب",
+      "raw": "رهبة",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ه-ب",
+      "raw": "راهب",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ر-ه-ب",
+      "raw": "مرهوب",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ر-ه-ب",
+      "raw": "رهّب",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ض-ر-ب",
+      "raw": "ضرب",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ض-ر-ب",
+      "raw": "ضرب",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ض-ر-ب",
+      "raw": "ضارب",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ض-ر-ب",
+      "raw": "مضروب",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ض-ر-ب",
+      "raw": "ضرّب",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ك-ب",
+      "raw": "ركب",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ك-ب",
+      "raw": "ركوب",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ر-ك-ب",
+      "raw": "راكب",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ر-ك-ب",
+      "raw": "مركوب",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ر-ك-ب",
+      "raw": "ركّب",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ل-ب-س",
+      "raw": "لبس",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ل-ب-س",
+      "raw": "لبس",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ل-ب-س",
+      "raw": "لابس",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ل-ب-س",
+      "raw": "ملبوس",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ل-ب-س",
+      "raw": "لبّس",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "غ-س-ل",
+      "raw": "غسل",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "غ-س-ل",
+      "raw": "غسل",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "غ-س-ل",
+      "raw": "غاسل",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "غ-س-ل",
+      "raw": "مغسول",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "غ-س-ل",
+      "raw": "غسّل",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ك-س-ر",
+      "raw": "كسر",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ك-س-ر",
+      "raw": "كسر",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ك-س-ر",
+      "raw": "كاسر",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ك-س-ر",
+      "raw": "مكسور",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ك-س-ر",
+      "raw": "كسّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-ن-ي",
+      "raw": "بنى",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-ن-ي",
+      "raw": "بناء",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-ن-ي",
+      "raw": "بانٍ",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ب-ن-ي",
+      "raw": "مبني",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_normalized"
+    },
+    {
+      "family": "ب-ن-ي",
+      "raw": "بنّى",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ف-ر",
+      "raw": "حفر",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ف-ر",
+      "raw": "حفر",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ف-ر",
+      "raw": "حافر",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ح-ف-ر",
+      "raw": "محفور",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ح-ف-ر",
+      "raw": "حفّر",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ز-ر-ع",
+      "raw": "زرع",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ز-ر-ع",
+      "raw": "زرع",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ز-ر-ع",
+      "raw": "زارع",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ز-ر-ع",
+      "raw": "مزروع",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ز-ر-ع",
+      "raw": "زرّع",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ق-ل",
+      "raw": "نقل",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ق-ل",
+      "raw": "نقل",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ن-ق-ل",
+      "raw": "ناقل",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ن-ق-ل",
+      "raw": "منقول",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ن-ق-ل",
+      "raw": "نقّل",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-د-ل",
+      "raw": "بدل",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-د-ل",
+      "raw": "بدل",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ب-د-ل",
+      "raw": "بادل",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ب-د-ل",
+      "raw": "بدّل",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ج-ه-د",
+      "raw": "جهد",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ج-ه-د",
+      "raw": "جهد",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ج-ه-د",
+      "raw": "جاهد",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ج-ه-د",
+      "raw": "جهّد",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ب-س",
+      "raw": "حبس",
+      "pattern": "V1",
+      "description": "Expanded 200-family set: Form I base verb",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ب-س",
+      "raw": "حبس",
+      "pattern": "VN",
+      "description": "Expanded 200-family set: verbal noun / masdar",
+      "review_status": "kept_core_expansion_pattern"
+    },
+    {
+      "family": "ح-ب-س",
+      "raw": "حابس",
+      "pattern": "AP",
+      "description": "Expanded 200-family set: active participle",
+      "review_status": "kept_ap_reviewed"
+    },
+    {
+      "family": "ح-ب-س",
+      "raw": "محبوس",
+      "pattern": "PP",
+      "description": "Expanded 200-family set: passive participle",
+      "review_status": "kept_pp_reviewed"
+    },
+    {
+      "family": "ح-ب-س",
+      "raw": "حبّس",
+      "pattern": "V2",
+      "description": "Expanded 200-family set: Form II verb",
+      "review_status": "kept_core_expansion_pattern"
+    }
+  ]
+}

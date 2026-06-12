@@ -1,0 +1,193 @@
+{
+  "version": "v3.2",
+  "query_dataset_commit": "1aef46246bea66b64a460feec735ac001b1831e6",
+  "basis_schema": "paper-b-basis-v3.0",
+  "method_note": "Radial/angular shares use an L-shaped diagnostic path at the shallower radius; they are not a unique decomposition of the direct geodesic.",
+  "pairs": [
+    {
+      "term1": "faraḥ",
+      "term1_ar": "فرح",
+      "term2": "surūr",
+      "term2_ar": "سرور",
+      "status": "paper_b_demonstration",
+      "r1": 0.6829,
+      "r2": 0.7316,
+      "distance_hyperbolic": 0.2106,
+      "radial_leg": 0.1954,
+      "angular_leg": 0.0711,
+      "radial_share": 0.733,
+      "angular_share": 0.267,
+      "delta_theta_deg": 1.59,
+      "midpoint": {
+        "px": -0.6699,
+        "py": -0.2289,
+        "r": 0.7079,
+        "nearest_basis_names": [
+          {
+            "name_ar": "النُّور",
+            "name_trans": "Al-Nūr",
+            "distance": 0.2508
+          },
+          {
+            "name_ar": "الحَكَم",
+            "name_trans": "Al-Ḥakam",
+            "distance": 0.2552
+          },
+          {
+            "name_ar": "العَدْل",
+            "name_trans": "Al-ʿAdl",
+            "distance": 0.2806
+          }
+        ]
+      }
+    },
+    {
+      "term1": "uḥibbuka",
+      "term1_ar": "أحبك",
+      "term2": "aʿshaquki",
+      "term2_ar": "أعشقك",
+      "status": "paper_b_demonstration",
+      "r1": 0.4086,
+      "r2": 0.5538,
+      "distance_hyperbolic": 0.3809,
+      "radial_leg": 0.3799,
+      "angular_leg": 0.0222,
+      "radial_share": 0.945,
+      "angular_share": 0.055,
+      "delta_theta_deg": 1.3,
+      "midpoint": {
+        "px": 0.4676,
+        "py": 0.127,
+        "r": 0.4845,
+        "nearest_basis_names": [
+          {
+            "name_ar": "الحَسِيب",
+            "name_trans": "Al-Ḥasīb",
+            "distance": 0.1327
+          },
+          {
+            "name_ar": "البَدِيع",
+            "name_trans": "Al-Badīʿ",
+            "distance": 0.1401
+          },
+          {
+            "name_ar": "البَصِير",
+            "name_trans": "Al-Baṣīr",
+            "distance": 0.1601
+          }
+        ]
+      }
+    },
+    {
+      "term1": "ṣamt",
+      "term1_ar": "صمت",
+      "term2": "ḥuzn",
+      "term2_ar": "حزن",
+      "status": "paper_b_demonstration",
+      "r1": 0.6802,
+      "r2": 0.7423,
+      "distance_hyperbolic": 0.2525,
+      "radial_leg": 0.2523,
+      "angular_leg": 0.0072,
+      "radial_share": 0.972,
+      "angular_share": 0.028,
+      "delta_theta_deg": 0.16,
+      "midpoint": {
+        "px": -0.6832,
+        "py": -0.2026,
+        "r": 0.7126,
+        "nearest_basis_names": [
+          {
+            "name_ar": "الغَنِيّ",
+            "name_trans": "Al-Ghanī",
+            "distance": 0.2265
+          },
+          {
+            "name_ar": "الجَبَّار",
+            "name_trans": "Al-Jabbār",
+            "distance": 0.2268
+          },
+          {
+            "name_ar": "العَدْل",
+            "name_trans": "Al-ʿAdl",
+            "distance": 0.2274
+          }
+        ]
+      }
+    },
+    {
+      "term1": "ghaḍab",
+      "term1_ar": "غضب",
+      "term2": "khawf",
+      "term2_ar": "خوف",
+      "status": "paper_b_demonstration",
+      "r1": 0.7494,
+      "r2": 0.5485,
+      "distance_hyperbolic": 0.7106,
+      "radial_leg": 0.7104,
+      "angular_leg": 0.0099,
+      "radial_share": 0.986,
+      "angular_share": 0.014,
+      "delta_theta_deg": 0.36,
+      "midpoint": {
+        "px": -0.6341,
+        "py": -0.1852,
+        "r": 0.6606,
+        "nearest_basis_names": [
+          {
+            "name_ar": "الحَلِيم",
+            "name_trans": "Al-Ḥalīm",
+            "distance": 0.304
+          },
+          {
+            "name_ar": "الوَكِيل",
+            "name_trans": "Al-Wakīl",
+            "distance": 0.3055
+          },
+          {
+            "name_ar": "الكَبِير",
+            "name_trans": "Al-Kabīr",
+            "distance": 0.3058
+          }
+        ]
+      }
+    },
+    {
+      "term1": "fanāʾ",
+      "term1_ar": "فناء",
+      "term2": "baqāʾ",
+      "term2_ar": "بقاء",
+      "status": "paper_c_exploratory",
+      "r1": 0.6186,
+      "r2": 0.689,
+      "distance_hyperbolic": 3.1372,
+      "radial_leg": 0.2465,
+      "angular_leg": 2.8907,
+      "radial_share": 0.079,
+      "angular_share": 0.921,
+      "delta_theta_deg": 178.23,
+      "midpoint": {
+        "px": -0.0573,
+        "py": -0.0234,
+        "r": 0.0619,
+        "nearest_basis_names": [
+          {
+            "name_ar": "البَاطِن",
+            "name_trans": "Al-Bāṭin",
+            "distance": 0.4558
+          },
+          {
+            "name_ar": "الظَّاهِر",
+            "name_trans": "Al-Ẓāhir",
+            "distance": 0.4663
+          },
+          {
+            "name_ar": "القَيُّوم",
+            "name_trans": "Al-Qayyūm",
+            "distance": 0.4723
+          }
+        ]
+      }
+    }
+  ]
+}
