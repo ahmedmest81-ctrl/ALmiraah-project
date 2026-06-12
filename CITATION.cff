@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: "AL-MIRʾĀH: Classical Arabic Philology as Transformer Geometry"
+message: "If you use this software or dataset, please cite it."
+type: software
+authors:
+  - family-names: Mislati
+    given-names: Ahmed
+    email: ahmedmest81@gmail.com
+    affiliation: Independent researcher, Vienna
+year: 2026
+url: "https://huggingface.co/spaces/WELLyes1/almiraah_transformer"

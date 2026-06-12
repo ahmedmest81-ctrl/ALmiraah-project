@@ -1,0 +1,53 @@
+# Abjad audit — all_99_corrected.json `abjad_num` vs recomputation
+# Conventions tested: AF = article-free, AI = article-inclusive
+# Module conventions: ة=400, ى=10, ؤ=6, ئ=10, hamza-seats=1 — themselves revisable
+#
+# status: OK_AF | OK_AI | MISMATCH_BOTH
+
+OK_AI          اللّٰه         stored=   66 AF=   35 AI=   66   [ل=30 + ه=5]
+OK_AI          الرَّحْمَان    stored=  330 AF=  299 AI=  330   [ر=200 + ح=8 + م=40 + ا=1 + ن=50]
+OK_AI          الرَّحِيم      stored=  289 AF=  258 AI=  289   [ر=200 + ح=8 + ي=10 + م=40]
+OK_AI          المَلِك        stored=  121 AF=   90 AI=  121   [م=40 + ل=30 + ك=20]
+MISMATCH_BOTH  المُؤْمِن      stored=  187 AF=  136 AI=  167   [م=40 + ؤ=6 + م=40 + ن=50]
+MISMATCH_BOTH  العَظِيم       stored=  920 AF= 1020 AI= 1051   [ع=70 + ظ=900 + ي=10 + م=40]
+MISMATCH_BOTH  الوَاجِد       stored= 1010 AF=   14 AI=   45   [و=6 + ا=1 + ج=3 + د=4]
+MISMATCH_BOTH  المُقْتَدِر    stored=  745 AF=  744 AI=  775   [م=40 + ق=100 + ت=400 + د=4 + ر=200]
+MISMATCH_BOTH  المُقَدِّم     stored=  825 AF=  184 AI=  215   [م=40 + ق=100 + د=4 + م=40]
+MISMATCH_BOTH  الآخِر         stored=  802 AF=  801 AI=  832   [آ=1 + خ=600 + ر=200]
+MISMATCH_BOTH  المُتَعَالِي   stored=  541 AF=  551 AI=  582   [م=40 + ت=400 + ع=70 + ا=1 + ل=30 + ي=10]
+MISMATCH_BOTH  المُنْتَقِم    stored= 1279 AF=  630 AI=  661   [م=40 + ن=50 + ت=400 + ق=100 + م=40]
+MISMATCH_BOTH  الرَّؤُوف      stored=  287 AF=  292 AI=  323   [ر=200 + ؤ=6 + و=6 + ف=80]
+MISMATCH_BOTH  ذُو الجَلَال   stored= 1067 AF=  801 AI=  801   [ذ=700 + و=6 + ا=1 + ل=30 + ج=3 + ل=30 + ا=1 + ل=30]
+MISMATCH_BOTH  المُقْسِط      stored=  249 AF=  209 AI=  240   [م=40 + ق=100 + س=60 + ط=9]
+
+# Summary: 84 article-free OK, 4 article-inclusive, 11 match neither
+# ─────────────────────────────────────────────────────────────────
+# HYPOTHESES for the 11 MISMATCH_BOTH cases (for philological
+# adjudication — do not auto-correct; Anchor Database Layer 0/1
+# updates only by deliberate revision):
+#
+# العَظِيم  stored 920 = 70+800+10+40 → fits MAGHRIBI ظ=800.
+#            One or more entries may have been computed under the
+#            Maghribi letter-value order. Check ض/ظ/غ/س/ش/ص Names.
+# الآخِر    stored 802 = AF 801 + 1 → madda آ counted as ء+ا (=2)
+#            rather than 1. Madda-valuation convention must be fixed
+#            project-wide (affects مرآة = 641 in live output, which
+#            valued آ=1).
+# الرَّؤُوف stored 287 = 292 − 5 → hamza-seat ؤ possibly valued as
+#            hamza=1 (292−6+1=287). Hamza-seat convention needed.
+# ذُو الجَلَال stored 1067 → likely computed over the full Name
+#            ذو الجلال والإكرام; the dataset's name_ar field holds the
+#            truncated form. Decide which form is canonical.
+# المُؤْمِن، المُقْتَدِر، المُقَدِّم، المُنْتَقِم، الوَاجِد، المُقْسِط
+#            → no single convention reproduces stored values;
+#            probable data-entry errors. الوَاجِد (stored 1010 vs
+#            14/45) and المُنْتَقِم (1279 vs 630/661) are served by
+#            the LIVE tool today and appeared in the 2026-06-10
+#            test output. Priority candidates for correction.
+#
+# DOWNSTREAM CHECK REQUIRED:
+#   Paper A: SAFE in principle — Q2 used per-letter Mashriqi values,
+#            not these stored per-Name sums. Verify §3 examples cite
+#            no stored abjad_num.
+#   Paper B: any table/example displaying per-Name Abjad values must
+#            be re-checked against the adjudicated convention.
