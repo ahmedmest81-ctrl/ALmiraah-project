@@ -95,6 +95,61 @@ def exp_x(x, t):
     return mobius_add(x, q)
 
 
+def geodesic_midpoint(u, v):
+    """Intrinsic midpoint of the geodesic segment from u to v."""
+    u, v = _clip(u), _clip(v)
+    if np.linalg.norm(u - v) < EPS:
+        return u.copy()
+    return exp_x(u, 0.5 * log_x(u, v))
+
+
+def radial_angular_legs(u, v):
+    """Return a diagnostic radial/angular L-path decomposition.
+
+    The radial leg changes depth along u's ray until it reaches the
+    shallower radius. The angular leg then connects the two angles at
+    that radius. Their sum is an upper bound on the direct geodesic,
+    not a unique orthogonal decomposition of that geodesic.
+    """
+    u, v = _clip(u), _clip(v)
+    r1 = min(float(np.linalg.norm(u)), MAX_NORM)
+    r2 = min(float(np.linalg.norm(v)), MAX_NORM)
+    th1 = float(np.arctan2(u[1], u[0]))
+    th2 = float(np.arctan2(v[1], v[0]))
+    dth = abs(th1 - th2)
+    if dth > np.pi:
+        dth = 2.0 * np.pi - dth
+
+    radial = abs(2.0 * np.arctanh(r1) - 2.0 * np.arctanh(r2))
+    shallow = min(r1, r2)
+    qa = np.array([shallow * np.cos(th1), shallow * np.sin(th1)])
+    qb = np.array([shallow * np.cos(th2), shallow * np.sin(th2)])
+    angular = poincare_dist(qa, qb)
+    total = radial + angular
+    return {
+        "radial": float(radial),
+        "angular": float(angular),
+        "radial_share": None if total < EPS else float(radial / total),
+        "angular_share": None if total < EPS else float(angular / total),
+        "delta_theta_deg": float(np.degrees(dth)),
+        "path_length": float(total),
+        "geodesic_distance": poincare_dist(u, v),
+    }
+
+
+def mean_pairwise_distance(points):
+    """Mean geodesic distance over all unordered point pairs."""
+    pts = [_clip(p) for p in points]
+    if len(pts) < 2:
+        return 0.0
+    distances = [
+        poincare_dist(pts[i], pts[j])
+        for i in range(len(pts))
+        for j in range(i + 1, len(pts))
+    ]
+    return float(np.mean(distances))
+
+
 def karcher_mean(points, weights=None, iters=64, tol=1e-7):
     """
     Weighted Riemannian barycenter on the Poincaré disk via fixed-point
@@ -121,6 +176,76 @@ def karcher_mean(points, weights=None, iters=64, tol=1e-7):
             break
         x = exp_x(x, g)
     return x
+
+
+def frechet_mean(points, weights=None, iters=256, tol=1e-9):
+    """Robust intrinsic mean using backtracking Riemannian descent.
+
+    This is used for new v3.2 cluster statistics. The historical
+    ``karcher_mean`` iteration remains unchanged because it generated the
+    frozen v3 query coordinates cited by Paper B.
+    """
+    pts = [_clip(p) for p in points]
+    if not pts:
+        raise ValueError("at least one point is required")
+    if len(pts) == 1:
+        return pts[0].copy()
+    if len(pts) == 2 and weights is None:
+        return geodesic_midpoint(pts[0], pts[1])
+
+    if weights is None:
+        w = np.ones(len(pts), dtype=float)
+    else:
+        w = np.maximum(np.asarray(weights, dtype=float), 0.0)
+    if w.sum() < EPS:
+        w = np.ones(len(pts), dtype=float)
+    w /= w.sum()
+
+    def objective(candidate):
+        return sum(
+            wi * poincare_dist(candidate, point) ** 2
+            for wi, point in zip(w, pts)
+        )
+
+    x = _clip(sum(wi * point for wi, point in zip(w, pts)))
+    for _ in range(iters):
+        direction = sum(wi * log_x(x, point) for wi, point in zip(w, pts))
+        if np.linalg.norm(direction) < tol:
+            break
+        current = objective(x)
+        step = 1.0
+        while step > 1e-8:
+            candidate = exp_x(x, step * direction)
+            if objective(candidate) < current - 1e-12:
+                x = candidate
+                break
+            step *= 0.5
+        else:
+            break
+    return x
+
+
+def frechet_statistics(points, field_baseline=None):
+    """Intrinsic center and dispersion statistics for disk points."""
+    pts = [_clip(p) for p in points]
+    if not pts:
+        raise ValueError("at least one point is required")
+    center = frechet_mean(pts)
+    squared = [poincare_dist(center, p) ** 2 for p in pts]
+    variance = float(np.mean(squared))
+    pairwise = mean_pairwise_distance(pts)
+    tightness = (
+        None
+        if field_baseline is None or field_baseline <= EPS
+        else float(pairwise / field_baseline)
+    )
+    return {
+        "center": center,
+        "variance": variance,
+        "dispersion": float(np.sqrt(variance)),
+        "mean_pairwise": pairwise,
+        "tightness": tightness,
+    }
 
 
 def hyperbolic_knn(target, candidates, k=8):

@@ -9,6 +9,10 @@ transformer representations.
 
 **Live tool:** https://huggingface.co/spaces/WELLyes1/almiraah_transformer
 
+The v3.2 branch must be deployed to the Space with `engine/app.py` and
+`engine/hyperbolic.py` together. Until then, the live tool remains on the
+previously audited engine version.
+
 **Code:** https://github.com/ahmedmest81-ctrl/ALmiraah-project
 (MCP server — five tools: `philological_lookup`, `root_analysis`,
 `semantic_neighbors`, `compare_terms`, `semantic_project`)
@@ -44,7 +48,10 @@ transformer representations.
 engine/        The live MCP server and its modules
   app.py            FastAPI/MCP server (v3: carrier/layer-8 embeddings,
                     Karcher placement, iʿtidāl profile centering, dual
-                    Euclidean/hyperbolic distances with hierarchy load)
+                    Euclidean/hyperbolic distances with hierarchy load;
+                    v3.2: geodesic midpoint + radial/angular diagnostic
+                    in compare_terms, root-cluster intrinsic geometry
+                    in root_analysis)
   wazn.py           Morphological pattern parser (miqyās positional
                     substitution; honest candidate sets for unvocalised input)
   hyperbolic.py     Poincaré-disk geometry: Möbius ops, Karcher mean,
@@ -67,6 +74,7 @@ experiments/   Pre-registered analyses with honest tallies
   q3_robustness.py                   Paper A Q3 robustness analysis
   m4_pattern_geometry.py             Wazn-pattern geometry analysis
   m4_pattern_geometry_200.py         Locked 200-family Wazn run
+  v32_geometry_diagnostics.py        Saved-query midpoint/decomposition audit
   three_experiments_report.md     Opposition axes / shadow field / wazn×position
   abjad_audit_report.txt          99-Name stored-value audit
   opposition_edges.json           Machine-resolved doctrinal opposition graph
@@ -81,6 +89,8 @@ data/paper_b/  Exact deployed 99-entry basis source, fitted v3 Poincaré
                coordinates, machine-readable metadata, and dataset licence
 
 results/paper_a/ Locked result JSONs cited by Paper A
+
+results/paper_b/ Locked v3.2 geometry diagnostics cited by Paper B/C
 ```
 
 ## Reproduction
@@ -90,6 +100,7 @@ pip install -r requirements.txt
 python pipeline/regenerate_v3.py            # re-embed basis, re-fit disk
 python pipeline/regenerate_full_v3.py       # re-project accumulated terms
 python pipeline/validate_paper_b_dataset.py # verify 99×30 schema and hashes
+python -m unittest tests/test_hyperbolic_operations.py -v
 python engine/wazn.py                       # wazn parser regression suite
 python engine/hyperbolic.py                 # geometry sanity checks
 ```

@@ -96,7 +96,7 @@ For an arbitrary Arabic query term q, the projection procedure follows the same 
 
 - **Morphological pattern** — the query term’s own wazn, parsed by positional radical substitution against a template inventory (the classical miqyās method). Where the unvocalised surface form admits multiple patterns, the engine returns all candidates with status `ambiguous_vocalization` rather than guessing; the attractor cluster’s prevailing wazn is reported separately as `cluster_wazn` and is never substituted for the query’s own pattern.
 
-Pairwise comparison additionally reports **two distances**: the flat Euclidean displacement in disk coordinates and the hyperbolic geodesic, together with their ratio (*hierarchy load*), which equals 2.0 at the disk origin and grows toward the rim. The ratio isolates how much of a pair's separation is constituted by hierarchical depth rather than by displacement alone (§5.8, §6.4).
+Pairwise comparison additionally reports **two distances**: the flat Euclidean displacement in disk coordinates and the hyperbolic geodesic, together with their ratio (*hierarchy load*), which equals 2.0 at the disk origin and grows toward the rim. The ratio isolates how strongly curvature magnifies a pair's flat displacement (§5.8, §6.4). Engine v3.2 also reports the intrinsic geodesic midpoint and the basis Names nearest that midpoint, plus a radial/angular diagnostic. The latter measures an L-shaped joining path: a radial leg changes depth to the shallower radius, then an angular leg changes field at that radius. Its shares are interpretable diagnostics, not a unique orthogonal decomposition of the direct geodesic.
 
 The resulting record fully characterises the query in the coordinate system. The cost of one query is one CAMeLBERT-ca forward pass on the 3 carrier sentences plus a 99-dimensional cosine computation; total query latency is approximately 1.2 seconds on consumer hardware.
 
@@ -106,13 +106,13 @@ The coordinate system supports five primary operations, exposed via the live MCP
 
 **philological_lookup(term)** — returns the full coordinate record for a single term: a provisional Abjad computation with per-letter breakdown under the currently declared orthographic convention, top attractors with tier/root/wazn/paired-opposite annotations, repelled basis Names, Poincaré position, hierarchical tier, and dominant morphological pattern. Stored per-Name Abjad totals are not presented as final pending the adjudication described in §6.3.
 
-**root_analysis(root)** — given a triliteral root, returns all basis Names sharing that root with full annotation. Use case: exploring the semantic field of a root across the divine Names.
+**root_analysis(root)** — given a triliteral root, returns all basis Names sharing that root with full annotation. When at least two Names match, it also returns their Karcher mean, Fréchet variance and dispersion, mean pairwise geodesic distance, and a tightness ratio against the field-wide 99-Name baseline. Use case: exploring the semantic field and disk-native clustering of a root across the divine Names.
 
 **semantic_project(candidates, context_arabic)** — given a set of cross-linguistic candidate Arabic forms for a concept and a list of Arabic context terms, projects each candidate through the basis and returns its tier, axis, attractor profile, neighbours in the accumulated query dataset, and geometric fit score against the context centroid. Use case: selecting the geometrically correct Arabic form for a specific context.
 
 **semantic_neighbors(term, k, min_r, max_r)** — given a term, returns the k accumulated queries geometrically closest to it by Poincaré distance, with r-value and attractor profile filters. Use case: exploring what other terms occupy similar coordinate regions.
 
-**compare_terms(term1, term2)** — given two terms, returns shared attractors, divergent attractors unique to each, opposing poles (one attracts what the other repels), coordinate distance, hierarchy levels, and provisional Abjad computations under the declared convention. Use case: pairwise structural comparison.
+**compare_terms(term1, term2)** — given two terms, returns shared attractors, divergent attractors unique to each, opposing poles (one attracts what the other repels), Euclidean and hyperbolic distances, hierarchy load, the radial/angular path diagnostic, the intrinsic geodesic midpoint with its nearest basis Names, hierarchy levels, and provisional Abjad computations under the declared convention. Use case: pairwise structural comparison and inspection of the basis region lying between two projected terms.
 
 ### 3.4 Why the methodology generalises
 
@@ -221,6 +221,19 @@ Raw cosine similarity between CAMeLBERT-ca embeddings occupies a compressed band
 
 The baseline's compressed band (0.865–0.937) cannot rank the four pairs. The coordinate system ranks them correctly and for the right reasons: the love pair (same speech act, one divergent axis) overlaps 4/5; the joy near-synonyms (genuine kin, fine differentiation) overlap 3/5 with the highest hierarchy load; the two cross-category pairs overlap 1/5 each with the largest geodesic separations. Differentiation appears where philology expects it — in divergent attractors for kin pairs, in wholesale profile separation for categorical pairs, and in hierarchy load for distinctions constituted at depth. The two single-term profiles (*uns*, *ẓulm*) demonstrate that the system's output is not merely a similarity score but a structured, interpretable profile in which the repelled set carries independent signal.
 
+### 5.9 V3.2 radial/angular diagnostic
+
+We applied the released v3.2 path diagnostic to the saved v3 positions of all four demonstration pairs. The results are locked in `results/paper_b/v32_geometry_diagnostics.json`.
+
+| Pair | Hyperbolic distance | Radial share | Angular share | Δθ |
+| --- | ---: | ---: | ---: | ---: |
+| *faraḥ* / *surūr* | 0.211 | 0.733 | 0.267 | 1.59° |
+| *uḥibbuka* / *aʿshaquki* | 0.381 | 0.945 | 0.055 | 1.30° |
+| *ṣamt* / *ḥuzn* | 0.253 | 0.972 | 0.028 | 0.16° |
+| *ghaḍab* / *khawf* | 0.711 | 0.986 | 0.014 | 0.36° |
+
+**Table 4.** Diagnostic L-path decomposition at the shallower radius. All four pairs are radial-dominant in the fitted disk: their projected angles are close, while their radial depths differ. This supports the §5.2 claim that the *faraḥ/surūr* distinction is constituted at depth. For the cross-category pairs, the result qualifies rather than replaces the attractor analysis: categorical difference appears in profile composition, while the final two-dimensional fitted displacement is predominantly radial.
+
 ## 6. Discussion
 
 ### 6.1 What kind of NLP problem the methodology addresses
@@ -261,7 +274,7 @@ The values in §5 are produced by the v3 engine, which corrected a protocol dive
 
 ### 6.5 Known limitations of the released geometry
 
-Three limitations are documented for users of the resource. First, centre-region compression: terms whose attractor sets are broad (dominated by Dhāt-tier Names) receive near-coincident Karcher positions; nearest-neighbour orderings at small r are therefore less reliable than at large r. Second, tier assignment by attractor vote and radial position are correlated but not identical signals, and may disagree for individual terms; both are reported. Third, the wazn parser returns candidate sets for unvocalised input rather than unique patterns (§3.2); approximately 17% of accumulated terms fall outside the current template inventory and are marked `not_parsed`, a coverage figure that bounds the parser's current scope.
+Four limitations are documented for users of the resource. First, centre-region compression: terms whose attractor sets are broad (dominated by Dhāt-tier Names) receive near-coincident Karcher positions; nearest-neighbour orderings at small r are therefore less reliable than at large r. Second, tier assignment by attractor vote and radial position are correlated but not identical signals, and may disagree for individual terms; both are reported. Third, the wazn parser returns candidate sets for unvocalised input rather than unique patterns (§3.2); approximately 17% of accumulated terms fall outside the current template inventory and are marked `not_parsed`, a coverage figure that bounds the parser's current scope. Fourth, the radial/angular shares are path diagnostics, not an invariant or unique decomposition of a geodesic; they should be interpreted alongside attractor profiles and the direct hyperbolic distance.
 
 ### 6.6 Future work
 

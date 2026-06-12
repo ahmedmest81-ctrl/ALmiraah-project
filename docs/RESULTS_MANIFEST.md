@@ -41,8 +41,9 @@ background analyses, not inputs to the locked 200-family result.
 ## Paper B
 
 The GitHub engine modules match the files currently deployed in the Hugging
-Face Space byte-for-byte. The exact deployed basis source and fitted disk are
-now released in this tree:
+Face Space at the pre-v3.2 audited commit. The v3.2 engine changes in this
+branch require a synchronized Space deployment. The exact deployed basis
+source and fitted disk are released in this tree:
 
 - `data/paper_b/basis_99_v3.json`
 - `data/paper_b/poincare_data_v3.json`
@@ -60,3 +61,10 @@ the accumulated query dataset (759 records at audit), not the fixed basis.
 | --- | --- |
 | `basis_99_v3.json` | `08A510B63A292545C1C176C9C999AAAB0D76EE78D490D76B8EAA8952B2C32E2C` |
 | `poincare_data_v3.json` | `8AA70364F07EA5E19B3321BEA38A5DE04919C95A55D0A7014C920C4DF77537F9` |
+| `v32_geometry_diagnostics.json` | `58B21E7A720CF58ECB60666FFA08F2B0FADE173B9EA6E4B32CCD303F97687460` |
+
+### V3.2 diagnostics
+
+| Claim | Script | Result |
+| --- | --- | --- |
+| Geodesic midpoint and radial/angular diagnostics for the four Paper B pairs and exploratory *fanāʾ/baqāʾ* | `experiments/v32_geometry_diagnostics.py` | `results/paper_b/v32_geometry_diagnostics.json` |

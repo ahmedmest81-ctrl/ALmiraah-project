@@ -1,6 +1,23 @@
 # AL-MIR'ĀH — Fix Package & Deployment Checklist
 2026-06-10 · companion to the live tool test of the same date
 
+## V3.2 synchronized deployment
+
+V3.2 activates intrinsic midpoint, radial/angular path diagnostics, and
+root-cluster disk statistics. Deploy `engine/app.py` and
+`engine/hyperbolic.py` together; deploying only `app.py` will fail because it
+imports the new geometry helpers.
+
+After deployment:
+
+1. Run `compare_terms` on `فناء` and `بقاء`; confirm a midpoint near the disk
+   center and an angular-dominant diagnostic.
+2. Run `compare_terms` on `فرح` and `سرور`; confirm a radial-dominant
+   diagnostic.
+3. Run `root_analysis` on `ر-ح-م`; confirm the disk-geometry section appears.
+4. Compare the deployed files with the GitHub release commit to restore the
+   byte-for-byte parity asserted by the audit.
+
 ## Contents
 | File | Fixes | Server touch-point |
 |---|---|---|

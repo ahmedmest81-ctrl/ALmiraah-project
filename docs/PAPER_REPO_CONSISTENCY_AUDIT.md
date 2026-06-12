@@ -35,8 +35,9 @@ without merging. Its dirty working tree was not changed.
 
 ### Consistent
 
-- GitHub `engine/app.py`, `abjad.py`, `equilibrium.py`, `hyperbolic.py`, and
-  `wazn.py` match the deployed Space versions byte-for-byte.
+- Before v3.2, GitHub `engine/app.py`, `abjad.py`, `equilibrium.py`,
+  `hyperbolic.py`, and `wazn.py` matched the deployed Space versions
+  byte-for-byte.
 - The Abjad audit exists in GitHub and in the dataset repository.
 
 ### Resolved in this release tree
@@ -54,6 +55,9 @@ without merging. Its dirty working tree was not changed.
 
 ### Remaining qualification
 
+- The v3.2 `engine/app.py` and `engine/hyperbolic.py` changes must be deployed
+  to the Hugging Face Space together. Until then, the branch is ahead of the
+  live tool and byte-for-byte parity is intentionally broken.
 - Stored per-Name Abjad totals remain provisional until the five conventions
   are adjudicated. The paper and metadata label them accordingly.
 - `paired_opposite` is a mixed free-text field rather than a normalized,
