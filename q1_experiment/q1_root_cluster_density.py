@@ -34,6 +34,17 @@ from collections import defaultdict
 import warnings
 warnings.filterwarnings('ignore')
 
+
+def strip_diacritics(text):
+    """Remove Arabic diacritical marks (harakat) from text.
+
+    AraVec and most Arabic corpus models are trained on undiacritised text.
+    This allows diacritised lexicon entries to match corpus vocabulary.
+    Strips Unicode range U+064B–U+065F (tashkeel: fathah, kasrah, dammah,
+    sukun, shadda, tanwin variants, and extended marks).
+    """
+    return ''.join(c for c in text if not (0x064B <= ord(c) <= 0x065F))
+
 # ── Arabic root lexicon ───────────────────────────────────────────────────────
 # Hand-curated root families: each entry is (root, [words_in_that_root_family])
 # These are high-frequency roots with multiple attested forms in AraVec corpus
@@ -150,13 +161,21 @@ ENGLISH_MORPH_FAMILIES = {
 
 # ── Core analysis functions ───────────────────────────────────────────────────
 
-def get_available_words(model, word_list):
-    """Return words from list that exist in the model vocabulary."""
+def get_available_words(model, word_list, arabic=False):
+    """Return words from list that exist in the model vocabulary.
+
+    For Arabic models (arabic=True) each diacritised form is looked up
+    as its undiacritised equivalent, since AraVec / Twitter models are
+    trained on bare consonant+vowel-letter text without harakat.
+    The returned list contains the undiacritised surface forms actually
+    found in the model so that downstream vector lookups succeed.
+    """
     available = []
     for word in word_list:
+        lookup = strip_diacritics(word) if arabic else word
         try:
-            _ = model[word]
-            available.append(word)
+            _ = model[lookup]
+            available.append(lookup)
         except KeyError:
             pass
     return available
@@ -168,7 +187,7 @@ def cosine_similarity(v1, v2):
     norm2 = np.linalg.norm(v2)
     if norm1 == 0 or norm2 == 0:
         return 0.0
-    return np.dot(v1, v2) / (norm1 * norm2)
+    return float(np.dot(v1, v2) / (norm1 * norm2))
 
 
 def compute_pairwise_similarities(model, word_list):
@@ -182,13 +201,15 @@ def compute_pairwise_similarities(model, word_list):
     return similarities
 
 
-def compute_root_cluster_density(model, families, lang_name, min_words=3):
+def compute_root_cluster_density(model, families, lang_name, min_words=3, arabic=False):
     """
     Measurement 1: Root-Cluster Density
 
     For each root/morphological family:
       - Compute intra-family pairwise cosine similarities
     Then compute cross-family similarities (random sample)
+
+    arabic=True enables diacritic stripping before vocabulary lookup.
 
     Returns dict with all statistics.
     """
@@ -202,9 +223,11 @@ def compute_root_cluster_density(model, families, lang_name, min_words=3):
 
     # ── Intra-family similarities ─────────────────────────────────────
     for root, words in families.items():
-        available = get_available_words(model, words)
+        available = get_available_words(model, words, arabic=arabic)
+        coverage_pct = 100.0 * len(available) / len(words)
         if len(available) < min_words:
-            print(f"  SKIP {root}: only {len(available)}/{len(words)} words in vocab")
+            print(f"  SKIP {root}: only {len(available)}/{len(words)} words in vocab "
+                  f"({coverage_pct:.0f}% coverage)")
             continue
 
         available_families[root] = available
@@ -214,17 +237,22 @@ def compute_root_cluster_density(model, families, lang_name, min_words=3):
         family_stats[root] = {
             "words_available": len(available),
             "words_total": len(words),
+            "coverage_pct": round(coverage_pct, 1),
             "intra_mean": float(np.mean(sims)),
             "intra_std": float(np.std(sims)),
             "intra_min": float(np.min(sims)),
             "intra_max": float(np.max(sims)),
             "available_words": available,
         }
-        print(f"  {root}: {len(available)}/{len(words)} words | "
+        print(f"  {root}: {len(available)}/{len(words)} words ({coverage_pct:.0f}%) | "
               f"intra-sim = {np.mean(sims):.4f} ± {np.std(sims):.4f}")
 
     if not available_families:
         print(f"  ERROR: No families had enough words in vocabulary.")
+        return None
+
+    if len(available_families) < 2:
+        print(f"  ERROR: Need at least 2 families for cross-family comparison; got {len(available_families)}.")
         return None
 
     # ── Cross-family similarities ─────────────────────────────────────
@@ -262,8 +290,13 @@ def compute_root_cluster_density(model, families, lang_name, min_words=3):
         intra_sims_all, cross_sims_all, alternative='greater'
     )
 
+    total_words = sum(s["words_total"] for s in family_stats.values())
+    found_words = sum(s["words_available"] for s in family_stats.values())
+    overall_coverage = 100.0 * found_words / total_words if total_words > 0 else 0.0
+
     print(f"\n  ── RESULTS: {lang_name} ──")
     print(f"  Families analyzed:     {len(available_families)}")
+    print(f"  Vocab coverage:        {found_words}/{total_words} words ({overall_coverage:.1f}%)")
     print(f"  Intra-family pairs:    {len(intra_sims_all)}")
     print(f"  Cross-family pairs:    {len(cross_sims_all)}")
     print(f"  Intra-family mean sim: {intra_mean:.4f} ± {intra_std:.4f}")
@@ -276,6 +309,7 @@ def compute_root_cluster_density(model, families, lang_name, min_words=3):
     return {
         "language": lang_name,
         "n_families": len(available_families),
+        "vocab_coverage_pct": round(overall_coverage, 1),
         "n_intra_pairs": len(intra_sims_all),
         "n_cross_pairs": len(cross_sims_all),
         "intra_mean": intra_mean,
@@ -284,8 +318,8 @@ def compute_root_cluster_density(model, families, lang_name, min_words=3):
         "cross_std": cross_std,
         "gap": gap,
         "cohens_d": cohens_d,
-        "p_value": p_value,
-        "significant": p_value < 0.05,
+        "p_value": float(p_value),
+        "significant": bool(p_value < 0.05),
         "family_stats": family_stats,
         "intra_sims_sample": intra_sims_all[:200],
         "cross_sims_sample": cross_sims_all[:200],
@@ -314,7 +348,8 @@ def print_comparative_summary(arabic_results, english_results):
         print(f"  {'GAP (intra - cross)':<35} "
               f"{ar_gap:>12.4f} "
               f"{en_gap:>12.4f}")
-        print(f"  {'Cohen\\'s d (effect size)':<35} "
+        cohens_label = "Cohen's d (effect size)"
+        print(f"  {cohens_label:<35} "
               f"{arabic_results['cohens_d']:>12.4f} "
               f"{english_results['cohens_d']:>12.4f}")
         print(f"  {'p-value':<35} "
@@ -478,7 +513,7 @@ def save_results(arabic_results, english_results, output_dir):
         }
 
     path = os.path.join(output_dir, "q1_results.json")
-    with open(path, 'w', ensure_ascii=False) as f:
+    with open(path, 'w', encoding='utf-8') as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
     print(f"  Saved: {path}")
     return output
@@ -540,10 +575,12 @@ def main():
 
     # ── Run Measurement 1 ─────────────────────────────────────────────
     arabic_results = compute_root_cluster_density(
-        arabic_model, ARABIC_ROOT_FAMILIES, "Arabic (AraVec)", args.min_words
+        arabic_model, ARABIC_ROOT_FAMILIES, "Arabic (AraVec)", args.min_words,
+        arabic=True
     )
     english_results = compute_root_cluster_density(
-        english_model, ENGLISH_MORPH_FAMILIES, "English (word2vec)", args.min_words
+        english_model, ENGLISH_MORPH_FAMILIES, "English (word2vec)", args.min_words,
+        arabic=False
     )
 
     # ── Comparative summary ───────────────────────────────────────────

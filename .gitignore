@@ -1,0 +1,16 @@
+__pycache__/
+venv/
+
+# Large binary model files — never commit
+*.bin
+*.model
+*.pkl
+*.npy
+
+# Old report dir (superseded by q1_experiment/results/)
+q1_report/
+
+# Test / IDE
+.pytest_cache/
+.DS_Store
+*.pyc
