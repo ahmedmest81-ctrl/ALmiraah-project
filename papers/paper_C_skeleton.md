@@ -35,7 +35,7 @@ Boundaries section. Consciousness claims explicitly out of scope (the framework 
 - Vocabulary-gap manuscript (intro source) · Pillar I/II documents (section 2)
 - Paper A results incl. the offset-consistency negative (functor unfaithfulness measure)
 - Paper B v4 §5 cases + §6.4 protocol-correction robustness story
-- v2/v3 dual-protocol profiles for 747 terms (instrument-variation evidence)
+- v2/v3 dual-protocol profiles for 759 terms (instrument-variation evidence)
 - hierarchy_load implementation + first measurements
 - hyperbolic.py (Karcher, Möbius) — the formal geometry section's computational companion
 - Mapping-completions and phase-two documents (section 3 raw material)

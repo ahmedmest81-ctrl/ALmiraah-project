@@ -1,5 +1,5 @@
 # Three Experiments on the v3 Field — Results & Pre-registration Tally
-2026-06-11 · all run on full_profiles_v3.npz (747 terms × 99 Names) + poincare_data_v3.json
+2026-06-11 · all run on the frozen full_profiles_v3.npz matrix available for these experiments (747 terms × 99 Names) + poincare_data_v3.json. The accumulated query dataset subsequently reached 759 records.
 
 ## Exp 1 — Paired-opposite axes
 **Pre-registered:** doctrinal pairs angularly distant on disk; less similar in embedding; ظلم → Muntaqim on the ʿAfw⇄Intiqām axis.

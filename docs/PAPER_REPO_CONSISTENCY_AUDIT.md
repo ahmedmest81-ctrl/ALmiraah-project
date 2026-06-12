@@ -52,7 +52,8 @@ without merging. Its dirty working tree was not changed.
   including corpus frequency, seasonal associations, color associations, and
   poetic meter. These cannot be generated faithfully without an additional
   source.
-- GitHub README says the dataset has 747 records; the fetched dataset has 759.
+- At audit time, the public GitHub README said 747 records; this release tree
+  corrects the count to the fetched dataset's 759 records.
 
 ## Required Before Public Submission
 

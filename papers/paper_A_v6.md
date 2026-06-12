@@ -249,7 +249,7 @@ The empirical case is a localisation argument: classical Arabic encoding systems
 
 ## 7. Reproducibility
 
-- **Pipeline code:** The frequency-matched permutation null (q2_robustness_freq_matched.py) is released at https://github.com/ahmedmest81-ctrl/ALmiraah-project, together with the coordinate-engine and regeneration code. The remaining pipeline scripts — q2_abjad_attention.py (Arabic primary), q2_robustness.py (unrestricted permutation null and random-pair baseline), q3_alephbert_control.py (Hebrew control) — will be added to the same repository upon arXiv submission.
+- **Pipeline code:** All pipeline scripts are released at https://github.com/ahmedmest81-ctrl/ALmiraah-project, together with the coordinate-engine and regeneration code: q2_abjad_attention.py (Arabic primary), q2_robustness.py (unrestricted permutation null and random-pair baseline), q2_robustness_freq_matched.py (frequency-matched permutation null), q3_alephbert_control.py (Hebrew control), q3_robustness.py (Hebrew robustness), and the M4 wazn-geometry scripts (m4_pattern_geometry.py, m4_pattern_geometry_200.py).
 
 - **Live tool:** https://huggingface.co/spaces/WELLyes1/almiraah_transformer (MCP server demonstrating the 99-Names coordinate database; relevant to but distinct from the present empirical paper).
 
@@ -259,7 +259,7 @@ The empirical case is a localisation argument: classical Arabic encoding systems
 
 - **Compute:** Full pipeline reproducible on a single GPU with ≥8GB VRAM (the Arabic primary run completed on an RTX 4060 at batch size 8 in ~24h; the Hebrew run in ~22h). Robustness checks run on CPU.
 
-- **Results JSONs:** q2_results_with_robustness.json, q2_freq_matched_K4.json, q3_results_with_robustness.json will be released in the same repository alongside the remaining pipeline scripts upon arXiv submission.
+- **Released artifacts:** The locked q2_results_with_robustness.json, q2_freq_matched_K4.json, q3_results_with_robustness.json, and m4_results_contextual_200_reviewed.json files are under `results/paper_a/`; the reviewed M4 annotations and review log are under `data/paper_a/`.
 
 - **Random seed:** 42 throughout. All permutation tests at 1,000 permutations.
 
