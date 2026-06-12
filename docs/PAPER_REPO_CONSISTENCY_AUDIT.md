@@ -39,31 +39,23 @@ without merging. Its dirty working tree was not changed.
   `wazn.py` match the deployed Space versions byte-for-byte.
 - The Abjad audit exists in GitHub and in the dataset repository.
 
-### Blocking inconsistencies
+### Resolved in this release tree
 
-- Public GitHub contains Paper B v4, not the current v5.
-- The cited Hugging Face dataset contains 759 accumulated query records, not
-  the 99-entry basis resource described in Paper B.
-- The dataset repository has no `dataset_metadata.json`.
-- The live Space contains `all_99_corrected.json` with 99 entries and 30
-  fields. Paper B describes a 19-field public export that does not currently
-  exist.
-- The Space source lacks several fields named in Paper B's 19-field table,
-  including corpus frequency, seasonal associations, color associations, and
-  poetic meter. These cannot be generated faithfully without an additional
-  source.
+- Paper B v5 now describes the actual 99-entry, 30-field deployed basis source.
+- The exact source and fitted v3 disk are released under `data/paper_b/`.
+- `dataset_metadata.json` documents all fields, status categories, source
+  commits, caveats, and checksums.
+- The manuscript now distinguishes the fixed basis from the 759-record
+  accumulated query dataset on Hugging Face.
+- Fields absent from the source (corpus frequency, seasonal associations,
+  color associations, and poetic meter) are no longer claimed.
 - At audit time, the public GitHub README said 747 records; this release tree
   corrects the count to the fetched dataset's 759 records.
 
-## Required Before Public Submission
+### Remaining qualification
 
-1. Publish Paper A v6 and Paper B v5 in place of the stale manuscript files.
-2. Add the Paper A scripts, results, M4 review data, and this results manifest.
-3. Decide Paper B's public dataset contract:
-   - release a real 19-field basis export plus `dataset_metadata.json`, or
-   - revise Paper B to describe the actual 30-field source and separately
-     describe the 759-record query dataset.
-4. Keep stored per-Name Abjad totals provisional until the five conventions
-   are adjudicated.
-5. Update README record counts and repository layout after the release files
-   are finalized.
+- Stored per-Name Abjad totals remain provisional until the five conventions
+  are adjudicated. The paper and metadata label them accordingly.
+- `paired_opposite` is a mixed free-text field rather than a normalized,
+  uniformly attested opposition registry; the paper and metadata now state
+  this limitation.

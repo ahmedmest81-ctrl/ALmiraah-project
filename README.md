@@ -13,8 +13,11 @@ transformer representations.
 (MCP server — five tools: `philological_lookup`, `root_analysis`,
 `semantic_neighbors`, `compare_terms`, `semantic_project`)
 
-**Dataset:** https://huggingface.co/datasets/WELLyes1/almiraah_coordinate_db
-(759 accumulated query records, v3 protocol, with full provenance)
+**Basis dataset:** `data/paper_b/basis_99_v3.json`
+(99 Names × 30 fields, with schema/status metadata and fitted coordinates)
+
+**Query dataset:** https://huggingface.co/datasets/WELLyes1/almiraah_coordinate_db
+(759 accumulated query records at the audited commit, v3 protocol)
 
 **Papers**
 - *Paper A* — wazn geometry and Abjad-attention in CAMeLBERT-ca (arXiv: pending)
@@ -54,6 +57,7 @@ engine/        The live MCP server and its modules
 pipeline/      Coordinate-space regeneration
   regenerate_v3.py       Basis re-embedding + disk re-fit (seed 42)
   regenerate_full_v3.py  Full accumulated-term re-projection
+  validate_paper_b_dataset.py  Validate the released 99×30 basis contract
 
 experiments/   Pre-registered analyses with honest tallies
   q2_abjad_attention.py             Paper A primary Abjad-attention analysis
@@ -73,6 +77,9 @@ docs/          DEPLOYMENT.md (fix history), VALIDATION_V3.md (protocol
 
 data/paper_a/  Reviewed 200-family Wazn annotations and adjudication log
 
+data/paper_b/  Exact deployed 99-entry basis source, fitted v3 Poincaré
+               coordinates, machine-readable metadata, and dataset licence
+
 results/paper_a/ Locked result JSONs cited by Paper A
 ```
 
@@ -82,6 +89,7 @@ results/paper_a/ Locked result JSONs cited by Paper A
 pip install -r requirements.txt
 python pipeline/regenerate_v3.py            # re-embed basis, re-fit disk
 python pipeline/regenerate_full_v3.py       # re-project accumulated terms
+python pipeline/validate_paper_b_dataset.py # verify 99×30 schema and hashes
 python engine/wazn.py                       # wazn parser regression suite
 python engine/hyperbolic.py                 # geometry sanity checks
 ```

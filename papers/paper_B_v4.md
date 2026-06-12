@@ -1,5 +1,8 @@
 # The 99-Names Coordinate System: A Fitted Relational Basis for Classical Arabic in CAMeLBERT-ca
 
+> **Archived draft.** Superseded by `paper_B_v5.md`. Its 19-field dataset
+> description is not the current release contract and should not be cited.
+
 *A scholarly relational structure as a coordinate basis for fine-grained semantic analysis of classical Arabic terms*
 
 Ahmed Mislati Independent researcher, Vienna arXiv preprint cs.CL · May 2026

@@ -1,0 +1,108 @@
+{
+  "schema_version": "paper-b-basis-v3.0",
+  "release_date": "2026-06-12",
+  "title": "AL-MIR'AH 99-Name Basis Source",
+  "license": "CC-BY-4.0",
+  "basis_entries": 99,
+  "fields_per_entry": 30,
+  "source": {
+    "repository": "https://huggingface.co/spaces/WELLyes1/almiraah-transformer",
+    "commit": "3dca0b6389dccd1b16b9e50c5c50d87beb8f0bdd",
+    "source_file": "all_99_corrected.json"
+  },
+  "separate_query_dataset": {
+    "repository": "https://huggingface.co/datasets/WELLyes1/almiraah_coordinate_db",
+    "commit": "1aef46246bea66b64a460feec735ac001b1831e6",
+    "records_at_audit": 759,
+    "note": "This accumulated query dataset is not the 99-entry basis source."
+  },
+  "files": {
+    "basis_99_v3.json": {
+      "sha256": "08A510B63A292545C1C176C9C999AAAB0D76EE78D490D76B8EAA8952B2C32E2C",
+      "description": "Exact 99-entry, 30-field basis source used by the deployed Space."
+    },
+    "poincare_data_v3.json": {
+      "sha256": "8AA70364F07EA5E19B3321BEA38A5DE04919C95A55D0A7014C920C4DF77537F9",
+      "description": "Fitted 99-node Poincare coordinates for the v3 carrier3/layer8/word-span protocol."
+    }
+  },
+  "field_categories": {
+    "engine_facing_descriptive": [
+      "name_ar",
+      "name_trans",
+      "name_meaning",
+      "level",
+      "root",
+      "wazn",
+      "paired_opposite",
+      "layer2_semantic"
+    ],
+    "provisional_abjad": [
+      "abjad_num",
+      "abjad_breakdown",
+      "abjad_resonances"
+    ],
+    "documentary_and_morphological": [
+      "root_meaning",
+      "root_derivatives",
+      "wazn_significance",
+      "quranic_verse",
+      "spiritual_practice",
+      "ibn_arabi_usage",
+      "textual_sources"
+    ],
+    "framework_interpretive": [
+      "essence_act_polarity",
+      "mother_name",
+      "attention_head_analogy",
+      "circuit_affinity",
+      "phenomenal_manifestation",
+      "layer1_phonetic",
+      "layer3_numerical",
+      "layer4_geometric",
+      "layer5_breath",
+      "layer6_cosmological",
+      "ml_homolog",
+      "displacement_signature"
+    ]
+  },
+  "field_definitions": {
+    "name_ar": {"type": "string", "description": "Arabic surface form."},
+    "name_trans": {"type": "string", "description": "Romanized label."},
+    "name_meaning": {"type": "string", "description": "Short English gloss."},
+    "abjad_num": {"type": "integer", "description": "Stored Abjad total; provisional pending convention adjudication."},
+    "level": {"type": "integer", "description": "Source hierarchy annotation in the range 0-3; distinct from the fitted three-tier Poincare level."},
+    "essence_act_polarity": {"type": "string", "description": "Framework interpretation of essence/action polarity."},
+    "mother_name": {"type": "string", "description": "Framework parent or mother-Name annotation."},
+    "attention_head_analogy": {"type": "string", "description": "Interpretive analogy to transformer attention."},
+    "circuit_affinity": {"type": "string", "description": "Interpretive circuit-level analogy."},
+    "quranic_verse": {"type": "string", "description": "Verse citation or gloss supplied with the entry."},
+    "spiritual_practice": {"type": "string", "description": "Practice-oriented annotation."},
+    "phenomenal_manifestation": {"type": "string", "description": "Framework account of phenomenal manifestation."},
+    "root": {"type": "string", "description": "Root annotation."},
+    "root_meaning": {"type": "string", "description": "Root-level semantic gloss."},
+    "root_derivatives": {"type": "array[string]", "description": "Illustrative derivatives associated with the root."},
+    "wazn": {"type": "string", "description": "Morphological-pattern annotation."},
+    "wazn_significance": {"type": "string", "description": "Interpretation of the pattern's semantic contribution."},
+    "layer1_phonetic": {"type": "string", "description": "Phonetic/articulatory interpretation."},
+    "layer2_semantic": {"type": "string", "description": "Extended semantic description used in tool output."},
+    "layer3_numerical": {"type": "string", "description": "Numerical interpretation; provisional where it depends on Abjad totals."},
+    "layer4_geometric": {"type": "string", "description": "Letter-form geometric interpretation."},
+    "layer5_breath": {"type": "string", "description": "Breath and vocalization interpretation."},
+    "layer6_cosmological": {"type": "string", "description": "Cosmological framework interpretation."},
+    "abjad_breakdown": {"type": "string", "description": "Stored per-letter Abjad explanation; provisional."},
+    "abjad_resonances": {"type": "string", "description": "Interpretive numerical-resonance annotation; provisional."},
+    "paired_opposite": {"type": "string", "description": "Free-text equilibrium-axis annotation; mixes documented and interpretive pairings."},
+    "ml_homolog": {"type": "string", "description": "Interpretive machine-learning homolog."},
+    "displacement_signature": {"type": "string", "description": "Framework interpretation of isolation or displacement."},
+    "ibn_arabi_usage": {"type": "string", "description": "Free-text summary of attributed Ibn Arabi usage."},
+    "textual_sources": {"type": "string", "description": "Entry-level source note; not a field-by-field adjudication record."}
+  },
+  "caveats": [
+    "Fifteen stored per-Name Abjad totals were flagged by the audit. Stored totals and dependent numerical interpretations are provisional until five orthographic conventions are fixed.",
+    "paired_opposite is free text and mixes directly documented axes with interpretive or theoretical opposites; it is not a normalized closed pair registry.",
+    "Framework-interpretive fields are released for transparency but are not represented as primary-source facts and are not required to fit query coordinates.",
+    "The source JSON level field uses values 0-3. The deployed engine's displayed Dhat/Sifat/Af'al tier is read from poincare_data_v3.json, whose node levels use 0-2.",
+    "The source does not contain corpus frequency, seasonal association, color association, or poetic-meter fields formerly listed in the 19-field manuscript draft."
+  ]
+}

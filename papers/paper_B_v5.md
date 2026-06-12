@@ -10,9 +10,9 @@ Ahmed Mislati Independent researcher, Vienna arXiv preprint cs.CL · June 2026
 
 Distributional similarity tools (cosine similarity, k-nearest neighbours, contextual embedding distance) cannot reliably resolve fine-grained relational distinctions in Arabic vocabulary. Two terms English-glossable as “joy” (فرح *faraḥ* and سرور *surūr*) cluster near each other in any contextual embedding space, but classical Arabic philology treats them as structurally distinct: *faraḥ* names assertive elated emotion, *surūr* names tranquil contentment. Two speech-acts both glossable as “I love you” (أحبك *uḥibbuka* and أعشقك *aʿshaquki*) function in markedly different registers, but a distributional model treats them as paraphrases. The problem is not a defect of contextual embeddings; it is that distributional similarity does not encode the relational properties — root families, morphological patterns, hierarchical tier, paired-opposite structure — that classical scholarly practice formalised over a millennium.
 
-We present a methodology and resource for incorporating a documented scholarly relational structure as a *fitted coordinate basis* on the contextual embedding space of CAMeLBERT-ca. The basis structure is the 99 Names of God in classical Islamic tradition: a closed, well-attested relational system with documented hierarchical tiers, paired opposites, root families, and morphological patterns. We treat the 99 Names as a coordinate-defining relational structure, not as a theological commitment. Arbitrary Arabic terms are projected into the basis via CAMeLBERT-ca contextual embeddings followed by Poincaré-disk geometric reduction. The resulting coordinate system supports five operations: philological lookup, root-family analysis, semantic projection, semantic neighbour retrieval, and structural comparison.
+We present a methodology and resource for incorporating a documented scholarly relational structure as a *fitted coordinate basis* on the contextual embedding space of CAMeLBERT-ca. The basis structure is the 99 Names of God in classical Islamic tradition: a closed, well-attested set with hierarchical, morphological, root-family, and selected documented opposition relations. The released annotations also contain explicitly labeled interpretive extensions beyond those documented relations. We treat the 99 Names as a coordinate-defining relational structure, not as a theological commitment. Arbitrary Arabic terms are projected into the basis via CAMeLBERT-ca contextual embeddings followed by Poincaré-disk geometric reduction. The resulting coordinate system supports five operations: philological lookup, root-family analysis, semantic projection, semantic neighbour retrieval, and structural comparison.
 
-We release: (i) a 99-entry annotated dataset covering 19 fields per entry partitioned into operational (used by the coordinate engine) and documentary (philological metadata) layers; (ii) the coordinate engine code; (iii) a live MCP server exposing the five operations. We demonstrate the methodology on six empirical cases drawn from emotion, cognition, and morality vocabulary. A measured baseline establishes the core difficulty: under the anisotropy of CAMeLBERT-ca contextual embeddings, all four demonstration pairs — joy near-synonyms, love speech-acts, silence/grief, anger/fear — receive within-pair cosine similarities compressed into a narrow 0.865–0.937 band, so that cosine magnitude carries no information about the *kind* of relationship each pair has. Against this baseline, the coordinate system recovers the distinction structure: the love speech-acts (cosine 0.921) share four of five attractors, with the single divergent attractor carrying the classical ḥubb/ʿishq distinction; the joy near-synonyms (cosine 0.937) share three of five attractors and differentiate at depth, with the highest hierarchy load of the set (4.01); and the two cross-category pairs (silence/grief at 0.885; anger/fear at 0.865), which cosine scores within 0.05 of the near-synonyms, separate almost completely — one of five attractors shared and the largest hyperbolic distances of the set (up to 0.711). Differentiation appears where philology expects it: in divergent attractors for kin pairs, in wholesale profile separation for categorical pairs, and in hierarchy load for distinctions constituted at depth. The methodology is generalisable: any documented scholarly relational structure in any language could in principle function as a fitted basis the same way.
+We release: (i) the actual 99-entry basis source used by the deployed engine, containing 30 fields per entry with field-level status labels separating engine-facing descriptions, provisional Abjad annotations, documentary/morphological notes, and framework-interpretive annotations; (ii) the fitted 99-node Poincaré coordinates and machine-readable dataset metadata; (iii) the coordinate engine code; and (iv) a live MCP server exposing the five operations. The 99-entry basis source is distinct from the separately released 759-record accumulated query dataset. We demonstrate the methodology on six empirical cases drawn from emotion, cognition, and morality vocabulary. A measured baseline establishes the core difficulty: under the anisotropy of CAMeLBERT-ca contextual embeddings, all four demonstration pairs — joy near-synonyms, love speech-acts, silence/grief, anger/fear — receive within-pair cosine similarities compressed into a narrow 0.865–0.937 band, so that cosine magnitude carries no information about the *kind* of relationship each pair has. Against this baseline, the coordinate system recovers the distinction structure: the love speech-acts (cosine 0.921) share four of five attractors, with the single divergent attractor carrying the classical ḥubb/ʿishq distinction; the joy near-synonyms (cosine 0.937) share three of five attractors and differentiate at depth, with the highest hierarchy load of the set (4.01); and the two cross-category pairs (silence/grief at 0.885; anger/fear at 0.865), which cosine scores within 0.05 of the near-synonyms, separate almost completely — one of five attractors shared and the largest hyperbolic distances of the set (up to 0.711). Differentiation appears where philology expects it: in divergent attractors for kin pairs, in wholesale profile separation for categorical pairs, and in hierarchy load for distinctions constituted at depth. The methodology is generalisable: any documented scholarly relational structure in any language could in principle function as a fitted basis the same way.
 
 ## 1. Introduction
 
@@ -28,7 +28,7 @@ The problem generalises beyond near-synonym disambiguation. Speech-acts — أح
 
 We present a methodology and resource for incorporating a documented scholarly relational structure as a *fitted coordinate basis* on CAMeLBERT-ca contextual embeddings. The methodology is structured around three elements:
 
-- A **basis structure** — a closed, well-attested, internally relational set of terms with documented structural properties (hierarchical tier, paired opposites, root families, morphological patterns, numerical values). The basis is fixed; it does not change with query.
+- A **basis structure** — a closed, well-attested, internally relational set of terms with structural annotations (hierarchical tier, selected documented opposition relations, root families, and morphological patterns). The basis is fixed; it does not change with query.
 
 - A **fitting procedure** — for each basis term, a CAMeLBERT-ca contextual embedding is computed, and the basis is reduced to a Poincaré disk via geometric projection that preserves hierarchical relationships.
 
@@ -36,7 +36,7 @@ We present a methodology and resource for incorporating a documented scholarly r
 
 The result is a coordinate system: every Arabic term receives a position (px, py, r), a hierarchical tier classification (Dhāt / Ṣifāt / Afʿāl), an attractor set (which basis terms it is structurally similar to), and a repellor set (which basis terms it is structurally opposed to).
 
-Our specific basis is the **99 Names of God** in classical Islamic tradition. We treat this set as a coordinate-defining relational structure, not as a theological commitment. The 99 Names satisfy the basis requirements: closed (n = 99), well-attested (documented continuously since the 8th century), internally relational (with paired opposites such as Al-Bāṣiṭ ⇄ Al-Qābiḍ documented as cosmic-equilibrium axes), and structurally annotated (with root families, Abjad values, morphological patterns, and tier classification all attested in classical philological sources). The basis is functioning as a methodological instrument; the methodology generalises to any analogous structure in any language.
+Our specific basis is the **99 Names of God** in classical Islamic tradition. We treat this set as a coordinate-defining relational structure, not as a theological commitment. The 99 Names satisfy the basis requirements: closed (n = 99), well-attested (documented continuously since the 8th century), internally relational (with selected opposition relations such as Al-Bāsiṭ ⇄ Al-Qābiḍ), and structurally annotated with root, pattern, hierarchy, and semantic descriptions. The release metadata distinguishes source-oriented descriptions from provisional numerical and framework-interpretive annotations. The basis is functioning as a methodological instrument; the methodology generalises to any analogous structure in any language.
 
 ### 1.3 What we contribute
 
@@ -44,7 +44,7 @@ This paper makes four contributions:
 
 - A methodology for using a documented scholarly relational structure as a fitted coordinate basis on contextual embeddings, applicable to any language and any analogously-structured basis.
 
-- A 99-entry annotated dataset covering 19 fields per entry (8 operational + 11 documentary), released on HuggingFace under permissive licence, with explicit field-level documentation of which fields are used by the coordinate engine and which are philological metadata.
+- The exact 99-entry, 30-field basis source used by the deployed engine, released with the fitted 99-node Poincaré coordinates, checksums, a schema validator, and metadata that labels evidential status field by field. This basis resource is explicitly distinguished from the 759-record accumulated query dataset.
 
 - A live deployment — a coordinate engine accessible via an MCP server — exposing five operations: philological lookup, root-family analysis, semantic projection of cross-linguistic candidates, semantic neighbour retrieval, and pairwise structural comparison.
 
@@ -62,11 +62,11 @@ The 99 Names of God (*al-asmāʼ al-ḥusnā*, “the most beautiful Names”) a
 
 For the methodological purposes of this paper, three properties of the 99-Name structure are operationally important.
 
-**Hierarchical tier.** Classical Akbarī cosmology classifies each Name into one of three tiers: **Dhāt** (essence-level, ontologically primary Names: Al-Lāh, Al-Aḥad, Al-Ḥayy, Al-Ḥaqq); **Ṣifāt** (attribute-level, persistent qualities: Al-Raḥmān, Al-Ḥakīm, Al-Karīm); and **Afʿāl** (action-level, operative-functional Names: Al-Jabbār, Al-Qābiḍ, Al-Bāsiṭ). The tier classification is documented in classical sources and is operationally stable.
+**Hierarchical tier.** The resource operationalizes a three-tier reading: **Dhāt** (essence-level), **Ṣifāt** (attribute-level), and **Afʿāl** (action-level). The fitted disk stores the operational 0–2 tier labels used by the engine. These labels are resource annotations motivated by the classical hierarchy; they have not undergone independent annotation adjudication.
 
-**Paired opposites.** Classical tradition documents specific axes of cosmic equilibrium: Al-Qābiḍ ⇄ Al-Bāsiṭ (constriction/expansion), Al-Muʿizz ⇄ Al-Mudhill (honor/humiliation), Al-Rāfiʿ ⇄ Al-Khāfiḍ (elevation/lowering), Al-Raḥmān ⇄ Al-Muntaqim (mercy/avengement). Each paired-opposite axis is annotated in our dataset with its classical attestation.
+**Paired opposites.** Classical tradition documents specific axes of equilibrium, including Al-Qābiḍ ⇄ Al-Bāsiṭ (constriction/expansion), Al-Muʿizz ⇄ Al-Mudhill (honor/humiliation), and Al-Rāfiʿ ⇄ Al-Khāfiḍ (elevation/lowering). The released `paired_opposite` field is broader than this documented core: it is free text and includes interpretive or theoretical opposites, which the metadata labels accordingly.
 
-**Root families.** The 99 Names exhaust most of the high-frequency triliteral roots of classical Arabic theological vocabulary. The root ر-ح-م (mercy) appears in three Names: Al-Raḥmān, Al-Raḥīm, Al-Raʾūf. The root ك-ر-م (generosity) appears in Al-Karīm, Al-Akram. The root families create natural neighbourhoods in coordinate space.
+**Root families.** The basis contains repeated root families central to classical Arabic theological vocabulary. For example, ر-ح-م appears in Al-Raḥmān and Al-Raḥīm; ح-ك-م in Al-Ḥakam and Al-Ḥakīm; and غ-ف-ر in Al-Ghaffār and Al-Ghafūr. These repeated families provide natural neighbourhoods for testing root-sensitive structure in coordinate space.
 
 ### 2.2 Why this structure works as a basis
 
@@ -124,58 +124,47 @@ This means the same methodology applied to a different basis (the 7 mu’allaqā
 
 ### 4.1 Dataset structure
 
-The released dataset contains 99 entries, one per Name, with 19 fields per entry partitioned into two layers (Table 1).
+The released basis source contains 99 entries, one per Name, with all 30 fields present in every entry. The release preserves the deployed source rather than constructing a smaller manuscript-only export. Because the fields do not share one evidential status, the metadata partitions them into four categories (Table 1).
 
-| Layer | Field count | Use |
+| Category | Field count | Status and use |
 | --- | --- | --- |
-| **Layer 1 — Operational** | 8 | Used by the coordinate engine. Required for tool operation. |
-| **Layer 2 — Documentary** | 11 | Philological metadata. Not used by the coordinate engine; provided for scholarly reference. |
+| **Engine-facing descriptive** | 8 | Identity, morphology, hierarchy, axis, and semantic descriptions consumed or displayed by the engine. |
+| **Provisional Abjad** | 3 | Stored totals and numerical explanations pending orthographic adjudication. |
+| **Documentary and morphological** | 7 | Root, pattern, verse, practice, usage, and entry-level source notes. |
+| **Framework-interpretive** | 12 | Phonetic, geometric, cosmological, and machine-learning analogies released for transparency, not represented as primary-source facts. |
 
-**Table 1.** Field partition. Layer 1 fields are minimal for tool operation; Layer 2 fields are documentary.
+**Table 1.** Evidential and functional partition of the released 30-field basis source.
 
-The full field inventory is given in Table 2.
+The exact field inventory is given in Table 2; machine-readable types and descriptions are supplied in `data/paper_b/dataset_metadata.json`.
 
-| Field | Layer | Type | Description |
-| --- | --- | --- | --- |
-| name_arabic | 1 | string | Arabic form of the Name (e.g. الرَّحْمَان) |
-| name_transliterated | 1 | string | Romanised form (e.g. Al-Raḥmān) |
-| meaning_english | 1 | string | Concise English gloss |
-| tier | 1 | enum | One of Dhāt / Ṣifāt / Afʿāl |
-| root | 1 | string | Triliteral root with hyphen-separated consonants |
-| wazn | 1 | string | Morphological pattern (e.g. faʿʿāl, faʿīl) |
-| abjad_value | 1 | int | Provisional stored sum in Mashriqi order; withheld as a final per-Name value pending orthographic adjudication |
-| paired_opposite | 1 | string | Name forming the documented equilibrium axis |
-| meaning_extended | 2 | string | Extended philological description |
-| classical_source | 2 | string | Primary attestation (al-Ghazālī, Ibn ʿArabī, etc.) |
-| phonetic_layer | 2 | string | Articulatory analysis |
-| numerical_layer | 2 | string | Abjad-relational and gematric annotations |
-| geometric_layer | 2 | string | Visual-letter analysis |
-| breath_layer | 2 | string | Vocalisation rhythm and pattern |
-| invocation_context | 2 | string | Classical contexts of liturgical use |
-| frequency_in_corpus | 2 | int | OpenITI classical corpus frequency |
-| seasonal_associations | 2 | string | Classical calendrical associations |
-| color_associations | 2 | string | Classical chromatic associations |
-| poetic_meter | 2 | string | Associated metrical patterns |
+| Category | Fields |
+| --- | --- |
+| Engine-facing descriptive | `name_ar`, `name_trans`, `name_meaning`, `level`, `root`, `wazn`, `paired_opposite`, `layer2_semantic` |
+| Provisional Abjad | `abjad_num`, `abjad_breakdown`, `abjad_resonances` |
+| Documentary and morphological | `root_meaning`, `root_derivatives`, `wazn_significance`, `quranic_verse`, `spiritual_practice`, `ibn_arabi_usage`, `textual_sources` |
+| Framework-interpretive | `essence_act_polarity`, `mother_name`, `attention_head_analogy`, `circuit_affinity`, `phenomenal_manifestation`, `layer1_phonetic`, `layer3_numerical`, `layer4_geometric`, `layer5_breath`, `layer6_cosmological`, `ml_homolog`, `displacement_signature` |
 
-**Table 2.** Full field inventory of the 99-Names dataset. Layer 1 fields (rows 1–8) are operational; Layer 2 fields (rows 9–19) are documentary.
+**Table 2.** Exact 30-field inventory of `basis_99_v3.json`.
 
-We release **Layer 1 + Layer 2 (all 19 fields)** in this resource publication. A third layer of framework-interpretive fields (cosmological mapping, ML homolog annotations, displacement signatures) is held back for a separate forthcoming publication where the interpretive framing is the load-bearing contribution.
+The source-level `level` annotation uses values 0–3. It is not identical to the operational three-tier hierarchy displayed by the deployed engine: the latter is read from the fitted `poincare_data_v3.json`, whose 99 nodes use levels 0–2. Both files are released so that this distinction is inspectable.
 
 ### 4.2 Construction and quality control
 
-Layer 1 fields were extracted from primary classical sources: al-Ghazālī’s *al-Maqṣad al-asnā* (1095/1992) for tier classification and meaning glosses, Ibn ʿArabī’s *Fuṣūṣ al-Ḥikam* (1240/2004) for paired-opposite axes, and standard root-extraction for root and wazn fields. An Abjad total is computationally deterministic only after the orthographic convention is fixed. A pre-release audit flagged 15 stored per-Name values: 4 match only an article-inclusive computation and 11 match neither the current article-free nor article-inclusive computation. These stored totals remain provisional and are not used as final displayed values in this paper pending adjudication of the five conventions listed in §6.3. All Layer 1 fields were annotated by the author against the cited primary sources; no independent inter-annotator agreement study has been conducted. In place of consensus validation, the dataset provides per-field source traceability: each tier classification, paired-opposite axis, and root assignment is documented against its classical attestation in the dataset's metadata file, so that any individual annotation can be independently checked against the cited source.
+The release is an exact copy of the 99-entry source loaded by the deployed Space at the audited commit, not a reconstruction from the manuscript. Every entry has the same 30 keys and consistent value types; `pipeline/validate_paper_b_dataset.py` checks the schema, checksums, basis/coordinate name alignment, and 99-node count.
 
-Layer 2 fields were compiled from multiple classical and secondary sources; per-field provenance is documented in the dataset’s metadata file. Layer 2 fields are provided as scholarly reference and are not load-bearing for the coordinate engine’s operation.
+The annotations were compiled by the author; no independent inter-annotator agreement study has been conducted. `textual_sources` provides an entry-level free-text source note rather than a field-by-field adjudication trail. The `paired_opposite` field likewise mixes documented equilibrium axes with interpretive or theoretical opposites and should not be treated as a normalized closed pair registry. The framework-interpretive fields are released to make the deployed source transparent, but they are not presented as primary-source facts and are not required to fit query coordinates.
+
+An Abjad total is computationally deterministic only after the orthographic convention is fixed. A pre-release audit flagged 15 stored per-Name values: 4 match only an article-inclusive computation and 11 match neither the current article-free nor article-inclusive computation. The three Abjad fields and any dependent numerical interpretation therefore remain provisional pending adjudication of the five conventions listed in §6.3. The coordinate, attractor, tier, and distance results reported in §5 do not depend on finalizing those stored totals.
 
 ### 4.3 Release and access
 
-The dataset is released on HuggingFace under CC BY 4.0: - **Dataset:** WELLyes1/almiraah_coordinate_db - **Engine code:** released at https://github.com/ahmedmest81-ctrl/ALmiraah-project - **Live MCP server:** https://wellyes1-almiraah-transformer.hf.space/mcp
+The basis source, fitted coordinates, metadata, and validator are released in the project repository under CC BY 4.0: - **99-entry basis source:** `data/paper_b/basis_99_v3.json` - **Fitted coordinates:** `data/paper_b/poincare_data_v3.json` - **Metadata:** `data/paper_b/dataset_metadata.json` - **Engine code:** https://github.com/ahmedmest81-ctrl/ALmiraah-project - **Accumulated query dataset (separate; 759 records at audit):** https://huggingface.co/datasets/WELLyes1/almiraah_coordinate_db - **Live MCP server:** https://wellyes1-almiraah-transformer.hf.space/mcp
 
 The MCP server exposes the five operations of §3.3 via the Model Context Protocol, allowing direct integration into LLM tool-calling workflows. The server is rate-limited but freely accessible for non-commercial use.
 
 ## 5. Empirical evaluation
 
-We evaluate the coordinate system on six demonstration cases: four pairs that a raw-cosine baseline cannot rank, and two single-term profiles whose structure the baseline cannot express at all. All values in this section are computed under the released v3 engine (carrier-sentence layer-8 embeddings, Karcher placement); the full per-term records are in the released dataset.
+We evaluate the coordinate system on six demonstration cases: four pairs that a raw-cosine baseline cannot rank, and two single-term profiles whose structure the baseline cannot express at all. All values in this section are computed under the released v3 engine (carrier-sentence layer-8 embeddings, Karcher placement); query records are in the separately released accumulated query dataset, while the fixed basis and fitted disk are in `data/paper_b/`.
 
 ### 5.1 The anisotropy problem: why the cosine baseline cannot discriminate
 
@@ -242,7 +231,7 @@ The methodology does *not* address problems for which distributional similarity 
 
 ### 6.2 Relation to Paper A
 
-The coordinate engine relies on CAMeLBERT-ca contextual embeddings produced by the same forward-pass mechanism Paper A measures. Paper A establishes empirically that classical Arabic root and wazn structure are encoded as geometrically separable, linearly decodable properties of CAMeLBERT-ca embeddings: across 951 word forms spanning 200 reviewed triliteral root families, roots cluster and the four broad-coverage derived patterns are linearly decodable by leave-one-out analogy completion (mean cosine 0.924–0.983; n = 98–200), though the per-root pattern offsets are not a single consistent translation vector. The 99-Names basis trades on the separability and clustering, not on a constant pattern direction. The root and wazn fields in the dataset (Layer 1) align with the geometry Paper A measures: the basis Names sharing a root cluster in coordinate space. Paper A’s empirical findings provide the structural justification for the coordinate basis to function as it does on CAMeLBERT-ca specifically.
+The coordinate engine relies on CAMeLBERT-ca contextual embeddings produced by the same forward-pass mechanism Paper A measures. Paper A establishes empirically that classical Arabic root and wazn structure are encoded as geometrically separable, linearly decodable properties of CAMeLBERT-ca embeddings: across 951 word forms spanning 200 reviewed triliteral root families, roots cluster and the four broad-coverage derived patterns are linearly decodable by leave-one-out analogy completion (mean cosine 0.924–0.983; n = 98–200), though the per-root pattern offsets are not a single consistent translation vector. The 99-Names basis trades on the separability and clustering, not on a constant pattern direction. The `root` and `wazn` fields in the basis source align with the geometry Paper A measures: basis Names sharing a root cluster in coordinate space. Paper A’s empirical findings provide the structural justification for the coordinate basis to function as it does on CAMeLBERT-ca specifically.
 
 ### 6.3 Limitations
 
@@ -281,7 +270,9 @@ The methodology generalises to any documented relational structure. Natural exte
 
 ## 7. Reproducibility and access
 
-- **Dataset:** WELLyes1/almiraah_coordinate_db on HuggingFace, released under CC BY 4.0
+- **99-entry basis source and fitted disk:** `data/paper_b/` in https://github.com/ahmedmest81-ctrl/ALmiraah-project, released under CC BY 4.0
+
+- **Accumulated query dataset:** WELLyes1/almiraah_coordinate_db on HuggingFace (759 records at the audited commit), released separately from the fixed basis
 
 - **Engine code:** https://github.com/ahmedmest81-ctrl/ALmiraah-project
 
@@ -291,7 +282,9 @@ The methodology generalises to any documented relational structure. Natural exte
 
 - **Carrier sentences:** Three fixed templates (specified in §3.1); released alongside the engine code
 
-- **Annotation provenance:** Per-field source documentation in dataset_metadata.json
+- **Schema and annotation status:** `data/paper_b/dataset_metadata.json`; entry-level source notes are in `textual_sources`, while interpretive and provisional fields are explicitly labeled
+
+- **Validation:** `python pipeline/validate_paper_b_dataset.py`
 
 - **Compute requirements:** Engine fitting requires one CAMeLBERT-ca forward pass per carrier sentence per basis entry (99 × 3 = 297 forward passes total) and runs on a single CPU on consumer hardware. Query latency ~1.2 seconds per query on consumer hardware.
 
@@ -299,7 +292,7 @@ The methodology generalises to any documented relational structure. Natural exte
 
 ## 8. Conclusion
 
-We present a methodology for using a documented scholarly relational structure as a fitted coordinate basis on contextual embeddings, applied specifically to the 99 Names of God in classical Islamic tradition fitted to CAMeLBERT-ca. The methodology produces a coordinate system in which arbitrary Arabic terms receive a Poincaré-disk position, hierarchical tier classification, attractor and repellor profiles against the basis, and morphological annotations. We demonstrate on six empirical cases — drawn from emotion, cognition, and morality vocabulary — that the coordinate system makes structural distinctions a CAMeLBERT-ca baseline cosine similarity cannot make. We release the annotated 99-entry dataset (19 fields per entry, partitioned into operational and documentary layers), the coordinate engine code, and a live MCP server exposing five primary operations.
+We present a methodology for using a documented scholarly relational structure as a fitted coordinate basis on contextual embeddings, applied specifically to the 99 Names of God in classical Islamic tradition fitted to CAMeLBERT-ca. The methodology produces a coordinate system in which arbitrary Arabic terms receive a Poincaré-disk position, hierarchical tier classification, attractor and repellor profiles against the basis, and morphological annotations. We demonstrate on six empirical cases — drawn from emotion, cognition, and morality vocabulary — that the coordinate system makes structural distinctions a CAMeLBERT-ca baseline cosine similarity cannot make. We release the exact 99-entry, 30-field basis source used by the deployed engine, its fitted 99-node Poincaré coordinates, machine-readable metadata and validation, the coordinate engine code, and a live MCP server exposing five primary operations.
 
 The contribution is methodological as much as it is a resource. The framework — basis structure plus fitting procedure plus projection procedure — applies to any documented relational structure in any language. The 99 Names of God is one instance. The empirical demonstrations show what one such instance does for classical Arabic. The resource is offered to the NLP community as a reproducible instrument for fine-grained semantic analysis where distributional similarity is insufficient.
 

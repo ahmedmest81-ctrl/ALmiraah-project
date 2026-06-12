@@ -41,13 +41,22 @@ background analyses, not inputs to the locked 200-family result.
 ## Paper B
 
 The GitHub engine modules match the files currently deployed in the Hugging
-Face Space byte-for-byte. The Space also contains the fitted geometry sources:
+Face Space byte-for-byte. The exact deployed basis source and fitted disk are
+now released in this tree:
 
-- `all_99_corrected.json`
-- `name_vecs_v3.npz`
-- `poincare_data_v3.json`
+- `data/paper_b/basis_99_v3.json`
+- `data/paper_b/poincare_data_v3.json`
+- `data/paper_b/dataset_metadata.json`
+- `pipeline/validate_paper_b_dataset.py`
 
-These files are not copied into this release tree yet. The source table has 99
-entries and 30 fields, while Paper B describes a public 19-field export. A
-truthful 19-field export and its provenance metadata must be produced before
-the paper can claim that exact resource is released.
+The basis has 99 entries and all 30 source fields are present in every entry.
+The metadata separates engine-facing, provisional Abjad, documentary, and
+framework-interpretive fields. The separately hosted Hugging Face dataset is
+the accumulated query dataset (759 records at audit), not the fixed basis.
+
+### Released checksums
+
+| File | SHA-256 |
+| --- | --- |
+| `basis_99_v3.json` | `08A510B63A292545C1C176C9C999AAAB0D76EE78D490D76B8EAA8952B2C32E2C` |
+| `poincare_data_v3.json` | `8AA70364F07EA5E19B3321BEA38A5DE04919C95A55D0A7014C920C4DF77537F9` |
