@@ -309,6 +309,8 @@ This work was conducted as an independent research project without institutional
 
 Al-Ghazālī, Abū Ḥāmid Muḥammad. (1095/1992). *Al-Maqṣad al-asnā fī sharḥ asmāʼ Allāh al-ḥusnā* [The Most Beautiful Names of God]. (D. Burrell & N. Daher, Trans.). Islamic Texts Society.
 
+Alakeel, Y., Qwaider, C., Aldarmaki, H., & Alqahtani, S. (2026). Morphemes Without Borders: Evaluating Root-Pattern Morphology in Arabic Tokenizers and LLMs. In *Proceedings of LREC-COLING 2026*. arXiv:2603.15773.
+
 Antoun, W., Baly, F., & Hajj, H. (2020). AraBERT: Transformer-based model for Arabic language understanding. In *Proceedings of OSACT4, LREC 2020*.
 
 Colin, G. S. (1986). Abjad. In *Encyclopaedia of Islam*, 2nd ed., vol. I. Brill.
@@ -321,7 +323,7 @@ Ibn ʿArabī, Muḥyī al-Dīn. (1240/2004). *Fuṣūṣ al-ḥikam* [The Ringst
 
 Inoue, G., Alhafni, B., Baimukan, N., Bouamor, H., & Habash, N. (2021). The interplay of variants, size, and task type in Arabic pre-trained language models. In *Proceedings of WANLP*.
 
-Mislati, A. (2026). Templatic morphology as decodable geometry, and Abjad letter-values as an attention probe, in classical Arabic transformer models. *arXiv preprint cs.CL*.
+Mislati, A. (2026). Templatic morphology as decodable geometry, and Abjad letter-values as an attention probe, in classical Arabic transformer models. *arXiv preprint cs.CL*. Code: https://github.com/ahmedmest81-ctrl/ALmiraah-project
 
 Romanov, M. (2019). OpenITI: A machine-readable corpus of Islamicate texts. In *Proceedings of DH2019*.
 
