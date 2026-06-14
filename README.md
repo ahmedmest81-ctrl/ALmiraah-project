@@ -1,5 +1,7 @@
 # AL-MIRʾĀH (المرآة) — Classical Arabic Philology as Transformer Geometry
 
+I work inside classical Arabic, and I'd long had the intuition that its root-pattern morphology behaves like a coordinate system, that form and meaning are mathematically coupled in a way most languages don't make legible. This repository is the attempt to find out whether that intuition was real or just felt real: if the structure is there, a transformer trained on Arabic should show it, and the 8th-century Mashriqi Abjad encoding should leave a measurable trace. What follows is the experiment that demanded.
+
 A computational philology framework that maps classical Arabic vocabulary onto a
 fitted Poincaré disk using the 99 Names of God (al-Asmāʾ al-Ḥusnā) as a fixed
 semantic basis, producing relational coordinates from CAMeLBERT-ca embeddings —
