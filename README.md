@@ -4,7 +4,7 @@ I work inside classical Arabic, and I'd long had the intuition that its root-pat
 
 A computational philology framework that maps classical Arabic vocabulary onto a
 fitted Poincaré disk using the 99 Names of God (al-Asmāʾ al-Ḥusnā) as a fixed
-semantic basis, producing relational coordinates from CAMeLBERT-ca embeddings —
+semantic basis, producing relational coordinates from CAMeLBERT-ca embeddings
 together with the empirical finding that Arabic's root-pattern morphology (wazn)
 and the Mashriqi Abjad numeral system produce measurable geometric structure in
 transformer representations.
