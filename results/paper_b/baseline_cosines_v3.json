@@ -1,0 +1,66 @@
+{
+  "artifact": "paper_b_raw_cosine_baselines",
+  "created_utc": "2026-06-18T00:27:27.738695+00:00",
+  "model_id": "CAMeL-Lab/bert-base-arabic-camelbert-ca",
+  "embedding_protocol": {
+    "layer": 8,
+    "carrier_sentences": [
+      "الكلمة هي {w}",
+      "يقول الشيخ {w}",
+      "معنى {w} هو"
+    ],
+    "pooling": "target-word subword span mean per carrier; mean across carriers",
+    "cosine": "ordinary uncentered cosine between query embeddings",
+    "diacritics": "Arabic short vowels/tatweel stripped before embedding"
+  },
+  "device": "cuda",
+  "torch_version": "2.5.1+cu121",
+  "transformers_version": "4.41.2",
+  "pairs": [
+    {
+      "pair_id": "farah_surur",
+      "term1_label": "faraḥ",
+      "term1_ar": "فرح",
+      "term2_label": "surūr",
+      "term2_ar": "سرور",
+      "manuscript_rounded": 0.937,
+      "raw_cosine": 0.9370776414871216,
+      "rounded_3dp": 0.937,
+      "matches_manuscript": true
+    },
+    {
+      "pair_id": "uhibbuka_ashaqaki",
+      "term1_label": "uḥibbuka",
+      "term1_ar": "أحبك",
+      "term2_label": "aʿshaquki",
+      "term2_ar": "أعشقك",
+      "manuscript_rounded": 0.921,
+      "raw_cosine": 0.9205049276351929,
+      "rounded_3dp": 0.921,
+      "matches_manuscript": true
+    },
+    {
+      "pair_id": "samt_huzn",
+      "term1_label": "ṣamt",
+      "term1_ar": "صمت",
+      "term2_label": "ḥuzn",
+      "term2_ar": "حزن",
+      "manuscript_rounded": 0.885,
+      "raw_cosine": 0.8853265047073364,
+      "rounded_3dp": 0.885,
+      "matches_manuscript": true
+    },
+    {
+      "pair_id": "ghadab_khawf",
+      "term1_label": "ghaḍab",
+      "term1_ar": "غضب",
+      "term2_label": "khawf",
+      "term2_ar": "خوف",
+      "manuscript_rounded": 0.865,
+      "raw_cosine": 0.8645122051239014,
+      "rounded_3dp": 0.865,
+      "matches_manuscript": true
+    }
+  ],
+  "all_match_manuscript": true
+}
