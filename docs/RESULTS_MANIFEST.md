@@ -62,9 +62,11 @@ the accumulated query dataset (759 records at audit), not the fixed basis.
 | `basis_99_v3.json` | `08A510B63A292545C1C176C9C999AAAB0D76EE78D490D76B8EAA8952B2C32E2C` |
 | `poincare_data_v3.json` | `8AA70364F07EA5E19B3321BEA38A5DE04919C95A55D0A7014C920C4DF77537F9` |
 | `v32_geometry_diagnostics.json` | `58B21E7A720CF58ECB60666FFA08F2B0FADE173B9EA6E4B32CCD303F97687460` |
+| `baseline_cosines_v3.json` | `87403189ACC56B32CB963E9C205A7DCD4B7EB336FB0802A488E9B571F1842E8B` |
 
 ### V3.2 diagnostics
 
 | Claim | Script | Result |
 | --- | --- | --- |
+| Raw CAMeLBERT-ca cosine baseline values for the four Paper B demonstration pairs | `experiments/paper_b_baseline_cosines.py` | `results/paper_b/baseline_cosines_v3.json` |
 | Geodesic midpoint and radial/angular diagnostics for the four Paper B pairs and exploratory *fanāʾ/baqāʾ* | `experiments/v32_geometry_diagnostics.py` | `results/paper_b/v32_geometry_diagnostics.json` |
