@@ -1,15 +1,76 @@
-# AL-MIRʾĀH (المرآة) — Classical Arabic Philology as Transformer Geometry
+# AL-MIRAAH — Arabic NLP Grounding via MCP
 
-I work inside classical Arabic, and I'd long had the intuition that its root-pattern morphology behaves like a coordinate system, that form and meaning are mathematically coupled in a way most languages don't make legible. This repository is the attempt to find out whether that intuition was real or just felt real: if the structure is there, a transformer trained on Arabic should show it, and the 8th-century Mashriqi Abjad encoding should leave a measurable trace. What follows is the experiment that demanded.
+AL-MIRAAH is a deployed research prototype that uses classical Arabic
+morphology, a fixed 99-Name semantic basis, and the mathematical pipeline
+documented in the accompanying research to produce structured semantic
+grounding profiles. Its five MCP tools let a connected AI system reason with
+inspectable evidence—attractors, repelled Names, morphology, coordinates,
+distances, and confidence signals—instead of inventing an interpretation
+without a reference frame.
 
-A computational philology framework that maps classical Arabic vocabulary onto a
-fitted Poincaré disk using the 99 Names of God (al-Asmāʾ al-Ḥusnā) as a fixed
-semantic basis, producing relational coordinates from CAMeLBERT-ca embeddings
-together with the empirical finding that Arabic's root-pattern morphology (wazn)
-and the Mashriqi Abjad numeral system produce measurable geometric structure in
-transformer representations.
+## What this repository demonstrates
 
-**Live tool:** https://huggingface.co/spaces/WELLyes1/almiraah_transformer
+- Designing clear tool contracts for an AI agent
+- Deploying an MCP service backed by a public, versioned dataset
+- Translating a specialist research question into a usable interface
+- Reproducible statistical evaluation with explicit falsification conditions
+- Reporting limitations and negative results alongside positive findings
+
+**Live interface:** https://ahmedmslti-almiraah-transformer.hf.space/
+
+**MCP endpoint:** https://ahmedmslti-almiraah-transformer.hf.space/mcp
+
+**Hugging Face Space:** https://huggingface.co/spaces/AhmedMSLTI/almiraah_transformer
+
+## How an Arabic term is grounded mathematically
+
+For an Arabic term $t$, the deployed v3 pipeline follows four documented steps.
+
+1. **Contextual embedding.** The undiacritized term is inserted into three fixed
+   Arabic carrier sentences. Its layer-8 target-token spans are mean-pooled and
+   then averaged across carriers:
+
+   $$
+   e(t)=\frac{1}{3}\sum_{c=1}^{3}\frac{1}{|S_{t,c}|}
+   \sum_{i\in S_{t,c}}h_{i,c}^{(8)}.
+   $$
+
+2. **Centered similarity to the basis.** For basis Name $n_j$, similarity is the
+   cosine of vectors centered by the mean basis embedding $\mu_B$:
+
+   $$
+   s_j(t)=\frac{(e(t)-\mu_B)\cdot(e(n_j)-\mu_B)}
+   {\|e(t)-\mu_B\|\,\|e(n_j)-\mu_B\|}.
+   $$
+
+   The tools also report an equilibrium-adjusted score $s_j(t)-\mu_j$, where
+   $\mu_j$ is the average pull received by Name $j$ across the reference field.
+
+3. **Hyperbolic placement.** The five strongest attractors receive non-negative
+   weights $w_j=\max(0,s_j)$. The term's disk position is their weighted Karcher
+   mean:
+
+   $$
+   p(t)=\operatorname*{arg\,min}_{p\in\mathbb{D}}
+   \sum_{j\in N_5(t)}\hat w_j\,d_{\mathbb{D}}(p,p_j)^2,
+   \qquad \hat w_j=\frac{w_j}{\sum_k w_k}.
+   $$
+
+   The implementation solves this intrinsic barycenter iteratively with
+   $x\leftarrow\exp_x\!\left(\sum_j\hat w_j\log_x(p_j)\right)$.
+
+4. **Geodesic comparison.** Distances on the Poincaré disk use
+
+   $$
+   d_{\mathbb{D}}(u,v)=\operatorname{arcosh}\!\left(
+   1+\frac{2\|u-v\|^2}{(1-\|u\|^2)(1-\|v\|^2)}\right).
+   $$
+
+These calculations produce a semantic grounding profile against this specific
+basis; they do **not** automatically translate a word or establish one final,
+model-independent meaning. Morphological parses can be ambiguous, Abjad values
+are explicitly provisional, and confidence falls as geodesic distance to the
+primary attractor increases.
 
 The v3.2 branch must be deployed to the Space with `engine/app.py` and
 `engine/hyperbolic.py` together. Until then, the live tool remains on the
@@ -22,12 +83,30 @@ previously audited engine version.
 **Basis dataset:** `data/paper_b/basis_99_v3.json`
 (99 Names × 30 fields, with schema/status metadata and fitted coordinates)
 
-**Query dataset:** https://huggingface.co/datasets/WELLyes1/almiraah_coordinate_db
-(759 accumulated query records at the audited commit, v3 protocol)
+**Query dataset:** https://huggingface.co/datasets/AhmedMSLTI/almiraah_coordinate_db
+(832 accumulated query records at the current public dataset commit, v3 protocol)
 
 **Papers**
-- *Paper A* — wazn geometry and Abjad-attention in CAMeLBERT-ca (arXiv: pending)
-- *Paper B* — the 99-Names coordinate resource (LREC-COLING target)
+- *Paper A* — [Templatic Morphology as Decodable Geometry, and Abjad
+  Letter-Values as an Attention Probe](https://doi.org/10.5281/zenodo.20735409)
+- *Paper B* — [The 99-Names Coordinate System: A Fitted Relational Basis for
+  Classical Arabic in CAMeLBERT-ca](https://doi.org/10.5281/zenodo.20739416)
+
+## Research origin
+
+I work inside classical Arabic, and I'd long had the intuition that its
+root-pattern morphology behaves like a coordinate system, that form and meaning
+are mathematically coupled in a way most languages don't make legible. This
+repository is the attempt to find out whether that intuition was real or just
+felt real: if the structure is there, a transformer trained on Arabic should
+show it, and the 8th-century Mashriqi Abjad encoding should leave a measurable
+trace. What follows is the experiment that demanded.
+
+The framework maps classical Arabic vocabulary onto a fitted Poincaré disk using
+the 99 Names of God (al-Asmāʾ al-Ḥusnā) as a fixed semantic basis. It produces
+relational coordinates from CAMeLBERT-ca embeddings and tests whether Arabic's
+root-pattern morphology (wazn) and the Mashriqi Abjad numeral system produce
+measurable geometric structure in transformer representations.
 
 ## Headline results
 
