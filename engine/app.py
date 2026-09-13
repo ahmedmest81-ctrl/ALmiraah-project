@@ -1,6 +1,6 @@
 """
 AL-MIR'ĀH · Philological Query Engine + MCP Server
-HuggingFace Space — WELLyes1/almiraah_transformer
+HuggingFace Space — AhmedMSLTI/almiraah_transformer
 
 v2.0 changes:
   - MCP transport: SSE → Streamable HTTP (mcp spec 2025-03-26)
@@ -25,12 +25,13 @@ from mcp import types
 
 # ── v2.1 fix modules (wazn inheritance bug; see DEPLOYMENT.md) ────────
 import wazn as wazn_mod
+from tool_service import LiveBackend, ToolService
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("almiraah")
 
 MODEL_ID   = "CAMeL-Lab/bert-base-arabic-camelbert-ca"
-DATASET_ID = "WELLyes1/almiraah_coordinate_db"
+DATASET_ID = "AhmedMSLTI/almiraah_coordinate_db"
 HF_TOKEN   = os.environ.get("HF_TOKEN", None)
 TOP_N      = 5
 
@@ -96,7 +97,7 @@ def load_coord_db():
                     except Exception:
                         pass
         log.info(f"Loaded {len(entries)} entries from local coordinates.jsonl")
-    elif HF_TOKEN:
+    else:
         try:
             from huggingface_hub import hf_hub_download
             path = hf_hub_download(
@@ -116,8 +117,6 @@ def load_coord_db():
             log.info(f"Loaded {len(entries)} entries from HF dataset")
         except Exception as e:
             log.warning(f"Could not load coordinates from HF dataset: {e}")
-    else:
-        log.warning("No HF_TOKEN and no local coordinates.jsonl — /neighbors disabled")
     coord_db = [e for e in entries if not _is_noise_record(e)]
     n_dropped = len(entries) - len(coord_db)
     if n_dropped:
@@ -488,8 +487,8 @@ def run_query(term: str) -> dict:
 import contextlib
 
 app = FastAPI(
-    title="AL-MIR'AH",
-    servers=[{"url": "https://wellyes1-almiraah-transformer.hf.space"}],
+    title="AL-MIRʾĀH",
+    servers=[{"url": "https://ahmedmslti-almiraah-transformer.hf.space"}],
 )
 app.add_middleware(
     CORSMiddleware,
@@ -1065,283 +1064,31 @@ async def list_tools() -> list[types.Tool]:
     ]
 
 
+_tool_service = ToolService(LiveBackend(
+    name_meta=name_meta,
+    coord_db=coord_db,
+    field_zero_source=FIELD_ZERO_SOURCE,
+    lookup=run_query,
+    profile=get_full_profile,
+    centroid=context_centroid,
+    fit=geometric_fit,
+    distance=poincare_distance,
+    compare_geometry=dual_distance,
+    midpoint=geodesic_midpoint,
+    midpoint_names=nearest_basis_names,
+    decomposition=radial_angular_decomposition,
+    root_geometry=root_cluster_geometry,
+    strip=strip_diac,
+    abjad_breakdown=abjad_breakdown,
+    abjad_value=abjad_value,
+))
+
+
 @mcp_server.call_tool()
 async def call_tool(name: str, arguments: dict) -> list[types.TextContent]:
-
-    if name == "philological_lookup":
-        term   = arguments["term"]
-        result = run_query(term)
-        pos    = result["estimated_position"]
-        abjad  = result.get("abjad", {})
-
-        top_str = "\n".join(
-            f"  {i+1}. {n['ar']} ({n['trans']}) — sim: {n['sim']}\n"
-            f"     tier: {['Dhāt','Ṣifāt','Afʿāl'][min(n['level'],2)]} | "
-            f"root: {n['root']} | abjad: {n['abjad']} | wazn: {n['wazn']}\n"
-            f"     axis: {n['ar']} ⇄ {n['paired_opposite']}\n"
-            f"     meaning: {n['meaning']}\n"
-            f"     {n['layer2_semantic']}"
-            for i, n in enumerate(result["top_names"])
-        )
-        bot_str = ", ".join(
-            f"{n['ar']} ({n['trans']}, sim={n['sim']})"
-            for n in result["bottom_names"]
-        )
-        cen_str = ", ".join(
-            f"{c['ar']} ({c['sim_centered']:+.3f})"
-            for c in result.get("attractors_centered", [])
-        )
-        cen_rep_str = ", ".join(
-            f"{c['ar']} ({c['sim_centered']:+.3f})"
-            for c in result.get("repelled_centered", [])
-        )
-        output = (
-            f"PHILOLOGICAL COORDINATE: {term}\n"
-            f"{'─'*52}\n"
-            f"Abjad value: {abjad.get('value','—')}  [{abjad.get('breakdown','—')}]\n"
-            f"Position: px={pos['px']}, py={pos['py']}, r={pos['r']}\n"
-            f"Hierarchy: {pos['level_label']} (level {pos['level']})\n"
-            f"Query wazn: {result['query_wazn']}  [{result['query_wazn_status']}]\n"
-            f"Cluster wazn (attractor majority): {result['cluster_wazn']}\n"
-            f"Poincaré dist to primary: {result['poincare_dist_to_primary']}\n\n"
-            f"TOP ATTRACTOR NAMES (raw):\n{top_str}\n\n"
-            f"IʿTIDĀL-CENTERED ATTRACTORS (deviation from field zero μ — {FIELD_ZERO_SOURCE['value']}):\n"
-            f"  {cen_str}\n"
-            f"IʿTIDĀL-CENTERED REPELLED:\n  {cen_rep_str}\n\n"
-            f"STRUCTURALLY ABSENT (repelled, raw):\n  {bot_str}\n"
-        )
-        return [types.TextContent(type="text", text=output)]
-
-    elif name == "root_analysis":
-        root    = arguments["root"]
-        matches = [(ar, meta) for ar, meta in name_meta.items()
-                   if meta["root"] == root]
-        if not matches:
-            return [types.TextContent(type="text",
-                text=f"No Names found with root {root}. "
-                     f"Try format ر-ح-م (consonants separated by hyphens).")]
-        lines = [f"ROOT ANALYSIS: {root}", "─"*44]
-        for ar, meta in matches:
-            tier = ['Dhāt','Ṣifāt','Afʿāl'][min(meta['level'], 2)]
-            lines.append(f"\n{ar} ({meta['trans']})")
-            _af = re.sub(r'^ال', '', strip_diac(ar))
-            _recomp = sum(ABJAD.get(c, 0) for c in _af)
-            _flag = "" if _recomp == meta['abjad'] else "  ⚠ stored≠recomputed (pending Abjad audit)"
-            lines.append(f"  Abjad (stored): {meta['abjad']} | recomputed article-free: {abjad_breakdown(_af)}{_flag}")
-            lines.append(f"  Wazn: {meta['wazn']} | Tier: {tier}")
-            lines.append(f"  Meaning: {meta['meaning']}")
-            lines.append(f"  Axis: {ar} ⇄ {meta['paired_opposite'][:80]}")
-            if meta.get("ml_homolog"):
-                lines.append(f"  ML homolog: {meta['ml_homolog'][:100]}")
-            if meta.get("layer1_phonetic"):
-                lines.append(f"  Phonetic: {meta['layer1_phonetic'][:100]}")
-            if meta.get("layer3_numerical"):
-                lines.append(f"  Numerical: {meta['layer3_numerical'][:100]}")
-            if meta.get("layer4_geometric"):
-                lines.append(f"  Geometric: {meta['layer4_geometric'][:100]}")
-            if meta.get("layer5_breath"):
-                lines.append(f"  Breath: {meta['layer5_breath'][:100]}")
-        if len(matches) >= 2:
-            geo = root_cluster_geometry(
-                [(meta["px"], meta["py"]) for _, meta in matches])
-            km = geo["karcher_mean"]
-            lines.append("")
-            lines.append(f"DISK GEOMETRY ({len(matches)} Names on root {root})")
-            lines.append(f"  Karcher mean: ({km['px']}, {km['py']}) r={km['r']}")
-            lines.append(f"  Fréchet variance: {geo['frechet_variance']} | dispersion: {geo['dispersion']}")
-            lines.append(f"  Mean pairwise geodesic: {geo['mean_pairwise']} | field baseline (all 99): {geo['field_mean_pairwise']}")
-            tight = geo["tightness"]
-            reading = ("tighter than the field at large"
-                       if tight is not None and tight < 1.0
-                       else "no tighter than the field at large")
-            lines.append(f"  Tightness ratio: {tight} ({reading})")
-        return [types.TextContent(type="text", text="\n".join(lines))]
-
-    elif name == "semantic_project":
-        candidates_map = arguments.get("candidates", {})
-        context_arabic = arguments.get("context_arabic", [])
-
-        if not candidates_map:
-            return [types.TextContent(type="text", text="Error: candidates required")]
-
-        context_profiles = []
-        for term in context_arabic:
-            if term.strip():
-                try:
-                    context_profiles.append(get_full_profile(term.strip()))
-                except Exception:
-                    pass
-
-        centroid   = context_centroid(context_profiles)
-        centroid_r = round(float(np.sqrt(centroid[0]**2 + centroid[1]**2)), 4)
-        divider    = "─" * 44
-        lines      = ["SEMANTIC PROJECTION", divider]
-
-        if context_arabic:
-            lines.append(f"Context: {', '.join(context_arabic)}")
-            lines.append(f"Centroid: ({round(centroid[0],3)}, {round(centroid[1],3)}) r={centroid_r}")
-            lines.append(divider)
-
-        for concept, arabic_forms in candidates_map.items():
-            lines.append(f"CONCEPT: {concept}")
-            profiles = []
-            for form in arabic_forms:
-                if not form.strip():
-                    continue
-                try:
-                    p = get_full_profile(form.strip())
-                    p["fit_score"] = geometric_fit(p, centroid) if context_profiles else None
-                    profiles.append(p)
-                except Exception as e:
-                    lines.append(f"  {form}: error — {e}")
-
-            if context_profiles:
-                profiles.sort(
-                    key=lambda p: p["fit_score"] if p["fit_score"] is not None else 0,
-                    reverse=True
-                )
-
-            for p in profiles:
-                fit_str  = f"fit={p['fit_score']}" if p["fit_score"] is not None else "no context"
-                top_attr = p["attractors"][0] if p["attractors"] else {}
-                abjad_v  = p.get("abjad", {}).get("value", "—")
-                lines.append(
-                    f"  {p['term_ar']} | {fit_str} | r={p['position']['r']} "
-                    f"| {p['tier']} | wazn:{p['dominant_wazn']} | abjad:{abjad_v}"
-                )
-                lines.append(
-                    f"    axis: {top_attr.get('name_ar','—')} ⇄ "
-                    f"{(top_attr.get('paired_opposite','') or '')[:40]}"
-                )
-                if p["dataset_neighbors"]:
-                    nbr_str = ", ".join(n["term_ar"] for n in p["dataset_neighbors"][:3])
-                    lines.append(f"    neighbors: {nbr_str}")
-
-            if profiles:
-                best = profiles[0]
-                fit_str = f"fit={best['fit_score']}" if best["fit_score"] is not None else "highest r"
-                lines.append(f"  → RECOMMENDED: {best['term_ar']} ({fit_str})")
-            lines.append("")
-
-        return [types.TextContent(type="text", text="\n".join(lines))]
-
-    elif name == "semantic_neighbors":
-        term  = arguments.get("term", "")
-        k     = int(arguments.get("k", 8))
-        min_r = float(arguments.get("min_r", 0.1))
-        max_r = float(arguments.get("max_r", 0.95))
-        if not term:
-            return [types.TextContent(type="text", text="Error: term is required")]
-        if not coord_db:
-            return [types.TextContent(type="text",
-                text="Dataset not loaded — neighbors unavailable")]
-
-        term_clean = strip_diac(term)
-        target = None
-        for entry in coord_db:
-            if entry.get("term_undiacritized") == term_clean or \
-               strip_diac(entry.get("term_ar", "")) == term_clean:
-                target = entry
-                break
-
-        if target is None:
-            result     = run_query(term)
-            pos        = result["estimated_position"]
-            target_pos = (pos["px"], pos["py"])
-            target_label = term
-            source     = "computed on-the-fly"
-        else:
-            ep         = target["estimated_position"]
-            target_pos = (ep["px"], ep["py"])
-            target_label = target.get("term_ar", term)
-            source     = "found in dataset"
-
-        distances = []
-        seen = set()
-        for entry in coord_db:
-            ar  = entry.get("term_ar", "")
-            key = entry.get("term_undiacritized", strip_diac(ar))
-            if key == term_clean or key in seen:
-                continue
-            seen.add(key)
-            ep = entry.get("estimated_position", {})
-            r  = ep.get("r", 0.0)
-            if r < min_r or r > max_r:
-                continue
-            d = poincare_distance(target_pos, (ep.get("px", 0.0), ep.get("py", 0.0)))
-            distances.append((ar, round(d, 4), round(r, 4),
-                               ep.get("level_label", ""),
-                               [a[0] for a in entry.get("top_name_attractors", [])[:3]]))
-
-        distances.sort(key=lambda x: x[1])
-        divider = "─" * 40
-        lines = [
-            f"SEMANTIC NEIGHBORS: {target_label}",
-            f"Position: ({round(target_pos[0],4)}, {round(target_pos[1],4)}) | {source}",
-            f"Filters: min_r={min_r}, max_r={max_r} | Top {k}",
-            divider,
-        ]
-        for i, (ar, dist, r, level, attrs) in enumerate(distances[:k], 1):
-            attr_str = ", ".join(attrs) if attrs else "—"
-            lines.append(f"{i}. {ar} | dist={dist} | r={r} | {level}")
-            lines.append(f"   attractors: {attr_str}")
-
-        return [types.TextContent(type="text", text="\n".join(lines))]
-
-    elif name == "compare_terms":
-        t1, t2 = arguments["term1"], arguments["term2"]
-        r1 = run_query(t1)
-        r2 = run_query(t2)
-
-        top1 = {n["ar"]: n for n in r1["top_names"]}
-        top2 = {n["ar"]: n for n in r2["top_names"]}
-        shared   = set(top1) & set(top2)
-        only_t1  = set(top1) - set(top2)
-        only_t2  = set(top2) - set(top1)
-        bot1     = {n["ar"] for n in r1["bottom_names"]}
-        bot2     = {n["ar"] for n in r2["bottom_names"]}
-        opposing = (set(top1) & bot2) | (set(top2) & bot1)
-
-        pos1 = r1["estimated_position"]
-        pos2 = r2["estimated_position"]
-        dd = dual_distance(pos1, pos2)
-        mid = geodesic_midpoint(pos1, pos2)
-        mid_names = nearest_basis_names(mid["px"], mid["py"], k=3)
-        decomp = radial_angular_decomposition(pos1, pos2)
-        mid_names_str = ", ".join(
-            f"{n['ar']} ({n['trans']}, {n['tier']}, d={n['distance']})"
-            for n in mid_names)
-        share_str = (
-            f"radial {decomp['radial_share']} / angular {decomp['angular_share']}"
-            if decomp["radial_share"] is not None else "—")
-
-        a1 = r1.get("abjad", {}); a2 = r2.get("abjad", {})
-        shared_str   = ", ".join(f"{ar} ({top1[ar]['trans']})" for ar in shared)   or "none"
-        only_t1_str  = ", ".join(f"{ar} ({top1[ar]['trans']})" for ar in only_t1)  or "none"
-        only_t2_str  = ", ".join(f"{ar} ({top2[ar]['trans']})" for ar in only_t2)  or "none"
-        opposing_str = ", ".join(opposing) or "none"
-
-        output = (
-            f"COMPARISON: {t1}  ↔  {t2}\n"
-            f"{'─'*52}\n"
-            f"{t1}: r={pos1['r']}, {pos1['level_label']}, wazn={r1['dominant_wazn']}, "
-            f"abjad={a1.get('value','—')} [{a1.get('breakdown','—')}]\n"
-            f"{t2}: r={pos2['r']}, {pos2['level_label']}, wazn={r2['dominant_wazn']}, "
-            f"abjad={a2.get('value','—')} [{a2.get('breakdown','—')}]\n"
-            f"Distance — Euclidean (flat): {dd['distance_euclidean']} | hyperbolic (geodesic): {dd['distance_hyperbolic']} | hierarchy load: {dd['hierarchy_load']}\n"
-            f"DECOMPOSITION — radial (depth) leg: {decomp['d_radial']} | angular (field) leg: {decomp['d_angular']} | shares: {share_str} | Δθ: {decomp['delta_theta_deg']}°\n"
-            f"  Reading: {decomp['gloss']}\n"
-            f"BARZAKH (geodesic midpoint): ({mid['px']}, {mid['py']}) r={mid['r']}\n"
-            f"  Nearest basis Names to the isthmus: {mid_names_str}\n\n"
-            f"SHARED ATTRACTORS: {shared_str}\n\n"
-            f"DIVERGENT — {t1} only: {only_t1_str}\n"
-            f"DIVERGENT — {t2} only: {only_t2_str}\n\n"
-            f"OPPOSING POLES (one attracts, other repels): {opposing_str}\n"
-        )
-        return [types.TextContent(type="text", text=output)]
-
-    return [types.TextContent(type="text", text=f"Unknown tool: {name}")]
-
+    """Thin MCP adapter: the model-independent service owns tool behavior."""
+    answer = _tool_service.execute(name, arguments)
+    return [types.TextContent(type="text", text=answer)]
 
 # ── MCP Session Manager (must be after mcp_server is defined) ─────────────
 from mcp.server.streamable_http_manager import StreamableHTTPSessionManager
@@ -1363,7 +1110,7 @@ app.router.lifespan_context = lifespan
 # ── OAuth metadata (required for Claude.ai remote MCP connector) ──────
 from fastapi.responses import RedirectResponse
 
-BASE_URL = "https://wellyes1-almiraah-transformer.hf.space"
+BASE_URL = "https://ahmedmslti-almiraah-transformer.hf.space"
 
 @app.get("/.well-known/oauth-authorization-server")
 async def oauth_metadata():
@@ -1411,7 +1158,7 @@ async def oauth_register(request: Request):
 
 # ── MCP Streamable HTTP endpoint ─────────────────────────────────────
 # Session manager handles all session state across requests.
-# Claude.ai MCP URL: https://wellyes1-almiraah-transformer.hf.space/mcp
+# MCP URL: https://ahmedmslti-almiraah-transformer.hf.space/mcp
 
 @app.get("/mcp")
 @app.post("/mcp")

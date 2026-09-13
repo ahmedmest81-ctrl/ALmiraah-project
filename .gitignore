@@ -3,3 +3,5 @@ __pycache__/
 *.npz
 .env
 hf_token*
+engine/all_99_corrected.json
+engine/poincare_data_v3.json
