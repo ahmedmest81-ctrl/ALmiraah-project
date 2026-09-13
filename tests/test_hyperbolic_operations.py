@@ -11,7 +11,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "engine"))
 
-from hyperbolic import (  # noqa: E402
+from hyperbolic import (  # noqa: E402 - local module after adding engine to sys.path
     exp_x,
     frechet_statistics,
     geodesic_midpoint,

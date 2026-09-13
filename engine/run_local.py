@@ -7,6 +7,7 @@ No Hugging Face write token is required for read-only local use.
 
 from __future__ import annotations
 
+import logging
 import os
 import shutil
 import subprocess
@@ -14,6 +15,8 @@ import sys
 from pathlib import Path
 
 from huggingface_hub import hf_hub_download
+
+logger = logging.getLogger(__name__)
 
 ROOT = Path(__file__).resolve().parents[1]
 ENGINE = ROOT / "engine"
@@ -35,7 +38,8 @@ def prepare() -> None:
         try:
             downloaded = hf_hub_download(SPACE_ID, "ui.html", repo_type="space")
             shutil.copyfile(downloaded, ENGINE / "ui.html")
-        except Exception:
+        except Exception as exc:  # noqa: BLE001 - optional public asset; keep offline fallback
+            logger.warning("Could not fetch the optional browser UI: %s", exc)
             (ENGINE / "ui.html").write_text(
                 "<h1>AL-MIRʾĀH</h1><p>Use /docs for the HTTP API or /mcp for MCP.</p>",
                 encoding="utf-8",
@@ -45,8 +49,8 @@ def prepare() -> None:
         try:
             downloaded = hf_hub_download(SPACE_ID, "name_vecs_v3.npz", repo_type="space")
             shutil.copyfile(downloaded, ENGINE / "name_vecs_v3.npz")
-        except Exception:
-            pass
+        except Exception as exc:  # noqa: BLE001 - optional cold-start optimization
+            logger.warning("Could not fetch optional basis vectors: %s", exc)
 
 
 def main() -> None:

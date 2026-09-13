@@ -7,8 +7,12 @@ while the MCP adapter only translates strings into protocol content blocks.
 
 from __future__ import annotations
 
+import logging
+from collections.abc import Callable, Mapping, Sequence
 from dataclasses import dataclass
-from typing import Any, Callable, Mapping, Protocol, Sequence
+from typing import Any, Protocol
+
+logger = logging.getLogger(__name__)
 
 
 class SemanticBackend(Protocol):
@@ -152,8 +156,8 @@ class ToolService:
             )
             lines.extend([
                 f"{ar} ({meta['trans']}) | Wazn: {meta['wazn']} | Tier: {tier}",
-                f"  Abjad (stored, provisional): {meta['abjad']} | "
-                f"recomputed article-free: {self.backend.abjad_breakdown(bare)}{warning}",
+                (f"  Abjad (stored, provisional): {meta['abjad']} | "
+                 f"recomputed article-free: {self.backend.abjad_breakdown(bare)}{warning}"),
                 f"  Meaning: {meta['meaning']} | Axis: {meta['paired_opposite']}",
             ])
             for key in ("ml_homolog", "layer1_phonetic", "layer3_numerical",
@@ -174,10 +178,10 @@ class ToolService:
             lines.extend([
                 f"DISK GEOMETRY ({len(matches)} Names on root {root})",
                 f"  Karcher mean: ({center['px']}, {center['py']}) r={center['r']}",
-                f"  Fréchet variance: {geo['frechet_variance']} | "
-                f"dispersion: {geo['dispersion']}",
-                f"  Mean pairwise geodesic: {geo['mean_pairwise']} | "
-                f"field baseline (all 99): {geo['field_mean_pairwise']}",
+                (f"  Fréchet variance: {geo['frechet_variance']} | "
+                 f"dispersion: {geo['dispersion']}"),
+                (f"  Mean pairwise geodesic: {geo['mean_pairwise']} | "
+                 f"field baseline (all 99): {geo['field_mean_pairwise']}"),
                 f"  Tightness ratio: {tightness} ({reading})",
             ])
         return "\n".join(lines)
@@ -224,8 +228,9 @@ class ToolService:
             if term.strip():
                 try:
                     context_profiles.append(self.backend.profile(term.strip()))
-                except Exception:
+                except Exception as exc:  # noqa: BLE001 - backend may reject individual terms
                     # One unsupported context word must not discard all candidates.
+                    logger.warning("Skipping unsupported context term %r: %s", term, exc)
                     continue
         center = self.backend.centroid(context_profiles)
         lines = ["SEMANTIC PROJECTION", f"Context: {', '.join(context)}", f"Centroid: {center}"]
@@ -240,7 +245,7 @@ class ToolService:
                             self.backend.fit(profile, center) if context_profiles else None
                         )
                         profiles.append(profile)
-                    except Exception as exc:
+                    except Exception as exc:  # noqa: BLE001 - show per-candidate backend errors
                         lines.append(f"  {form}: error — {exc}")
             if context_profiles:
                 profiles.sort(key=lambda p: p["fit_score"], reverse=True)
@@ -311,20 +316,20 @@ class ToolService:
         ) or "none"
         return "\n".join([
             f"COMPARISON: {left} ↔ {right}",
-            f"{left}: r={a['r']}, {a['level_label']}, wazn={first['dominant_wazn']}, "
-            f"Abjad (provisional)={abjad_a.get('value', '—')} "
-            f"[{abjad_a.get('breakdown', '—')}]",
-            f"{right}: r={b['r']}, {b['level_label']}, wazn={second['dominant_wazn']}, "
-            f"Abjad (provisional)={abjad_b.get('value', '—')} "
-            f"[{abjad_b.get('breakdown', '—')}]",
-            f"Distance — Euclidean (flat): {distances['distance_euclidean']} | "
-            f"hyperbolic (geodesic): {distances['distance_hyperbolic']} | "
-            f"hierarchy load: {distances['hierarchy_load']}",
-            f"DECOMPOSITION: radial={legs['d_radial']} | angular={legs['d_angular']} | "
-            f"shares={legs['radial_share']}/{legs['angular_share']} | "
-            f"Δθ={legs.get('delta_theta_deg', '—')}° | {legs['gloss']}",
-            f"BARZAKH (geodesic midpoint): {midpoint} | "
-            f"nearest basis Names: {midpoint_names}",
+            (f"{left}: r={a['r']}, {a['level_label']}, wazn={first['dominant_wazn']}, "
+             f"Abjad (provisional)={abjad_a.get('value', '—')} "
+             f"[{abjad_a.get('breakdown', '—')}]"),
+            (f"{right}: r={b['r']}, {b['level_label']}, wazn={second['dominant_wazn']}, "
+             f"Abjad (provisional)={abjad_b.get('value', '—')} "
+             f"[{abjad_b.get('breakdown', '—')}]"),
+            (f"Distance — Euclidean (flat): {distances['distance_euclidean']} | "
+             f"hyperbolic (geodesic): {distances['distance_hyperbolic']} | "
+             f"hierarchy load: {distances['hierarchy_load']}"),
+            (f"DECOMPOSITION: radial={legs['d_radial']} | angular={legs['d_angular']} | "
+             f"shares={legs['radial_share']}/{legs['angular_share']} | "
+             f"Δθ={legs.get('delta_theta_deg', '—')}° | {legs['gloss']}"),
+            (f"BARZAKH (geodesic midpoint): {midpoint} | "
+             f"nearest basis Names: {midpoint_names}"),
             f"SHARED ATTRACTORS: {shared_text}",
             f"DIVERGENT — {left} only: {only_a_text}",
             f"DIVERGENT — {right} only: {only_b_text}",

@@ -13,7 +13,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install test dependencies
-        run: python -m pip install numpy scipy scikit-learn ruff
+        run: python -m pip install numpy scipy scikit-learn ruff==0.16.0
       - name: Lint service and tests
         run: ruff check engine/tool_service.py engine/run_local.py tests
       - name: Compile engine

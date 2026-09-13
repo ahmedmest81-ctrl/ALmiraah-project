@@ -6,7 +6,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "engine"))
 
-from tool_service import ToolService  # noqa: E402
+from tool_service import ToolService
 
 
 def result(term):
