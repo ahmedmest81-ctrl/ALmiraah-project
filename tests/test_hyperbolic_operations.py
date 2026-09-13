@@ -2,16 +2,10 @@
 
 from __future__ import annotations
 
-import sys
 import unittest
-from pathlib import Path
 
 import numpy as np
-
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "engine"))
-
-from hyperbolic import (  # noqa: E402 - local module after adding engine to sys.path
+from engine.hyperbolic import (
     exp_x,
     frechet_statistics,
     geodesic_midpoint,
