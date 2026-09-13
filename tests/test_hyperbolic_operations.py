@@ -5,6 +5,7 @@ from __future__ import annotations
 import unittest
 
 import numpy as np
+
 from engine.hyperbolic import (
     exp_x,
     frechet_statistics,
